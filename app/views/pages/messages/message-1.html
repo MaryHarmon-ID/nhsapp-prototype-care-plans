@@ -1,0 +1,32 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "/pages/messages/your-messages" %}
+
+{% set pageHeading = "Portland Street Great Westood Surgery" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-7">
+        <p>Patient survey reminder. The Patient feedback survey is about to close. Have your say about Portland Street Great Westood Surgery by providing us with your thoughts.</p>
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
