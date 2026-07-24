@@ -1,0 +1,59 @@
+
+{{ header({
+  service: {
+    text: 'App<span class="nhsuk-u-visually-hidden"> homepage</span>' | safe,
+    href: "/pages/home-" + data['accountType']
+  },
+  account: {
+    classes: 'nhsapp-u-hide-until-tablet',
+    items: [
+      {
+        text: 'Help and support',
+        href: '#'
+      },
+      {
+        text: 'Account',
+        href:  "/pages/account-and-settings-" + data['accountType']
+      },
+      {
+        text: 'Log out',
+        href: '#'
+      }
+    ]
+  },
+  navigation: {
+    items: [
+      {
+        text: 'Home',
+        href: "/pages/home-" + data['accountType']
+      },
+      {
+        text: 'Services',
+        href:  "/pages/services-" + data['accountType']
+      },
+      {
+        text: 'Your health',
+        href:  "/pages/your-health-" + data['accountType']
+      },
+      {
+        text: 'Messages',
+        href:  "/pages/messages-" + data['accountType']
+      },
+      {
+        text: 'Help and support',
+        href:  "#",
+        classes: 'nhsapp-u-hide-from-tablet'
+      },
+      {
+        text: 'Account',
+        href:  "/pages/account-and-settings-" + data['accountType'],
+        classes: 'nhsapp-u-hide-from-tablet'
+      },
+      {
+        text: 'Log out',
+        href:  "#",
+        classes: 'nhsapp-u-hide-from-tablet'
+      }
+    ]
+  }
+}) }}
