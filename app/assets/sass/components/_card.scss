@@ -1,0 +1,71 @@
+// ==========================================================================
+// COMPONENTS / #CARD
+// ==========================================================================
+
+// Colours
+.app-card--dark-blue {
+  background-color: nhsapp-colour("dark-blue");
+  border: 0;
+  color: nhsuk-colour("white");
+
+  .nhsapp-card__container {
+    border-color: nhsuk-colour("white");
+  }
+
+  .nhsapp-card__link {
+    color: nhsuk-colour("white");
+
+    &:hover,
+    &:visited,
+    &:hover:visited {
+      color: nhsuk-colour("white");
+    }
+
+    &:focus,
+    &:focus:hover {
+      color: $nhsuk-focus-text-colour;
+    }
+  }
+
+  &:hover,
+  &:hover:visited {
+    color: nhsuk-colour("white");
+
+    .nhsapp-icon {
+      fill: nhsuk-colour("white");
+    }
+  }
+
+  .nhsuk-card-link__img {
+    border-bottom: 0;
+  }
+
+  .nhsapp-icon {
+    fill: nhsuk-colour("white");
+  }
+
+  .nhsuk-caption-s,
+  .nhsuk-caption-m,
+  .nhsuk-caption-l,
+  .nhsuk-caption-xl {
+    color: nhsuk-colour("white");
+  }
+
+  .nhsuk-link {
+    color: currentColor;
+  }
+}
+
+// Removes border from a card
+.app-card--no-border {
+  border: 0;
+}
+
+// Center aligns card content
+.app-card--center-align {
+  text-align: center;
+
+  .app-card__content {
+    margin: 0 auto;
+  }
+}

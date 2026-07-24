@@ -1,0 +1,71 @@
+// Import NHS.UK frontend library
+@import "nhsuk-frontend/dist/nhsuk";
+
+// Import all styles from the NHS App frontend library
+@import 'nhsapp-frontend/dist/nhsapp/all';
+
+// Components that are not in the NHS.UK frontend library
+@import 'components/list-border';
+@import 'components/related-nav';
+
+// Components that are custom to the NHS App
+@import 'components/full-width-component-utility';
+@import 'components/wrapper-and-container';
+@import 'components/icons';
+
+@import 'components/display';
+
+@import 'components/header';
+@import 'components/app-bottom-navigation';
+@import 'components/bottom-sheet';
+@import 'components/action-sheet';
+@import 'components/add-to-wallet';
+@import 'components/buttons';
+@import 'components/card';
+@import 'components/date-picker';
+@import 'components/dynamic-page-title';
+@import 'components/global-navigation-native';
+@import 'components/global-navigation-web';
+@import 'components/iframe';
+@import 'components/inset-text';
+@import 'components/ios-notifications';
+@import 'components/links';
+@import 'components/link-with-icon';
+@import 'components/loader';
+@import 'components/login-native';
+@import 'components/native-view';
+@import 'components/provider-banner';
+@import 'components/section-break';
+@import 'components/sticky-footer';
+@import 'components/summary-list';
+@import 'components/switch-profile-banner';
+@import 'components/utilities';
+
+@import 'components/nhsuk-frontend-extensions';
+
+// Prototype specific styles
+@import 'prototype-specific/example';
+@import 'prototype-specific/ios-dynamic-text';
+
+///////////////////////////////////////////
+// Add your custom CSS/Sass styles below...
+///////////////////////////////////////////
+
+.nhsuk-back-link {
+  @include nhsuk-responsive-margin(5, "bottom"); //Hotfix to fix the breacrumb spacing
+}
+
+// Native container width
+// This is used to ensure the content does not stretch too wide on larger screens
+// and to maintain a consistent look with the NHS App design.
+.nhs-app-native .nhsuk-width-container {
+  max-width: 704px; // 768px - 64px (32px padding on each side)
+
+  @include nhsuk-media-query($from: desktop) {
+    margin: 0 auto;
+  }
+}
+
+.app-icon--tick {
+  fill: $nhsuk-success-colour;
+}
