@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  NHS App prototype
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>NHS App prototype</h1>
+      <p class="nhsuk-lede-text">
+        A prototype to test new design components and patterns for the NHS App.
+      </p>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/">Pages templates and layouts</a>
+        </li>
+        <li>
+          <a href="/components/">Components</a>
+        </li>
+        <li>
+          <a href="/native">Make your prototype feel more app-like</a>
+        </li>
+        <li>
+          <a href="/frame">View prototype in a mobile frame</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Custom prototype settings</h2>
+      <p><a href="/data-settings">View or change the prototype settings</a>.</p> 
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Help improve the NHS App prototype</h2>
+
+      <p>We welcome feedback and suggestions to help improve the NHS App prototype.</p>
+
+      <p>If you have any ideas, feature requests, or issues to report, please <a href="https://github.com/nhsuk/nhsapp-prototype/issues">submit an issue on GitHub</a>.</p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Built using</h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "NHS prototype kit"
+            },
+            value: {
+              html: "<a href='https://github.com/nhsuk/nhsuk-prototype-kit/releases'><span class='nhsuk-u-visually-hidden'>NHS prototype kit </span>v7.0.1</a>"
+            }
+          },
+          {
+            key: {
+              text: "NHS.UK frontend"
+            },
+            value: {
+              html: "<a href='https://github.com/nhsuk/nhsuk-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS.UK frontend </span>v10.0.0</a>"
+            }
+          },
+          {
+            key: {
+              text: "NHS App frontend"
+            },
+            value: {
+              html: "<a href='https://github.com/nhsuk/nhsapp-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS App frontend </span>v5.0.1</a>"
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
