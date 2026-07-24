@@ -1,0 +1,212 @@
+{% extends 'layout.html' %}
+
+{% set pageHeading = "Page templates and layouts" %}
+{% set pageDescription = "A collection of pages, layouts, and design patterns to help you build and test NHS App prototypes quickly and consistently." %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+      <p class="nhsuk-lede-text">
+        {{ pageDescription }}
+      </p>
+
+      <h2>Layouts</h2>
+
+      <p>Found in <code>/app/views</code></p>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/layout-app">App layout (top and bottom nav)</a>
+        </li>
+        <li>
+          <a href="/layout-app-splash-screen">Splash screen (blue background)</a>
+        </li>
+        <li>
+          <a href="/layout-app-not-signed-in">Not signed in (blue header)</a>
+        </li>
+        <li>
+          <a href="/layout-ios-locked-screen">iOS locked screen</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Notification pages</h2>
+
+      <p>Found in <code>/app/views/pages</code></p>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/ios-notification-message">iOS notification message</a>
+        </li>
+        <li>
+          <a href="/pages/ios-notification-message-with-status-bar">iOS notification message (with status bar)</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>NHS App pages</h2>
+
+      <p>Found in <code>/app/views/pages</code></p>
+
+      <h3>Login</h3>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/login">Login screen</a>
+        </li>
+        <li>
+          <a href="/pages/login-face-id">Login - face id</a>
+        </li>
+        <li>
+          <a href="/pages/login-face-id-success">Login - face id success</a>
+        </li>
+        <li>
+          <a href="/pages/logged-out">Login - logged out</a>
+        </li>
+      </ul>
+
+      <h3>Homepage {% if data['web'] === "yes" %}(Web){% else %}(Native){% endif %}</h3>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/home-p9">Homepage - P9</a>
+        </li>
+        <li>
+          <a href="/pages/home-p5">Homepage - P5</a>
+        </li>
+        <li>
+          <a href="/pages/home-linked-profiles">Homepage - Linked profiles</a>
+        </li>
+      </ul>
+
+      <h3>Hubpages {% if data['web'] === "yes" %}(Web){% else %}(Native){% endif %}</h3>
+
+        <ul clas="nhsuk-list">
+          <li>
+            <a href="/pages/services-p9">Services - P9</a>
+          </li>
+          <li>
+            <a href="/pages/services-p5">Services - P5</a>
+          </li>
+          <li>
+            <a href="/pages/services-linked-profiles">Services - Linked profiles</a>
+          </li>
+          <li>
+            <a href="/pages/your-health-p9">Your health - P9</a>
+          </li>
+          <li>
+            <a href="/pages/your-health-p5">Your health - P5</a>
+          </li>
+          <li>
+            <a href="/pages/your-health-linked-profiles">Your health - Linked profiles</a>
+          </li>
+          <li>
+            <a href="/pages/messages-p9">Messages - P9</a>
+          </li>
+          <li>
+            <a href="/pages/messages-p5">Messages - P5</a>
+          </li>
+          <li>
+            <a href="/pages/messages-linked-profiles">Messages - Linked profiles</a>
+          </li>
+          <li>
+            <a href="/pages/account-and-settings-p9">Account and settings - P9</a>
+          </li>
+          <li>
+            <a href="/pages/account-and-settings-p5">Account and settings - P5</a>
+          </li>
+          <li>
+            <a href="/pages/account-and-settings-linked-profiles">Account and settings - Linked profiles</a>
+          </li>
+        </ul>
+        
+        <h3>Messages {% if data['web'] === "yes" %}(Web){% else %}(Native){% endif %}</h3>
+
+        <p>Found in <code>/app/views/pages/messages</code></p>
+
+        <ul clas="nhsuk-list">
+          <li>
+            <a href="/pages/messages/your-messages">Your messages</a>
+          </li>
+          <li>
+            <a href="/pages/messages/cannot-send-your-reply">Cannot send your reply</a>
+          </li>
+          <li>
+            <a href="/pages/messages/cannot-show-message">Cannot show message</a>
+          </li>
+        </ul>
+
+        <h3>Account and settings {% if data['web'] === "yes" %}(Web){% else %}(Native){% endif %}</h3>
+
+        <p>Found in <code>/app/views/pages/account-and-settings</code></p>
+
+        <ul clas="nhsuk-list">
+          <li>
+            <a href="/pages/account-and-settings/cookies-and-legal-agreement">Manage cookies and read legal information</a>
+          </li>
+          <li>
+            <a href="/pages/account-and-settings/linked-profiles">Linked profiles</a>
+          </li>
+          <li>
+            <a href="/pages/account-and-settings/switch-profiles">Switch profiles</a>
+          </li>
+        </ul> 
+        
+        <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+        <h2>Page templates</h2>
+
+        <p>Found in <code>/pages/page-templates</code></p>
+
+        <ul clas="nhsuk-list">
+          <li>
+            <a href="/pages/page-templates/start-page">Start page</a>
+          </li>
+          <li>
+            <a href="/pages/page-templates/question-page-radios">Question page - Radios</a>
+          </li>
+          <li>
+            <a href="/pages/page-templates/question-page-textarea">Question page - Textarea</a>
+          </li>
+          <li>
+            <a href="/pages/page-templates/check-answers">Check answers page</a>
+          </li>
+          <li>
+            <a href="/pages/page-templates/confirmation-page">Confirmation page</a>
+          </li>
+          <li>
+            <a href="/pages/page-templates/error-page">Error page</a>
+          </li>
+        </ul>
+
+        <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible app-section-break--width-4">
+
+        <h2>Custom prototype settings</h2>
+        <p><a href="/data-settings">View or change the prototype settings</a>.</p>  
+
+        <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+        <h2>Help improve the page templates</h2>
+
+        <p>If something isn't working as expected or a template is out of date, please <a href="https://github.com/nhsuk/nhsapp-prototype/issues">submit an issue on GitHub</a>.</p>
+
+        <hr class="nhsuk-section-break nhsuk-section-break--m">
+
+    </div>
+  </div>
+{% endblock %}

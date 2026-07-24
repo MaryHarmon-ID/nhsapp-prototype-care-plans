@@ -1,0 +1,97 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Account and settings" %}
+
+{% set pageHeading = "Account and settings" %}
+{% set pageDescription = "Change your NHS App settings and personal details" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Change your contact or login details",
+            href: "#"
+          },
+          {
+            title: "Manage cookies and read legal information",
+            href: "pages/account-and-settings/cookies-and-legal-agreement"
+          }
+        ]
+      })}}
+
+      <button id="logoutButton" class="nhsuk-button nhsuk-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit">
+        Log out
+      </button>
+
+      <p>Version: {{ data['version'] }}</p>
+
+      <div id="logoutActionSheet" tabindex="0" style="display:none">
+        <div class="action-sheet-mask"></div> 
+        <div class="action-sheet"> 
+          <div class="action-sheet-title"> 
+            <strong>Are you sure you want to log out?</strong>
+          </div> 
+          <button onclick="document.getElementById('logoutForm').submit();" class="action-sheet-button action-sheet-button--destructive"> 
+            Log out
+          </button> 
+          <button id="cancelButton" class="action-sheet-button"> 
+            Cancel
+          </button> 
+        </div> 
+        <form id="logoutForm" action="/pages/logged-out" method="post" novalidate="novalidate"></form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}

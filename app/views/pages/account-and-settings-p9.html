@@ -1,0 +1,174 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Account and settings" %}
+
+{% set pageHeading = "Account" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        classes: 'nhsapp-cards--pale-blue',
+        isListItem: false,
+        cards: [
+          {
+            title: data['userFirstName']  + ' ' + data['userLastName'],
+            titleClasses: 'nhsuk-u-font-size-36',
+            headingLevel: '2',
+            descriptionHtml: '<p class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-0"><strong>Date of birth:</strong> ' + data['dob'] + ' </p>
+                  <p><strong>NHS number:</strong> ' +  data['nhsNumber'] + '</p>'
+          },
+          {
+            title: 'Manage health services for others',
+            href: '/pages/account-and-settings/linked-profiles'
+          }
+        ]
+      }) }}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        heading: 'Personal details',
+        cards: [
+          {
+            title: "Contact details",
+            href: "#"
+          },
+          {
+            title: "Your GP surgery",
+            href: "#"
+          }
+        ]
+      })}}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        heading: 'Health choices',
+        cards: [
+          {
+            title: "Organ donation decision",
+            href: "#"
+          },
+          {
+            title: "Health data sharing decision",
+            href: "#"
+          },
+          {
+            title: "Take part in health research",
+            href: "#"
+          }
+        ]
+      })}}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        heading: 'Settings',
+        cards: [
+          {
+            title: "Face ID",
+            href: "#"
+          },
+          {
+            title: "Notifications",
+            href: "#"
+          },
+          {
+            title: "Login and security",
+            href: "#"
+          },
+          {
+            title: "Cookies",
+            href: "#"
+          }
+        ]
+      })}}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        heading: 'About the NHS App',
+        classes: "app-cards--secondary",
+        cards: [
+          {
+            title: "Privacy and legal policies",
+            href: "#"
+          },
+          {
+            title: "Join our user research panel",
+            href: "#"
+          }
+        ]
+      })}}
+
+      <button id="logoutButton" class="nhsuk-button nhsuk-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit">
+        Log out
+      </button>
+
+      <p>Version: {{ data['version'] }}</p>
+
+      <div id="logoutActionSheet" tabindex="0" style="display:none">
+        <div class="action-sheet-mask"></div> 
+        <div class="action-sheet"> 
+          <div class="action-sheet-title"> 
+            <strong>Are you sure you want to log out?</strong>
+          </div> 
+          <button onclick="document.getElementById('logoutForm').submit();" class="action-sheet-button action-sheet-button--destructive"> 
+            Log out
+          </button> 
+          <button id="cancelButton" class="action-sheet-button"> 
+            Cancel
+          </button> 
+        </div> 
+        <form id="logoutForm" action="/pages/logged-out" method="post" novalidate="novalidate"></form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}
