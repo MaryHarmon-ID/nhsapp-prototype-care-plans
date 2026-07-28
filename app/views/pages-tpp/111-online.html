@@ -1,0 +1,45 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Check your symptoms - 111 online" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+            <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <p>If you're worried about a symptom, answer some questions and we will tell you what to do next.</p>
+
+      <p>Depending on your symptoms, we might advise you to:</p>
+      <ul clas="nhsuk-list">
+        <li>call 999 or go to A&E in an emergency</li>
+        <li>go to an urgent treatment centre</li>
+        <li>see an evening and weekend (out-of-hours) GP</li>
+        <li>book a callback from a nurse</li>
+        <li>get urgent specialist support, for dental or mental health problems</li>
+        <li>contact your own GP</li>
+        <li>see a pharmacist for help with a minor illness</li>
+        <li>look after yourself at home</li>
+      </ul>
+
+      {{ button({
+        text: "Start now",
+        classes: "nhsapp-button"
+      }) }}
+
+    
+
+    </div>
+  </div>
+
+  {% endblock %}

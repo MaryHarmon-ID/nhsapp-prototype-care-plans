@@ -1,8 +1,8 @@
 // Import NHS.UK frontend library
-@import "nhsuk-frontend/dist/nhsuk";
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
 // Import all styles from the NHS App frontend library
-@import 'nhsapp-frontend/dist/nhsapp/all';
+@import 'node_modules/nhsapp-frontend/dist/nhsapp/all';
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
@@ -41,6 +41,9 @@
 @import 'components/switch-profile-banner';
 @import 'components/utilities';
 
+// Component updates
+@import 'components/card-link-updates';
+@import 'components/callout';
 @import 'components/nhsuk-frontend-extensions';
 
 // Prototype specific styles
@@ -55,6 +58,18 @@
   @include nhsuk-responsive-margin(5, "bottom"); //Hotfix to fix the breacrumb spacing
 }
 
+.nhs-app-native {
+  .nhsuk-back-link {
+    margin-bottom: 12px;
+    padding-top: 0;
+
+    @include nhsuk-media-query($from: desktop) {
+      margin-bottom: nhsuk-spacing(3);
+      padding-top: nhsuk-spacing(1);
+    }
+  }
+}
+
 // Native container width
 // This is used to ensure the content does not stretch too wide on larger screens
 // and to maintain a consistent look with the NHS App design.
@@ -66,6 +81,6 @@
   }
 }
 
-.app-icon--tick {
-  fill: $nhsuk-success-colour;
+.address p {
+  margin: 0;
 }

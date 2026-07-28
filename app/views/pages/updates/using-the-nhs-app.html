@@ -1,0 +1,162 @@
+{% extends 'layout-app-help.html' %}
+
+{% set pageHeading = "Using the NHS App" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-6",
+    href: "/pages/updates/help-landing"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+      <p class="nhsuk-lede-text">
+        {{ pageDescription }}
+      </p>
+
+<!-- Primary card grid -->
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <!-- Card 1 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Logging in</a>
+        </h2>
+        <p class="nhsuk-card__description">How to log in</p>
+      </div>
+    </div>
+  </li>
+  
+  <!-- Card 2 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/pages/updates/help-prescriptions">Prescriptions</a>
+        </h2>
+        <p class="nhsuk-card__description">How to request and check the progress of prescriptions</p>
+      </div>
+    </div>
+  </li>
+
+  <!-- Card 3 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="/pages/updates/help-appointments">Appointments</a>
+        </h2>
+        <p class="nhsuk-card__description">Includes booking, managing and details of appointments</p>
+      </div>
+    </div>
+  </li>
+
+
+  <!-- Card 4 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Test results</a>
+        </h2>
+        <p class="nhsuk-card__description">About viewing test results in the NHS App</p>
+      </div>
+    </div>
+  </li>
+
+    <!-- Card 5 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Vaccinations</a>
+        </h2>
+        <p class="nhsuk-card__description">Includes booking and viewing vaccinations.</p>
+      </div>
+    </div>
+  </li>
+
+  <!-- Card 6 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Health conditions and allergies</a>
+        </h2>
+        <p class="nhsuk-card__description">How to view details of your health conditions and allergies</p>
+      </div>
+    </div>
+  </li>
+
+
+  <!-- Card 7 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Documents</a>
+        </h2>
+        <p class="nhsuk-card__description">How to open documents and download files such as GP surgery letters</p>
+      </div>
+    </div>
+  </li>
+
+  <!-- Card 8 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Messages</a>
+        </h2>
+        <p class="nhsuk-card__description">About viewing messages and managing your NHS App inbox</p>
+      </div>
+    </div>
+  </li>
+
+  <!-- Card 9 -->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content nhsuk-card__content--primary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Profile</a>
+        </h2>
+        <p class="nhsuk-card__description">Managing personal details, health choices and app settings</p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- Secondary card at the bottom -->
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable nhsuk-card--secondary">
+      <div class="nhsuk-card__content nhsuk-card__content--secondary">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="#">Technical support</a>
+        </h2>
+        <p class="nhsuk-card__description">
+          Contact the NHS App team for help with technical problems
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- Extra links at the bottom -->
+<p>
+  <a class="nhsuk-link" href="#">Get help for mental health now</a><br>
+  <a class="nhsuk-link" href="#">Get urgent medical help now</a>
+</p>
+
+    </div>
+  </div>
+{% endblock %}

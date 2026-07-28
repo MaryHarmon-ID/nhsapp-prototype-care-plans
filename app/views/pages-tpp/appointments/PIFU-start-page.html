@@ -1,0 +1,62 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Request a patient inititated follow-up (PIFU)" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsapp-card nhsapp-card--blue nhsapp-card--full-width">
+      <div class="nhsapp-card__container nhsuk-u-padding-top-4 nhsuk-u-padding-bottom-4">
+        <div class="nhsapp-card__content">
+          <p class="nhsuk-u-margin-bottom-0">This is a new service. Help us improve it and <a href="#">give your
+              feedback.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- DYNAMIC PAGE TITLE -->
+    {{ dynamicPageTitle({
+    title: pageHeading,
+    titleSecondary: true,
+    description: pageDescription
+    })}}
+
+    <p>Use this service to request a follow-up for a condition or health issue you are being treated for.</p>
+
+    <h3 class="nhsuk-heading-s">When to make a request</h3>
+    <p>Follow the advice from your hospital or specialist care provider.</p>
+
+    <h3 class="nhsuk-heading-s">What happens next</h3>
+    <p>Your hospital or specialist care provider will review your request and contact you within 10 days. You may be offered an appointment, a phone call, or get advice.</p>
+
+    <p>If you think you need mercial help now or before you hear from your healthcare provider, contact your GP or visit 111 online.</p>
+
+          {{ button({
+        text: "Start now",
+        classes: "nhsapp-button"
+      }) }}
+
+    
+  </div>
+</div>
+<style lang="scss">
+  .nhsapp-card--blue {
+    background: #D2E1EF;
+    border: none
+  }
+  .nhsapp-tag--blue {
+    background-color: #005EB8;
+    color: #FFFFFF;
+  }
+  @media (max-width: 40.0625em) {
+    .nhsapp-card--full-width {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+  }
+</style>
+{% endblock %}

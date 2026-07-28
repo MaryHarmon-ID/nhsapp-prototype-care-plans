@@ -1,0 +1,29 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set linkedProfile = true %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "You do not have access to Toby's [GP health record area]" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+    <p>Contact Toby's GP surgery to request access.</p>
+
+      <button id="logoutButton" class="nhsuk-button nhsuk-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit">
+        Find GP surgery contact details
+      </button>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

@@ -8,6 +8,7 @@
 {% from "nhsapp/components/badge/large/macro.njk" import nhsappBadgeLarge %}
 {% from "nhsapp/components/card/macro.njk" import nhsappCardGroup %}
 {% from "nhsapp/components/card/macro.njk" import nhsappCard %}
+{% from "nhsapp/styles/section-heading/macro.njk" import nhsappSectionHeading %}
 {% from "nhsapp/styles/icon/macro.njk" import nhsappIcon %}
 {% from "nhsapp/components/tag/macro.njk" import nhsappTag %}
 {% from "nhsapp/components/timeline/macro.njk" import nhsappTimeline %}
@@ -18,12 +19,15 @@
     - add custom CSS and JavaScript
 -->
 
-<!-- Extends the prototype kit template which in turn extends the NHS.UK frontend template -->
-{% extends "prototype-kit-template.njk" %}
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template.html" %}
+
+<!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+{% endblock %}
 
 {% block head %}
-  <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-  <link href="/css/main.css" rel="stylesheet">
   <link rel="manifest" href="/manifest.json">
 {% endblock %}
 
@@ -36,34 +40,35 @@
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
   {{ header({
-    service: {
-      text: 'App prototype <span class="nhsuk-u-visually-hidden"> homepage</span>' | safe,
-      href: "/"
-    }
-  }) }}
+    "service": {
+        "name": "App prototype",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
 {% endblock %}
 
 <!-- Edit the footer -->
 <!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
   {{ footer({
-    meta: {
-      items: [
-        {
-          href: "/",
-          text: "Home"
-        },
-        {
-          href: "https://github.com/nhsuk/nhs-app-redesign-prototype",
-          text: "GitHub repo"
-        },
-        {
-          href: "/clear-data",
-          text: "Clear data"
-        }
-      ]
-    }
-  }) }}
+    "links": [
+      {
+        "URL": "/",
+        "label": "Home"
+      },
+      {
+        "URL": "https://github.com/NHSDigital/nhsapp-prototype-nav-updates",
+        "label": "GitHub repo"
+      },
+      {
+        "URL": "/clear-data",
+        "label": "Clear data"
+      }
+    ]
+  })}}
 {% endblock %}
 
 {% block bodyEnd %}

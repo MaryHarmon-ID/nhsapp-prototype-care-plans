@@ -40,3 +40,12 @@
     padding-top: nhsuk-spacing(2);
   }
 }
+
+// Button group overrides
+.nhsapp-button-group {
+  @include nhsuk-media-query($from: tablet) {
+    .nhsuk-button {
+      margin-bottom: 0;
+    }
+  }
+}

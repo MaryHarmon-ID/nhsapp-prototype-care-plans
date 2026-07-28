@@ -1,0 +1,43 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "/pages/messages/your-messages" %}
+
+{% set pageHeading = "Wealden Ridge" %}
+{% set pageDescription = "Received today at 1:02pm" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-7">
+        <p>Your digital NHS Health Check is due by <b>28 August 2025.</b></p>
+        <p>This is a free check-up of your health. It can help spot early signs of stroke, kidney disease, heart disease and type 2 diabetes.</p>
+        <p>You can complete your NHS Health Check online.</p>
+
+  <a
+    class="nhsuk-button nhsapp-button"
+    href="/pages/messages/digital-health-checks"
+    role="button"
+  >
+    Continue to NHS health check
+  </a>
+</div>
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}

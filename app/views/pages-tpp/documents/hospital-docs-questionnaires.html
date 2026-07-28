@@ -1,0 +1,53 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Hospital and specialist documents and questionnaires" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <h1 class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          {{ pageHeading }}
+        </h1>
+
+      <p>
+        Some of your documents and questionnaires may not be visible in the app. To find out more, select the help section at the top of the screen.
+      </p>
+
+            {{ nhsappSectionHeading({
+              headingText: "Showing 1 of 1",
+              subheadingText: ""
+            })}}
+
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+                      {{ nhsappTag({
+          text: "To read",
+          classes: "nhsapp-tag--red"
+        })}} <br>
+        <div class="nhsuk-u-margin-bottom-3"></div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Orthopaedic appointment on Monday 27th Janurary 2024 at 9am">
+                Bone fracture clinic
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-3 nhsuk-u-secondary-text-color">Received 13 June 2025</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+      </ul>
+
+
+    </div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,23 @@
+$app-border-width-callout: 1px;
+$app-box-shadow-width-callout: 8px;
+
+.app-callout {
+  background: $color_nhsuk-white;
+  border: $app-border-width-callout solid $nhsuk-border-color;
+  border-top: 0;
+  box-shadow: 0 (-1 * $app-box-shadow-width-callout) 0 0 rgba($color_nhsuk-warm-yellow, 1);
+
+  @include nhsuk-responsive-padding(5);
+  @include nhsuk-responsive-margin(4, "bottom");
+  @include nhsuk-responsive-margin(5, "top");
+
+  @include nhsuk-media-query($media-type: print) {
+    border-color: currentcolor;
+    color: $nhsuk-text-color;
+    background: none;
+  }
+}
+
+.app-callout > :last-child {
+  margin-bottom: 0;
+}

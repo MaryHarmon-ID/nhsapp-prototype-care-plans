@@ -1,0 +1,100 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Book or read about vaccinations" %}
+
+{% block content %}
+
+    <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({ title: pageHeading, titleSecondary: true, description:
+      pageDescription })}}
+      
+      <div class="nhsapp-section-heading">
+        <h2 class="nhsuk-heading-s">Seasonal vaccinations available now</h2>
+          </div>
+          
+
+{% from "nhsapp/components/card/macro.njk" import nhsappCard %}
+
+{{ nhsappCard({
+  title: 'Book, cancel or change a COVID-19 vaccination appointment',
+  href: '#'
+}) }}
+  
+  <!-- Boost yourself -->
+      <div class="nhsuk-grid-row">
+      </div>
+  
+      <div class="nhsapp-section-heading">
+        <h2 class="nhsuk-heading-s">Protect yourself</h2>
+          </div>
+  
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "COVID-19",
+            href: "#"
+          },
+          {
+            title: "Flu",
+            href: "#"
+          },
+          {
+            title: "Pneumococcal",
+            href: "#"
+          },
+          {
+            title: "Shingles",
+            href: "#"
+          },
+          {
+            title: "HPV",
+            href: "#"
+          }
+        ]
+      }) }}
+  
+  
+       <div class="nhsapp-section-heading">
+        <h2 class="nhsuk-heading-s">Boost protection for missed vaccinations or if you are at high risk</h2>
+          </div>
+
+          {{ nhsappCardGroup({
+            stacked: true,
+            cards: [
+              {
+                title: "HPV",
+                href: "#"
+              },
+              {
+                title: "ManACWY",
+                href: "#"
+              },
+              {
+                title: "MMR",
+                href: "#"
+              },
+              {
+                title: "Td/IPV (3-in-1 booster)",
+                href: "#"
+              }
+            ]
+          }) }}
+
+        <a
+      class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+      data-module="nhsuk-button"
+      href="/scenario7/all-vaccinations"> View all vaccinations
+        </a>
+        </div>
+      </div>
+  
+      {% endblock %}
+    </div>
+  </div>

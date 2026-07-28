@@ -1,0 +1,29 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "There is a problem showing your [GP health record area]" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+ <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+    <p>This may be a temporary problem. Try again or contact your GP surgery directly.</p>
+
+<a href="502-error-2" class="nhsuk-button nhsuk-button--secondary nhsapp-button" role="button">
+  Try again
+</a>
+
+      <h3>For urgent medical advice </h3>
+     <p>Use <a>111 online</a> or call <a>111</a>.</p>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

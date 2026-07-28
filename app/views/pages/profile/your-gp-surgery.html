@@ -1,0 +1,45 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Profile" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Your GP surgery" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+
+
+<div class="address">
+  <p><strong>THE NORTHERN MEDICAL CENTRE</strong></p>
+  <p>Holloway Community Health Centre</p>
+  <p>11 Hornsey Street</p>
+  <p>London</p>
+  <p>N7 8TP</p>
+</div>
+
+<br>
+
+<details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      If you do not recognise this address
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p>Your GP surgery may be part of a group of surgeries. This address is for the main practice. It may be different to where you usually go when you visit the GP.</p>
+  </div>
+</details>
+
+<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+Change GP surgery</button>
+
+  {% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Request a letter or information" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <p>
+        Your GP surgery provides this service. They use an online form supplied by Accurx.<br>
+        <br>
+        You can use it to ask for things like:
+        <ul>
+          <li>a fit note (sick note)</li>
+          <li>a doctors letter</li>
+          <li>test results</li>
+        </ul>
+        Your GP will then contact you with an appointment or guidance
+      </p>
+
+      <br>
+
+            {{ button({
+              text: "Start now",
+              classes: "nhsapp-button"
+            }) }}
+
+            <br>
+            <br>
+
+
+      <p>
+        <a href="#" class="nhsuk-link--no-visited-state">Find out more about Accurx in our privacy policy</a>
+      </p>
+
+
+          </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

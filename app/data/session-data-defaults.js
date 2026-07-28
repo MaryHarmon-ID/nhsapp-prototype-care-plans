@@ -8,11 +8,13 @@ module.exports = {
   // Set linked profile details
   "linkedProfileFirstName": "Toby",
   "linkedProfileLastName": "Day",
-  "linkedProfileAge": "83",
+  "linkedProfileAge": "9",
+  "linkedProfileNhsNumber": "321 654 0987",
+  "linkedProfileDob": "5 November 2015",
 
   // Set user details
-  "userFirstName": "Mary",
-  "userLastName": "Swanson",
+  "userFirstName": "Neil",
+  "userLastName": "Dean",
   "nhsNumber": "123 456 7890",
   "dob": "15 March 1984",
 

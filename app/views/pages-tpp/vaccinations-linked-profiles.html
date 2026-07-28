@@ -1,0 +1,31 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Vaccinations" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Your vaccinations",
+            href: "#"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

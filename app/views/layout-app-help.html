@@ -1,0 +1,99 @@
+{% extends 'layout-app.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper" %}
+
+{% block head %}
+  <meta name="theme-color" content="#005eb8">
+{% endblock %}
+
+{% block header %}
+<header class="nhsuk-header nhsuk-header--organisation header-blue" role="banner">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-header__content">
+      <!-- Close link -->
+      <a href="/pages/home-p9" class="header-close">
+        <span class="close-icon" aria-hidden="true">×</span>
+        Close
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+/* NHS blue header background */
+.header-blue {
+  background-color: #005eb8; /* NHS blue */
+  padding: 1rem;
+}
+
+/* Flex layout for header */
+.nhsuk-header__content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* Keeps all items vertically centered */
+}
+
+/* Close link styling */
+.header-close {
+  font-size: 1.25rem;
+  color: #ffffff !important;
+  text-decoration: none;
+  display: inline-flex;    /* Inline-flex works better inside text flow */
+  align-items: center;     /* Vertically centers the icon and text */
+  gap: 0.5rem;             /* Consistent spacing between icon and text */
+  line-height: 1;          /* Reduces vertical offset differences */
+}
+
+/* Prevent purple visited color */
+.header-close:visited {
+  color: #ffffff !important;
+}
+
+/* Hover feedback */
+.header-close:hover {
+  color: #d4e1f4;
+  text-decoration: underline;
+}
+
+/* X icon styling */
+.close-icon {
+  font-size: 1.6rem;       /* Slightly smaller for balance */
+  display: flex;
+  align-items: center;     /* Ensures it’s vertically centered within itself */
+  line-height: 1;          /* Prevents extra space above/below */
+  margin-top: -1px;        /* Tiny adjustment if the × appears slightly high */
+}
+</style>
+{% endblock %}
+
+  {% if backLink === true %}
+    {% if containerFullWidth === true %}
+      <div class="nhsuk-width-container">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            {% include "components/back-link/include.html" %}
+          </div>
+        </div>
+      </div>
+    {% else %}
+      {% include "components/back-link/include.html" %}
+    {% endif %}
+  {% endif %}
+
+{% block main %}
+  {% if data['web'] === "no" %}
+    <div class="scrollable-content">
+  {% endif %}
+  <div class="nhsuk-width-container">
+    {% block beforeContent %}{% endblock %}
+    <main class="nhsuk-main-wrapper nhsuk-main-wrapper--s" id="maincontent" role="main">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+  {% if data['web'] === "no" %}
+  </div>
+  {% endif %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'layout-app-help.html' %}
+
+{% set pageHeading = "Book a GP surgery appointment" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-6",
+    href: "help-appointments"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+<p>To book a GP surgery appointment:</p>
+
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Select <strong>Appointments</strong> on the home screen of the NHS App.</li>
+        <li>Select <strong>Book a GP surgery appointment</strong>.</li>
+      </ol>
+
+      <p>This leads to two options:</p>
+
+      <h3 class="nhsuk-heading-s">Ask about a health problem</h3>
+      <p>
+        Select <strong>Ask about a health problem</strong> to complete an online form describing your symptoms.
+        Your GP surgery will then contact you to offer an appointment or advice.
+      </p>
+
+      <h3 class="nhsuk-heading-s">Check for available appointments</h3>
+      <p>
+        Alternatively, select <strong>Check for available appointments</strong> to see whether your GP surgery has
+        made any appointments directly available to book through the app.
+      </p>
+
+      <p>
+        If your GP surgery does not use an online form,“Check for available appointments” will be the
+        only booking option showing in your appointments area.
+      </p>
+
+
+<p class="nhsuk-u-margin-bottom-0">
+  <strong>Page last reviewed:</strong> 2 September 2025
+</p>
+<p>
+  <strong>Next review due:</strong> 2 March 2027
+</p>
+    </div>
+  </div>
+
+{% endblock %}

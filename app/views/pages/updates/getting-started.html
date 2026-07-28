@@ -1,0 +1,31 @@
+{% extends 'layout-app-updates.html' %}
+
+{% set pageHeading = "Welcome to the NHS App" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+    <img src="/images/nhs-logo-hub.svg" style="height: 22px; margin-bottom: 8px; margin-top: 120px;">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <p> Before you start, here are some tips about finding your way around.</p>
+
+
+      {{ button({
+        text: "Next",
+        classes: "nhsapp-button",
+        href: "/pages/updates/getting-started-2"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

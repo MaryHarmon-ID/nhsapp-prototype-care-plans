@@ -1,0 +1,92 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Profile" %}
+
+{% set pageHeading = "Profile" %}
+{% set pageDescription = "Change your NHS App settings and personal details" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+      
+      <div class="nhsapp-cards nhsapp-cards--stacked app-cards--blue">
+        <div class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <h2 class="app-dynamic-page-title__name nhsuk-heading-l nhsuk-u-margin-bottom-1">{{ data['userFirstName'] }} {{ data['userLastName'] }}</h2>
+              <p><strong>NHS number:</strong> {{ data['nhsNumber'] }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="app-card__section-heading">App settings</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Face ID",
+            href: "#"
+          },
+          {
+            title: "Login and security",
+            href: "#"
+          },
+          {
+            title: "Notifications",
+            href: "#"
+          },
+          {
+            title: "Cookies",
+            href: "#"
+          }
+        ]
+      })}}
+
+      <h2 class="app-card__section-heading">About the NHS App</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        classes: "nhsapp-cards--secondary",
+        cards: [
+          {
+            title: "Privacy and legal policies",
+            href: "#"
+          },
+          {
+            title: "Join our user research panel",
+            href: "#"
+          }
+        ]
+      })}}
+
+      <button id="logoutButton" class="nhsuk-button nhsuk-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit">
+        Log out
+      </button>
+
+      <p>Version: {{ data['version'] }}</p>
+
+      <div id="logoutActionSheet" tabindex="0" style="display:none">
+        <div class="action-sheet-mask"></div> 
+        <div class="action-sheet"> 
+          <div class="action-sheet-title"> 
+            <strong>Are you sure you want to log out?</strong>
+          </div> 
+          <button onclick="document.getElementById('logoutForm').submit();" class="action-sheet-button action-sheet-button--destructive"> 
+            Log out
+          </button> 
+          <button id="cancelButton" class="action-sheet-button"> 
+            Cancel
+          </button> 
+        </div> 
+        <form id="logoutForm" action="/pages/logged-out" method="post" novalidate="novalidate"></form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

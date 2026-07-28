@@ -1,13 +1,15 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
-{% set pageName = "Blank transactional template" %}
+{% block pageTitle %}
+  Blank transactional template - NHS prototype kit
+{% endblock %}
 
 {% block beforeContent %}
   {{ backLink({
-    href: "#",
-    text: "Back"
+    "href": "#",
+    "text": "Back"
   }) }}
 {% endblock %}
 

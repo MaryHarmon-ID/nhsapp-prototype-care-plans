@@ -1,0 +1,46 @@
+
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Requested medicines" %}
+{% set pageDescription = "Your GP needs to approve the medicines you requested in the app. If your request is rejected, contact your GP surgery." %}
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/prescriptions/your-approved-prescriptions">
+              Check prescriptions with the pharmacy
+            </a>
+          </div>
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </div>
+
+      <ul class="nhsuk-list nhsuk-list--border">
+      <li>
+          <strong class="nhsapp-tag nhsapp-tag--green nhsuk-u-margin-bottom-2">Approved by GP</strong>
+          <p class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">{{ data['medicine1'] }}</p>
+          <p class="nhsuk-u-margin-bottom-0">Quantity: {{ data['medicine1quantity'] }}</p>
+          <p class="nhsuk-u-margin-bottom-0 nhsuk-body-s nhsuk-u-secondary-text-color">Requested: 4 Feb 2026</p>
+        </li>
+        </ul>
+
+
+    </div>
+  </div>
+
+  {% endblock %}

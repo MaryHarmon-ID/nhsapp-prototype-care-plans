@@ -80,10 +80,10 @@
       <ul class="nhsapp-cards nhsapp-cards--stacked">
 
         {% if "Unread" in data['message-status'] and data['message1read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] === "true" %}
-        {% if "Portland Street Great Westood Surgery" in data['message-sender'] or data['message-sender'] == "" %}
+        {% if "Wealden Ridge Surgery" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 1 -->
-        <li class="nhsapp-card nhsuk-u-padding-left-6">
-          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-6">
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
@@ -99,12 +99,12 @@
                 <a href="#1" onclick="document.getElementById('message1').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
                   {% if data['message1read'] === "true" %}
                   <span class="nhsuk-u-visually-hidden">Read message from </span>
-                    Portland Street Great Westood Surgery
+                    Wealden Ridge Surgery
                   {% else %}
                     <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
                       <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
                       <span class="nhsuk-u-visually-hidden">Unread message from </span>
-                    </span>Portland Street Great Westood Surgery
+                    </span>Wealden Ridge Surgery
                   {% endif %}
                   <span class="nhsuk-u-visually-hidden"> received today at 1:02pm</span> 
                 </a>
@@ -112,7 +112,7 @@
               <div class="nhsapp-card__below">
                 <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
                   <span class="nhsuk-u-visually-hidden"> with preview message of </span>
-                  Patient survey reminder. The Patient feedback survey is about to close. Have your say about Portland Street Great Westood Surgery by providing us with your thoughts. 
+                  Your digital NHS health check is due by 28 August 2025. This is a free check-up of your health. 
                 </p>
               </div>
             </div>
@@ -124,8 +124,8 @@
         {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
         {% if "Range Surgery" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 2 -->
-        <li class="nhsapp-card nhsuk-u-padding-left-6">
-          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-6">
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
@@ -169,8 +169,8 @@
         {% if "Read" in data['message-status'] or data['message-status'] == "" %}
         {% if "Hughenden Valley Surgery" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 3 -->
-        <li class="nhsapp-card nhsuk-u-padding-left-6">
-          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-6">
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
@@ -197,8 +197,8 @@
         {% if "Read" in data['message-status'] or data['message-status'] == "" %}
         {% if "NHS App" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 4 -->
-        <li class="nhsapp-card nhsuk-u-padding-left-6">
-          <div class="nhsapp-card__container nhsuk-u-padding-left-0">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-6">
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
@@ -221,6 +221,35 @@
         </li>
         {% endif %}
         {% endif %}
+
+                {% if "Read" in data['message-status'] or data['message-status'] == "" %}
+        {% if "NHS App" in data['message-sender'] or data['message-sender'] == "" %}
+        <!-- MESSAGE 4 -->
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container nhsuk-u-padding-left-6">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__above">
+                <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
+                  18 Sep 2023
+                </span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/messages/message-5">
+                <span class="nhsuk-u-visually-hidden">Read message from </span>
+                NHS APP
+                <span class="nhsuk-u-visually-hidden"> received 18 September 2023 at 2:15pm </span> 
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+                  <span class="nhsuk-u-visually-hidden"> with preview message of </span>
+                  Your next COVID-19 vaccination. I'd like to invite you to get your COVID-19 vaccination this spring.
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+        {% endif %}
+
 
       </ul>
       {% endif %}

@@ -1,0 +1,77 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Profile" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Your organ donation decision" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      <div>
+      </td>
+      <td class="nhsuk-table__cell">
+        <span class="nhsapp-tag nhsapp-tag--green"> Yes, I want to donate </span>
+        </div>
+
+        <br>
+        <br>
+
+<div class="address">
+        <p>I want to donate all of my organs and tissue.</p>
+        <hr>
+        <p>I would like NHS staff to discuss my faith and beliefs with my family if I am able to donate. </p>
+        <hr>
+        <p class="nhsuk-u-secondary-text-color">You recorded this decision on: 3 February 2024</p>
+        </div>
+
+<br>
+<br>
+
+        <button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+Change my donation decision</button>
+
+<br>
+<br>
+
+      <h2 class="app-card__section-heading">Next steps</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Tell your family and friends",
+             href: "#"
+          },
+          {
+            title: "Share that you are a donor",
+            href: "#"
+
+          }
+        ]
+      }) }}
+
+           
+
+
+            <h2 class="app-card__section-heading">Other things you can do</h2>
+
+            {{ nhsappCard({
+  title: 'Register to be a blood donor',
+  href: '#',
+  classes: 'nhsapp-card--secondary'
+}) }} 
+
+
+
+
+
+  {% endblock %}

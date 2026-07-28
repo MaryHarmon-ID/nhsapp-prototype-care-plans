@@ -1,0 +1,33 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Profile" %}
+
+{% set pageHeading = "Sensitive information" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="app-callout app-callout--yellow">
+        <h1 class="nhsuk-u-margin-bottom-4">{{ pageHeading }}</h1>
+
+        <p>Your test results may include information you:</p>
+        <ul>
+          <li>find worrying</li>
+          <li>have not yet discussed with a health professional</li>
+        </ul>
+        <p>Contact your GP if someone is pressuring you to see this information.</p>
+
+        <div class="nhsapp-button-group">
+          <a class="nhsuk-button nhsapp-button" href="/pages/test-results/test-results-2" role="button">
+            Continue
+          </a>
+          <a href="/pages/home-p9" class="nhsuk-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">Back to home</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}

@@ -14,6 +14,7 @@
 .app-bottom-navigation__list {
   display: flex;
   gap: nhsuk-spacing(1);
+  justify-content: space-around;
   list-style: none;
   margin: 0;
   padding: 0 10px;
@@ -24,7 +25,7 @@
   line-height: 1;
   margin: 0;
   padding: 0;
-  width: 25%;
+  width: 33%;
 }
 
 .app-bottom-navigation__link {
@@ -36,13 +37,13 @@
   text-decoration: none;
 
   .app-icon {
-    fill: nhsuk-colour("white");
+    fill: $color_nhsuk-white;
     height: 28px;
     width: 28px;
   }
 
   .nhsapp-icon {
-    fill: nhsuk-colour("white");
+    fill: $color_nhsuk-white;
     height: 28px;
     width: 28px;
   }
@@ -55,8 +56,8 @@
 }
 
 .app-bottom-navigation__label {
-  color: nhsuk-colour("white");
-  font-size: 12px;
+  color: $color_nhsuk-white;
+  font-size: 14px;
 
   @include nhsuk-media-query($from: tablet) {
     font-size: 16px;

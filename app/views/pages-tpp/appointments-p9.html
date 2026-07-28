@@ -1,0 +1,69 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Appointments" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <h2 class="app-card__section-heading">GP surgery</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Book an appointment",
+            href: "/pages/contact-your-gp-surgery"
+          },
+          {
+            title: "Manage GP appointments",
+            href: "/pages/appointments/gp-appointments"
+          },
+          {
+            title: "Appointment notes and other updates",
+            href: "/pages/warning-screen-1"
+          },
+          {
+            title: "Request a letter or information",
+            href: "/pages/appointments/request-a-letter",
+            html: "<p class='nhsuk-u-margin-top-1 nhsuk-body-s nhsuk-u-secondary-text-color'>Provided using Accurx</p>"
+          }
+        ]
+      }) }}
+
+      <h2 class="app-card__section-heading">Hospital</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Hospital and specialist appointments",
+            href: "#"
+          },
+          {
+            title: "Referrals",
+            href: "#"
+          },
+          {
+            title: "Waiting lists",
+            href: "#"
+          },
+         {
+            title: "Patient initiated follow-up (PIFU) requests",
+            href: "#"
+          }
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

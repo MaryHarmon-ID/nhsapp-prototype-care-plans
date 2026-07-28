@@ -1,0 +1,82 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Profile" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Health choices" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+
+      <!-- PANEL LINK CARD - Your health -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Organ donation decision",
+            href: "/pages/profile/organ-donation-decision"
+          },
+          {
+            title: "Health data sharing decision",
+            href: "#"
+          },
+          {
+            title: "Take part in research",
+            href: "#"
+          },
+          {
+            title: "Record your symptoms",
+            href: "#"
+          },
+          {
+            title: "Choose which records your health team can see",
+            href: "#"
+          }
+        ]
+      })}}
+
+              <!--banner-->
+    <div class="nhsapp-card nhsapp-card--blue nhsapp-card--full-width">
+      <div class="nhsapp-card__container nhsuk-u-padding-top-4 nhsuk-u-padding-bottom-4">
+        <div class="nhsapp-card__content">
+          <p class="nhsuk-u-margin-bottom-0">Help us improve this waiting list feature and <a href="#">give your
+              feedback.</a>
+          </p>
+        </div>
+      </div>
+    </div> 
+
+    </div>
+  </div>
+
+    <style lang="scss">
+  .nhsapp-card--blue {
+    background: #D2E1EF;
+    border: none
+  }
+
+  .nhsapp-tag--blue {
+    background-color: #005EB8;
+    color: #FFFFFF;
+  }
+
+  @media (max-width: 40.0625em) {
+    .nhsapp-card--full-width {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+  }
+</style>
+
+{% endblock %}

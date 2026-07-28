@@ -1,0 +1,55 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Linked profiles" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Manage health services for others" %}
+{% set pageDescription = "Support family members and people you care for, or allow them to help you" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {{ nhsappSectionHeading({
+        headingText: "People you can access services for"
+      })}}
+
+      <!-- PANEL LINK CARD -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
+            href: "/pages/account-and-settings/switch-profiles",
+            description: data['linkedProfileAge']
+          }
+        ]
+      })}}
+
+      {{ nhsappSectionHeading({
+        headingText: "Add people"
+      })}}
+      
+      <p>Contact your GP surgery to:</p>
+
+      <ul>
+        <li>apply to access services for someone else</li>
+        <li>give someone you trust access to your services</li>
+      </ul>
+
+      <p>You can only add people at the same GP surgery as you.</p>
+    
+    </div>
+  </div>
+
+  {% endblock %}
+

@@ -1,0 +1,56 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Check the details of your request" %}
+
+{% block content %}
+
+<div data-v-409fd6c1-s="" class="">
+  <div data-v-2c2a270d="" class="nhsuk-u-margin-bottom-5" data-qa="page-heading">
+    <h1 data-v-2c2a270d="" class="page-heading nhsuk-u-margin-bottom-0 nhsuk-heading-xl" tabindex="-1">Check the details of your request</h1>
+  
+  <!---->
+    <br>
+
+    <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-2" data-qa="prescription-name">Medicines</h2>
+    
+    <div class="nhsuk-u-padding-bottom-0" data-qa="selected-prescription">
+      <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Felodipine 2.5 micrograms tablets</h3>
+      <p class="nhsuk-u-margin-bottom-5">Use as directed ‐ 10 tablets</p></div>
+      
+      <a href="select-medicines" class="" data-qa="change-repeat-prescription">Change</a>
+      
+      <div data-qa="special-requests">
+        <hr aria-hidden="true" class="nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-5">
+        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-3">Notes for your GP surgery</h2>
+        <p data-qa="special-requests-text" class="nhsuk-body-m">Test</p>
+        <a href="select-medicines" class="" data-qa="change-special-request">Change</a></div>
+
+              <div data-qa="special-requests">
+        <hr aria-hidden="true" class="nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-5">
+        <h2>Your chosen pharmacy</h2>        
+        <span class="nhsuk-u-font-weight-bold">BOOTS</span><br />
+        Balham<br />
+        London<br />
+        SW12 73G<br />
+        080867766155
+      </p></div>
+
+       
+        <!---->
+        
+        <div class="nhsuk-u-padding-top-8 nhsuk-u-padding-bottom-3">
+      
+      
+          {{ button({
+        text: "Request prescription",
+        classes: "nhsapp-button",
+        href: "/pages/prescriptions/order-success"
+      }) }}
+    
+    </div></div>
+
+  {% endblock %}

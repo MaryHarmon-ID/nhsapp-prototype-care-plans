@@ -1,0 +1,35 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Check the progress of prescriptions" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+    {{ nhsappCardGroup({
+      stacked: true,
+      cards: [
+        {
+          title: "Requested medicines",
+          description: "Check if your GP has approved or rejected medicines you've requested",
+          href: "/pages/prescriptions/requested-medicines"
+        },
+        {
+          title: "Your approved prescriptions",
+          description: "Your prescriptions prepared by your pharmacy",
+          href: "/pages/prescriptions/your-approved-prescriptions"
+        }
+      ]
+    })}}
+    
+    </div>
+  </div>
+
+{% endblock %}

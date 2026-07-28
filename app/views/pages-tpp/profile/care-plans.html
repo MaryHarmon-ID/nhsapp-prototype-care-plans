@@ -1,0 +1,43 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Care plans" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+
+      <p>Your GP surgery provides this service. They use an online tool supplied by <b>Patients Known Best.</b></p>
+
+      <p>You can use it to view your care plan, which may include details about:</p>
+      <ul clas="nhsuk-list">
+        <li>how you want to be cared for</li>
+        <li>plans for managing symptoms</li>
+        <li>legal issues like power of attorney</li>
+
+      </ul>
+
+     <p>You can use your care plan in conversations with your health team and loved ones.</p>
+
+
+      {{ button({
+        text: "Start now",
+        classes: "nhsapp-button"
+      }) }}
+
+
+      <p>
+        <a href="#" class="nhsuk-link--no-visited-state">Find out more about Patients Know Best in our privacy policy</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

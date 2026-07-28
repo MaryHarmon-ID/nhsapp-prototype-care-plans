@@ -1,0 +1,78 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set pageHeading = "Appointment confirmed" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+<div class="nhsuk-panel" data-qa="confirmation-panel-order-success">
+  <h1 class="nhsuk-panel__title">Appointment confirmed</h1>
+</div>
+
+      <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Details</h2>
+
+        <p>
+          <span class="nhsuk-u-visually-hidden">Type: </span>{{ data['gp-appointment-type'] or 'Blood test' }}<br>
+          <span class="nhsuk-u-visually-hidden">Time: </span>{{ data['appointment-time'] or data['appointment-name'] or '8am' }}<br>
+          <span class="nhsuk-u-visually-hidden">Date: </span>{{ data['appointment-date'] or 'Monday 3 February 2024' }}
+
+        </p>
+
+        <hr>
+
+        <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Location</h2>
+
+        <p>
+          <span>{{ data['appointment-location'] or 'Southbank Practice' }}</span>
+        </p>
+
+
+        <hr>
+
+        <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Healthcare professional</h2>
+
+        <p>
+          <span>{{ data['appointment-clinician'] or 'Nurse Donna' }}</span>
+        </p>
+
+        <hr>
+
+        <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-1">Reason for appointment</h2>
+
+        <p>{{ data['gp-appointment-reason'] or 'Not provided' }}</p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+
+      <br>
+
+      <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Add to calendar</a>
+
+      <br>
+      
+      <br>
+
+      <h2 class="nhsuk-heading-s">What you can do next</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Manage GP appointments",
+            href: "/pages/appointments/gp-appointments"
+          }
+        ]
+      }) }}
+
+
+
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+

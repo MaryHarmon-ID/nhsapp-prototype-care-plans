@@ -1,0 +1,141 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Manage GP appointments" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <form id="form" method="post" action="#" novalidate="novalidate">
+
+        <h1 class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          {{ pageHeading }}
+        </h1>
+
+      <p>
+        For urgent medical advice, go to 
+        <a href="#" class="app-link nhsuk-link--no-visited-state">111.nhs.uk</a> 
+        or 
+        <a href="#" class="app-link nhsuk-link--no-visited-state">call 111</a>.
+      </p>
+
+      {{ button({
+        text: "Book a GP appointment",
+        classes: "nhsapp-button"
+      }) }}
+
+      <hr>
+
+            {{ nhsappSectionHeading({
+              headingText: "Upcoming appointments",
+              subheadingText: ""
+            })}}
+
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages-u/appointments/gp-appointment-detail-upcoming" aria-label="Orthopaedic appointment on Monday 27th Janurary 2024 at 9am">
+                Monday 19 May 2025
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">9am</p>
+                <p class="nhsuk-u-margin-bottom-3">Allergy test</p>
+                <p class="nhsuk-u-margin-bottom-3">Dr. Max Smith</p>
+                <p class="nhsuk-u-margin-bottom-0 nhsuk-u-secondary-text-color">Southbank Practice</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+      </ul>
+
+            <hr>
+
+            {{ nhsappSectionHeading({
+              headingText: "Past appointments",
+              subheadingText: ""
+            })}}
+
+                  <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages-u/appointments/gp-appointment-detail-past" aria-label="Orthopaedic appointment on Monday 27th Janurary 2024 at 9am">
+                Thursday 3 April 2025
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">9am</p>
+                <p class="nhsuk-u-margin-bottom-3">Blood test</p>
+                <p class="nhsuk-u-margin-bottom-3">Nurse Donna</p>
+                <p class="nhsuk-u-margin-bottom-0 nhsuk-u-secondary-text-color">Southbank Practice</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages-u/appointments/gp-appointment-detail-past-phone" aria-label="Orthopaedic appointment on Thursday 30th January 2024 at 9am">
+                Wednesday 13 November 2024
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">9am</p>
+                <p class="nhsuk-u-margin-bottom-3">Phone appointment</p>
+                <p class="nhsuk-u-margin-bottom-3">Nurse Donna</p>
+                <p class="nhsuk-u-margin-bottom-0 nhsuk-u-secondary-text-color">Phone appointment</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Orthopaedic appointment on Monday 27th Janurary 2024 at 9am">
+                Tuesday 5th November 2024
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">9am</p>
+                <p class="nhsuk-u-margin-bottom-3">Allergy test</p>
+                <p class="nhsuk-u-margin-bottom-3">Dr. Max Smith</p>
+                <p class="nhsuk-u-margin-bottom-0 nhsuk-u-secondary-text-color">Southbank Practice</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Orthopaedic appointment on Thursday 30th January 2024 at 9am">
+                Friday 6 September 2024
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">9am</p>
+                <p class="nhsuk-u-margin-bottom-3">Flu vaccination</p>
+                <p class="nhsuk-u-margin-bottom-3">Nurse Donna</p>
+                <p class="nhsuk-u-margin-bottom-0 nhsuk-u-secondary-text-color">Southbank Practice</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+
+          </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

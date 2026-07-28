@@ -1,0 +1,87 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Profile" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Allergies and adverse reactions" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div class="nhsapp-cards">
+        <div class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-heading-s nhsuk-u-margin-bottom-0">12 November 2019 2:17pm</p>
+              </div>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-1">Dog allergy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-heading-s nhsuk-u-margin-bottom-0">24 July 2016</p>
+              </div>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-1">Adverse reaction to Cascor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-heading-s nhsuk-u-margin-bottom-0">9 August 2012</p>
+              </div>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-1">DAdverse reaction to Biovea Policosanol</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-heading-s nhsuk-u-margin-bottom-0">8 February 2011</p>
+              </div>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-1">Cat allergy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <p>You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+

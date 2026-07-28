@@ -1,0 +1,41 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Appointments" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <h2 class="app-card__section-heading">GP surgery</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Check for available appointments",
+            href: "#"
+          },
+          {
+            title: "Manage GP appointments",
+            href: "#"
+          },
+          {
+            title: "Appointment notes and other updates",
+            href: "#"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
