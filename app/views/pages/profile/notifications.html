@@ -1,0 +1,47 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Notifications" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Notifications" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+
+<span class="nhsapp-tag nhsapp-tag--red"> Notifications are off </span>
+
+      <p><br>To changes your notification preferences, go to your device settings. This may take up to 24 hours to update.</p>
+<p>You will need to turn on notifications for every device you use the NHS App on.</p>
+
+<details class="nhsuk-details">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      If this is a shared device
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <p>If this is a shared device, and you turn notifications on, anyone who uses the NHS App on this device will get notifications.</p>
+    <p>NHS App notifications will not display a preview of your message.</p>
+  </div>
+</details>
+
+<button class="nhsuk-button nhsuk-button--secondary" data-module="nhsuk-button" type="submit">
+  Go to device settings
+</button>
+
+    </div>
+  </div>
+
+  {% endblock %}
+

@@ -1,0 +1,50 @@
+<nav class="app-bottom-navigation" id="bottomNav" style="display:block">
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <ul class="app-bottom-navigation__list">
+        <li class="app-bottom-navigation__item">
+          <a class="app-bottom-navigation__link" href="/pages-tpp/home-{{ data['accountType'] }}">
+            {% if hub === "Home" %}
+              {{ nhsappIcon('homeFilled') }}
+            {% else %}
+              {{ nhsappIcon('home') }}
+            {% endif %}
+            <span class="app-bottom-navigation__label {% if hub === 'Home' %}app-bottom-navigation__label--active{% endif %}">Home</span>
+          </a>
+        </li>
+        <li class="app-bottom-navigation__item">
+          <a class="app-bottom-navigation__link" href="/pages-tpp/messages-{{ data['accountType'] }}">
+            {% if hub === "Messages" %}
+              {% if data['messages'] > 0 %}
+                {{ nhsappIcon('messagesUnreadFilled') }}
+              {% else %}
+                {{ nhsappIcon('messagesFilled') }}
+              {% endif %}
+            {% else %}
+              {% if data['messages'] > 0 %}
+                {{ nhsappIcon('messagesUnread') }}
+              {% else %}
+                {{ nhsappIcon('messages') }}
+              {% endif %}
+            {% endif %}
+            <span class="app-bottom-navigation__label {% if hub === 'Messages' %}app-bottom-navigation__label--active{% endif %}">Messages</span>
+          </a>
+        </li>
+        <li class="app-bottom-navigation__item">
+          <a class="app-bottom-navigation__link" href="/pages-tpp/profile-{{ data['accountType'] }}">
+            {% if hub === "Profile" %}
+              <svg class="nhsapp-icon nhsapp-icon__profile-filled" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 24 24">
+                <path d="M11.96 2C15.4764 2 18.5619 3.83225 20.334 6.59473C21.2505 8.0214 21.8178 9.69504 21.9072 11.4951C21.9158 11.6656 21.9199 11.8372 21.9199 12.0098C21.9199 17.5343 17.4645 22.0195 11.96 22.0195C6.4554 22.0195 2 17.5343 2 12.0098C2 11.8372 2.0041 11.6656 2.0127 11.4951C2.05597 10.6271 2.21073 9.78789 2.46191 8.99121C3.73559 4.94016 7.50355 2.00002 11.96 2ZM9.96973 14.5C8.05383 14.5002 6.47164 16.1318 6.20898 18.248C7.71904 19.657 9.73958 20.5195 11.96 20.5195C14.1484 20.5195 16.1437 19.6827 17.6465 18.3096C17.4058 16.1635 15.8052 14.5 13.8799 14.5H9.96973ZM11.9297 6.83984C9.98983 6.84001 8.41016 8.42046 8.41016 10.3604C8.41035 12.3001 9.98995 13.8797 11.9297 13.8799C13.8696 13.8799 15.45 12.3002 15.4502 10.3604C15.4502 8.42035 13.8697 6.83984 11.9297 6.83984Z" />
+              </svg>
+            {% else %}
+              <svg class="nhsapp-icon nhsapp-icon__profile" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 24 24">
+                <path d="M12.0303 2C17.5346 2.0002 21.9901 6.48546 21.9902 12.0098C21.9902 15.3963 20.3139 18.3895 17.75 20.2012V20.2158L17.4092 20.4385C16.7057 20.8967 14.7952 22.0066 12.1123 22.0166C12.085 22.0168 12.0577 22.0195 12.0303 22.0195C12.0221 22.0195 12.014 22.0186 12.0059 22.0186C11.9909 22.0184 11.9759 22.0197 11.9609 22.0195C11.9128 22.019 11.865 22.0149 11.8174 22.0137C6.41133 21.8997 2.07031 17.4629 2.07031 12.0098C2.07044 6.48535 6.52579 2.00002 12.0303 2ZM10.0498 16.0098C8.89989 16.0099 7.7501 17.1782 7.75 18.8799V19.292C8.49229 19.7497 9.93183 20.4616 11.8496 20.5146C11.9045 20.5158 11.9595 20.5185 12.0146 20.5186C12.0329 20.5187 12.0511 20.5185 12.0693 20.5186C13.1977 20.5134 14.2734 20.2846 15.2568 19.876C15.419 19.8085 15.57 19.7405 15.709 19.6729C15.8935 19.5831 16.0733 19.4854 16.25 19.3828V18.8799C16.2499 17.2843 15.239 16.1578 14.165 16.0234L13.9502 16.0098H10.0498ZM12.0303 3.5C7.36186 3.50002 3.57044 7.30611 3.57031 12.0098C3.57031 14.4814 4.61824 16.7039 6.28906 18.2578C6.54713 16.235 8.04314 14.5099 10.0498 14.5098H13.96V14.5107C15.979 14.5165 17.4775 16.2686 17.7158 18.3105C19.4195 16.7544 20.4902 14.509 20.4902 12.0098C20.4901 7.30622 16.6985 3.5002 12.0303 3.5ZM12 5.71973C14.2917 5.71994 16.1493 7.57839 16.1494 9.87012C16.1492 12.1618 14.2917 14.0193 12 14.0195C9.70832 14.0193 7.84982 12.1618 7.84961 9.87012C7.84976 7.57838 9.70828 5.71992 12 5.71973ZM12 7.21973C10.5367 7.21992 9.34976 8.40681 9.34961 9.87012C9.34982 11.3334 10.5367 12.5193 12 12.5195C13.4632 12.5193 14.6492 11.3334 14.6494 9.87012C14.6493 8.40682 13.4633 7.21994 12 7.21973Z" />
+              </svg>
+            {% endif %}
+            <span class="app-bottom-navigation__label {% if hub === 'Profile' %}app-bottom-navigation__label--active{% endif %}">Profile</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

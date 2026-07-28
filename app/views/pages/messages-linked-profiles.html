@@ -5,7 +5,7 @@
 {% set linkedProfile = true %}
 
 {% set pageHeading = "Messages" %}
-{% set pageDescription = "It's not possible to access this section while acting on " + data['linkedProfileFirstName'] + "'s behalf." %}
+{% set pageDescription = "It's not possible to access this section while acting for " + data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'] + "." %}
 
 {% block content %}
 

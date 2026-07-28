@@ -1,0 +1,50 @@
+{% extends 'layout-app-help.html' %}
+
+{% set pageHeading = "Prescriptions" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-6",
+    href: "/pages/updates/using-the-nhs-app"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+
+      <h2>GP surgery</h2>
+
+      <ul class="nhsuk-list">
+    <li>
+      <a class="nhsuk-link" href="#">Request a repeat prescription</a>
+    </li>
+    <li>
+      <a class="nhsuk-link" href="#">Check the progress of prescriptions</a>
+    </li>
+    <li>
+      <a class="nhsuk-link" href="#">Change your chosen pharmacy</a>
+    </li>
+    <li>
+      <a class="nhsuk-link" href="/pages/updates/help-medicines-record">View your medicines record</a> 
+    </li>
+  </ul>  
+
+
+   <h2>Hospital</h2>
+
+  <ul class="nhsuk-list">
+    <li>
+      <a class="nhsuk-link" href="#">Check hospital and other medicines</a>
+    </li>
+  </ul>
+
+    </div>
+  </div>
+{% endblock %}

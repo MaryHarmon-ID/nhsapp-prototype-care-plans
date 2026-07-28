@@ -1,0 +1,66 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Check for available GP appointments" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <form id="form" method="post" action="#" novalidate="novalidate">
+
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <p>
+        Use this service to book available appointments at your GP surgery.<br>
+        <br>
+        For urgent medical advice, go to 
+        <a href="#" class="app-link nhsuk-link--no-visited-state">111.nhs.uk</a> 
+        or call 111.
+      </p>
+
+
+      <!-- <h2 class="nhsuk-heading-l">Before you start</h2> -->
+
+
+
+
+      <!-- <h2 class="nhsuk-heading-l">Before you start</h2>
+      <ul>      
+        <li>Read the appointment booking guidance from your GP</li>
+      </ul>
+
+      <br> -->
+
+      <hr>
+
+      {{ details({
+        text: "Tips from your GP on how to book an appointment",
+        HTML: "
+        Blood tests are INVITE ONLY and should be booked with Nurse Donna at the Southbank Practice. Also book with Donna for warfarin clinic and b12 injections. Please remember to cancel your appointment if it is no longer needed. Thanks</p>
+        "
+      }) }}
+
+            {{ button({
+              text: "Start now",
+              classes: "nhsapp-button"
+            }) }}
+
+
+          </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

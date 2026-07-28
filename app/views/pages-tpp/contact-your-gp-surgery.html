@@ -1,0 +1,34 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Book an appointment" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Ask about a health problem",
+            href: "/pages/appointments/ask-health-problem",
+            html: "<p class='nhsuk-u-margin-top-1 nhsuk-body-s nhsuk-u-secondary-text-color'>Provided using Accurx</p>"
+          },
+          {
+            title: "Check for available GP appointments",
+            href: "/pages/appointments/check-for-gp-appointments"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

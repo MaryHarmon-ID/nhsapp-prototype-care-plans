@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  NHS App prototype
+  NHS App prototype nav updates
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,10 +11,101 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1>NHS App prototype</h1>
+      <h1>NHS App prototype nav updates</h1>
       <p class="nhsuk-lede-text">
-        A prototype to test new design components and patterns for the NHS App.
+        A prototype for the new NHS App navigation updates.
       </p>
+
+    <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+
+      <h2 class="nhsuk-heading-s">EMIS & GP Connect Prototype</h3>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/home-p9">Homepage - P9</a>
+        </li>
+        <li>
+          <a href="/pages/home-p5">Homepage - P5</a>
+        </li>
+      </ul>
+
+      <p>For Proxy view, navigate to 'Profile' in the P9 prototype and select 'Manage health services for others'</p>
+
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+
+       <h2 class="nhsuk-heading-s">TPP Prototype</h3>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages-tpp/home-p9">Homepage - P9</a>
+        </li>
+        <li>
+          <a href="/pages-tpp/home-p5">Homepage - P5</a>
+        </li>
+      </ul>
+
+      <p>For Proxy view, navigate to 'Profile' in the P9 prototype and select 'Manage health services for others'</p>
+
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h3 class="nhsuk-heading-s">Sensitive information screen</h3>
+
+      <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/warning-screen-1">Appointments - Warning</a>
+        </li>
+        <li>
+          <a href="/pages/documents/documents-warning-screen">Documents - Warning</a>
+        </li>
+        <li>
+          <a href="/pages/profile/healthconditions-warning-screen">Health conditions - Warning</a>
+        </li>
+        <li>
+          <a href="/pages/test-results/test-warning-screen">Test results - Warning</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h3 class="nhsuk-heading-s"> Unhappy paths</h3>
+
+            <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/error-pages/gp-health-record-error-1">P9 User: SCR Error - Users doesn't have full access to their GP health record and needs to request it to their GP surgery</a>
+        </li>
+        <li>
+          <a href="/pages/error-pages/gp-health-record-proxy-1">Proxy User - User doesn't have access to that specific area of their health record</a>
+        </li>
+      </ul>
+
+      <h3 class="nhsuk-heading-s"> Error screens</h3>
+
+            <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/error-pages/502-error">502 error - Error Code: 6e for EMIS, 6t for TPP, 6n for PFS API</a>
+        </li>
+        <li>
+          <a href="/pages/error-pages/504-error">504 error - Error Code: ze for EMIS, zt for TPP</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+            <h3 class="nhsuk-heading-s">Campaigns</h3>
+
+            <ul clas="nhsuk-list">
+        <li>
+          <a href="/pages/home-p9-health-quiz">NHS App Health Quiz campaign card design</a>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">
+
+      <h2>Prototype features</h2>
 
       <ul clas="nhsuk-list">
         <li>
@@ -55,7 +146,7 @@
               text: "NHS prototype kit"
             },
             value: {
-              html: "<a href='https://github.com/nhsuk/nhsuk-prototype-kit/releases'><span class='nhsuk-u-visually-hidden'>NHS prototype kit </span>v7.0.1</a>"
+              html: "<a href='https://github.com/nhsuk/nhsuk-prototype-kit/releases'><span class='nhsuk-u-visually-hidden'>NHS prototype kit </span>v5.3.0</a>"
             }
           },
           {
@@ -63,7 +154,7 @@
               text: "NHS.UK frontend"
             },
             value: {
-              html: "<a href='https://github.com/nhsuk/nhsuk-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS.UK frontend </span>v10.0.0</a>"
+              html: "<a href='https://github.com/nhsuk/nhsuk-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS.UK frontend </span>v9.6.2</a>"
             }
           },
           {
@@ -71,7 +162,7 @@
               text: "NHS App frontend"
             },
             value: {
-              html: "<a href='https://github.com/nhsuk/nhsapp-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS App frontend </span>v5.0.1</a>"
+              html: "<a href='https://github.com/nhsuk/nhsapp-frontend/releases'><span class='nhsuk-u-visually-hidden'>NHS App frontend </span>v4.0.0</a>"
             }
           }
         ]

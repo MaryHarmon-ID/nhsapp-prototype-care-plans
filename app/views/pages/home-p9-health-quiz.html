@@ -1,0 +1,87 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set pageHeading = "Home" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Prescriptions",
+            href: "/pages/prescriptions-p9"
+          },
+          {
+            title: "Appointments",
+            href: "/pages/appointments-p9"
+          },
+          {
+            title: "Test results",
+            href: "/pages/test-results-p9"
+          },
+          {
+            title: "Vaccinations",
+            href: "/pages/vaccinations-p9"
+          },
+                    {
+            title: "Health conditions",
+            href: "/pages/health-conditions"
+          },
+          {
+            title: "Documents",
+            href: "/pages/documents-p9"
+          }
+        ]
+      }) }}
+
+      <h2 class="app-card__section-heading">NHS information and support</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        classes: 'nhsapp-cards--secondary',
+        cards: [
+          {
+            title: "Check your symptoms using 111 online",
+            href: "/pages/111-online"
+          },
+          {
+            title: "Health A to Z",
+            href: "/pages/health-a-z"
+          },
+          {
+            title: "Find services near you",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <!-- CAMPAIGN CARD -->
+      <div class="nhsapp-card app-card-link--dark-blue app-card-link--full-width nhsuk-u-margin-top-7">
+        <div class="app-card-link__media">
+          <img class="app-card-link__img" src="/images/campaigns/campaign-card-health-quiz-image.jpg" alt="">
+        </div>
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <a href="#" class="nhsapp-card__link nhsuk-u-font-size-26">
+              Healthy choices quiz
+            </a>
+            <div class="nhsapp-card__below">
+              <p class="nhsuk-u-margin-top-2">Answer questions and get guidance on how to live a healthier life</p>
+            </div>
+          </div>
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

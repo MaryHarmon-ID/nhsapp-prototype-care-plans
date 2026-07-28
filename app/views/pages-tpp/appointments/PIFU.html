@@ -1,0 +1,71 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Patient-initiated follow-up (PIFU) requests" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsapp-card nhsapp-card--blue nhsapp-card--full-width">
+      <div class="nhsapp-card__container nhsuk-u-padding-top-4 nhsuk-u-padding-bottom-4">
+        <div class="nhsapp-card__content">
+          <p class="nhsuk-u-margin-bottom-0">This is a new service. Help us improve it and <a href="#">give your
+              feedback.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- DYNAMIC PAGE TITLE -->
+    {{ dynamicPageTitle({
+    title: pageHeading,
+    titleSecondary: true,
+    description: pageDescription
+    })}}
+
+    <p>No PIFU requests available.</p>
+
+    <h3 class="nhsuk-heading-s">If you think a request is missing</h3>
+    <p>This may be because:</p>
+    <ul>
+      <li>the period of time you were given to request one may have finished</li>
+      <li>requests are saved in the app for 90 days and this time may have passed
+      </li>
+    </ul>
+    <p>Contact your hospital or specialist care provider for more information.</p>
+    <br>
+    <ul class="nhsapp-cards">
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            {% if data['appointment-letter'] != "read" %}
+            {% endif %}
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/appointments/PIFU-start-page">
+              Request a patient-initiated follow-up
+            </a>
+          </div>
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<style lang="scss">
+  .nhsapp-card--blue {
+    background: #D2E1EF;
+    border: none
+  }
+  .nhsapp-tag--blue {
+    background-color: #005EB8;
+    color: #FFFFFF;
+  }
+  @media (max-width: 40.0625em) {
+    .nhsapp-card--full-width {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+  }
+</style>
+{% endblock %}

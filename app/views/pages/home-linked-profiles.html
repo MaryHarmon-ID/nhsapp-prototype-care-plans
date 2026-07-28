@@ -11,28 +11,58 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <!-- DYNAMIC PAGE TITLE -->
-      {{ dynamicPageTitle({
-        logo: data['web'] !== "yes",
-        linkedProfile: {
-          name: data['linkedProfileFirstName'] + " " + data['linkedProfileLastName'],
-          age: data['linkedProfileAge']
-        }
-      })}}
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
 
       {{ nhsappCardGroup({
         stacked: true,
-        headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
-          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Services</h2>
-          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/pages/services-p9">View all <span class="nhsuk-u-visually-hidden">services</span></a> 
-        </div>',
         cards: [
           {
-            title: "Find NHS services near you",
-            href: "/pages/services-linked-profiles"
+            title: "Prescriptions",
+            href: "/pages/prescriptions-linked-profiles"
+          },
+          {
+            title: "Appointments",
+            href: "/pages/appointments-linked-profiles"
+          },
+          {
+            title: "Test results",
+            href: "/pages/test-results-linked-profiles"
+          },
+          {
+            title: "Vaccinations",
+            href: "/pages/vaccinations-linked-profiles"
+          },
+          {
+            title: "Health conditions",
+            href: "/pages/health-conditions-linked-profiles"
+          },
+          {
+            title: "Documents",
+            href: "/pages/documents-linked-profiles"
           }
         ]
-      })}}
+      }) }}
+
+      <h2 class="app-card__section-heading">NHS information and support</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        classes: 'nhsapp-cards--secondary',
+        cards: [
+          {
+            title: "Check your symptoms using 111 online",
+            href: "/pages/111-online"
+          },
+          {
+            title: "Health A to Z",
+            href: "/pages/health-a-z"
+          },
+          {
+            title: "Find services near you",
+            href: "#"
+          }
+        ]
+      }) }}
 
     </div>
   </div>

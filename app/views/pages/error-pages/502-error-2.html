@@ -1,0 +1,28 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "There is still a problem showing your [GP health record area]" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+ <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+    <p>Try again later or contact your GP surgery directly.</p>
+
+      <h3>For urgent medical advice </h3>
+     <p>Use <a>111 online</a> or call <a>111</a>.</p>
+
+      <h3>For technical support </h3>
+     <p>Make a note of the error code 6XXXXX and <a>contact the NHS App team</a>.</p>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

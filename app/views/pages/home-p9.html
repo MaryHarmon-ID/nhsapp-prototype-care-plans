@@ -9,104 +9,83 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <!-- DYNAMIC PAGE TITLE -->
-      {{ dynamicPageTitle({
-        logo: data['web'] !== "yes",
-        greetingName: data['userFirstName'] + " " + data['userLastName'],
-        nhsNumber: data['nhsNumber']
-      })}}
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
 
       {{ nhsappCardGroup({
         stacked: true,
-        headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
-          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Services</h2>
-          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/pages/services-p9">View all <span class="nhsuk-u-visually-hidden">services</span></a> 
-        </div>',
         cards: [
           {
-            title: "Request medicines",
-            href: "/pages/your-health/repeat-prescription/select-medicines"
+            title: "Prescriptions",
+            href: "/pages/prescriptions-p9"
           },
           {
-            title: "Check if you need urgent medical help using 111 online",
+            title: "Appointments",
+            href: "/pages/appointments-p9"
+          },
+          {
+            title: "Test results",
+            href: "/pages/test-results-p9"
+          },
+          {
+            title: "Vaccinations",
+            href: "/pages/vaccinations-p9"
+          },
+                    {
+            title: "Health conditions",
+            href: "/pages/health-conditions"
+          },
+          {
+            title: "Documents",
+            href: "/pages/documents-p9"
+          }
+        ]
+      }) }}
+
+      <h2 class="app-card__section-heading">NHS information and support</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        classes: 'nhsapp-cards--secondary',
+        cards: [
+          {
+            title: "Check your symptoms using 111 online",
+            href: "/pages/111-online"
+          },
+          {
+            title: "Health A to Z",
+            href: "/pages/health-a-z"
+          },
+          {
+            title: "Find services near you",
+            href: "#"
+          },
+          {
+            title: "NHS Health Check online",
             href: "#"
           }
         ]
       }) }}
 
-      {{ nhsappCardGroup({
-        stacked: true,
-        headingHtml: '<div class="nhsapp-cards__heading" style="justify-content: space-between; align-items: center; display: flex;">
-          <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Your health</h2>
-          <a class="nhsuk-u-font-size-19 nhsuk-link nhsuk-link--no-visited-state nhsuk-u-nowrap" href="/pages/your-health-p9">View all <span class="nhsuk-u-visually-hidden">your health</span></a> 
-        </div>',
-        cards: [
-          {
-            title: "GP health record",
-            href: "#"
-          },
-          {
-            title: "View and manage prescriptions",
-            href: "/pages/your-health/prescriptions-p9"
-          },
-          {
-            title: "Upcoming and past appointments",
-            href: "/pages/your-health/upcoming-and-past-appointments-p9"
-          }
-        ]
-      }) }}
 
-      {% if data['messages'] > 0 %}
-        {{ nhsappCardGroup({
-          stacked: true,
-          heading: 'Messages',
-          cards: [
-            {
-              title: 'View your messages',
-              href: '/pages/messages-p9',
-              prefixIcon: 'messagesUnread',
-              linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
-              badgeLarge: {
-                count: data['messages'],
-                label: 'unread messages'
-              }
-            }
-          ]
-        }) }}
-      {% else %}
-        {{ nhsappCardGroup({
-          stacked: true,
-          heading: 'Messages',
-          cards: [
-            {
-              title: 'View your messages',
-              href: '/pages/messages-p9'
-            }
-          ]
-        }) }}
-      {% endif %}
 
-      {{ nhsappCardGroup({
-        stacked: true,
-        heading: 'Account',
-        cards: [
-          {
-            title: 'Manage services for another person',
-            href: '/pages/account-and-settings/linked-profiles'
-          }
-        ]
-      }) }}
+            <!-- CAMPAIGN CARD -->
+      <div class="nhsapp-card app-card-link--dark-blue app-card-link--full-width nhsuk-u-margin-top-7">
+        <div class="app-card-link__media">
+          <img class="app-card-link__img" src="/images/campaigns/campaign-card-health-quiz-image.jpg" alt="">
+        </div>
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <a href="#" class="nhsapp-card__link nhsuk-u-font-size-26">
+              Healthy choices quiz
+            </a>
+            <div class="nhsapp-card__below">
+              <p class="nhsuk-u-margin-top-2">Answer questions and get guidance on how to live a healthier life</p>
+            </div>
+          </div>
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </div>
 
-      {{ nhsappCard({
-        classes: 'nhsapp-card--dark-blue',
-        href: '#',
-        title: 'Help change the NHS',
-        titleClasses: 'nhsuk-u-font-size-26',
-        descriptionHtml: '<p class="nhsuk-u-margin-top-2">Have your say on making the NHS fit for the future</p>',
-        img: {
-          src: '/images/campaigns/campaign-card-image-3.jpg'
-        }
-      }) }}
 
     </div>
   </div>

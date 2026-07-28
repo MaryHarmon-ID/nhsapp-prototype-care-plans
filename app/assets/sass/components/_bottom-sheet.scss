@@ -76,7 +76,7 @@
 }
 
 .app-bottom-sheet .app-bottom-sheet__draggable-area {
-  border-bottom: 1px solid nhsuk-colour("grey-4");
+  border-bottom: 1px solid $color_nhsuk-grey-4;
   margin: 0 16px;
   padding: 16px 0;
   cursor: grab;
@@ -92,7 +92,7 @@
 .app-bottom-sheet .app-bottom-sheet__draggable-thumb {
   width: 36px;
   height: 5px;
-  background: nhsuk-colour("grey-3");
+  background: $color_nhsuk-grey-3;
   border-radius: 2.5px;
   margin: 0 auto;
   position: absolute;

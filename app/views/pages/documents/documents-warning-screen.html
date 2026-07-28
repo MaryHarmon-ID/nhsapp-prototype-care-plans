@@ -1,0 +1,32 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set pageHeading = "Sensitive information" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="app-callout app-callout--yellow">
+        <h1 class="nhsuk-u-margin-bottom-4">{{ pageHeading }}</h1>
+
+        <p>Your documents may include details you were not expecting.</p>
+        <p>For example, a letter with details about a health conditions you have.</p>
+        <p>
+          If you have any questions about your documents, contact your GP surgery.
+        </p>
+
+        <div class="nhsapp-button-group">
+          <a class="nhsuk-button nhsapp-button" href="/pages/documents/your-documents" role="button">
+            Continue
+          </a>
+          <a href="/pages/home-p9" class="nhsuk-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">Back to home</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}

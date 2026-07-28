@@ -1,0 +1,67 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "/pages/messages/your-messages" %}
+
+{% set pageHeading = "NHS App" %}
+{% set pageDescription = "Received 18 September 2023 at 2:15pm" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-7">
+        <p><strong>Welcome to the NHS App</strong></p>
+
+          <p>From the home screen, you can access all the app’s services. You can also use the menu bar at the bottom of every screen to move between the 3 main areas of home, messages and profile.</p>
+
+          <p>Wherever you are in the app, you can select <a class="nhsuk-link--no-visited-state" href="https://www.nhs.uk/nhs-app/help/">App help</a> at the top of the screen to read more information about that area of the app.</p>
+
+          <p>Get started by trying out some of these features.</p>
+
+        <p><strong>Prescriptions</strong></p>
+
+          <p>In <a class="nhsuk-link--no-visited-state" href="/pages/prescriptions-p9">Prescriptions</a>, request repeat prescriptions and check their progress. You can also choose a pharmacy your medicines are collected or delivered from.</p>
+
+        <p><strong>Appointments</strong></p>
+
+          <p>In <a class="nhsuk-link--no-visited-state" href="/pages/appointments-p9">Appointments</a>, book and manage appointments at your GP surgery and view and manage hospital and specialist appointments. It may also be possible to ask your GP about a health problem using an online form. </p>  
+
+        <p><strong>Test results</strong></p>
+
+          <p><a class="nhsuk-link--no-visited-state" href="/pages/appointments-p9">See the results of tests</a> you've had at your GP surgery or hospital. </p>
+
+        <p><strong>Profile</strong></p>
+
+          <p>The <a class="nhsuk-link--no-visited-state" href="/pages/profile-p9">Profile</a> area has your personal details, where you can do things like change your GP surgery and look up your NHS number. You can also manage health services for others, such as your child or an adult you care for. </p>
+        
+        <p><strong>Messages</strong></p>
+
+          <p>Read messages from your healthcare providers. You can <a class="nhsuk-link--no-visited-state" href="/pages/profile/notifications">turn on notifications</a> to tell you when you have a new message.</p>
+
+        <p><strong>Medical help</strong></p>
+
+          <p>Check your symptoms using <a class="nhsuk-link--no-visited-state" href="/pages/111-online">111 online</a> or go to <a class="nhsuk-link--no-visited-state" href="https://www.nhs.uk/nhs-app/help/">the NHS Website</a> for information about hundreds of health conditions, tests, treatments and medicines.</p>
+
+<hr> 
+
+<p><a>Flag message</a></p>
+
+<p><a>Remove message</a></p>
+
+    </div>
+  </div>
+
+  {% endblock %}

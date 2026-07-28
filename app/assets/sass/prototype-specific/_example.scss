@@ -1,5 +1,5 @@
 .example {
-  border: 1px solid nhsuk-colour("grey-3");
+  border: 1px solid $color_nhsuk-grey-3;
   margin-bottom: nhsuk-spacing(6);
   padding: nhsuk-spacing(7) nhsuk-spacing(4) nhsuk-spacing(4);
   position: relative;
@@ -7,7 +7,7 @@
   &:before {
     @include nhsuk-font($size: 16, $weight: normal, $line-height: 1);
     background-color: white;
-    border: 1px solid nhsuk-colour("grey-3");
+    border: 1px solid $color_nhsuk-grey-3;
     color: #354550;
     content: "Example";
     font-kerning: 1;
@@ -47,7 +47,7 @@
 }
 
 .example--white-background {
-  background-color: nhsuk-colour("white");
+  background-color: $color_nhsuk-white;
 }
 
 #hiddenDiv,

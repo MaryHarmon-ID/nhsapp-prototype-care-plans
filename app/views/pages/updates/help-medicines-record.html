@@ -1,0 +1,83 @@
+{% extends 'layout-app-help.html' %}
+
+{% set pageHeading = "View your medicines record" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-6",
+    href: "/pages/updates/help-prescriptions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+      <p>The NHS App shows details of your one-off and repeat medicines. This may include medicines you are currently taking, as well as ones you had in the past.</p>
+
+<p>To view your medicines record:</p>
+
+      <ol class="nhsuk-list nhsuk-list--number">
+        <li>Select <strong>Prescriptions</strong> on the home screen.</li>
+        <li>Select <strong>Medicines record</strong>.</li>
+      </ol>
+
+      <h2>If information is missing or incorrect</h2>
+
+<p>The information in this part of the app comes from your GP surgery.</p>
+
+<div class="nhsuk-do-dont-list">
+  <h3 class="nhsuk-do-dont-list__label">Contact your GP surgery if:</h3>
+  <ul class="bullet-list-list" role="list">
+    <li>
+      you cannot see this information
+    </li>
+        <li>
+      information is missing or incorrect
+    </li>
+      <li>
+      you can see information that should not be there (for example, you can see information that is not yours)
+    </li>
+  </ul>
+
+</a>
+</div>
+
+{% block head %}
+  <style>
+    .nhsuk-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #005eb8;
+      font-weight: 700;
+    }
+
+    .nhsuk-action-link svg {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .nhsuk-action-link__text {
+      display: inline-block;
+    }
+  </style>
+{% endblock %}
+
+<p class="nhsuk-u-margin-bottom-0">
+  <strong>Page last reviewed:</strong> 2 September 2025
+</p>
+<p>
+  <strong>Next review due:</strong> 2 March 2027
+</p>
+    </div>
+  </div>
+  
+{% endblock %}

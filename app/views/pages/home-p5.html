@@ -9,34 +9,42 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <!-- DYNAMIC PAGE TITLE -->
-      {{ dynamicPageTitle({
-        logo: data['web'] !== "yes",
-        greetingName: data['userFirstName'] + " " + data['userLastName'],
-        nhsNumber: data['nhsNumber']
-      })}}
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
 
       <!-- INTERRUPTION CARD -->
       {{ interruptionCard({
         title: "Prove who you are to get full access",
-        description: "You'll need to prove who you are before you can use most parts of the NHS App, including prescriptions, appointments and your GP health record.",
+        description: "You'll need to prove who you are before you can use most parts of the NHS App, including prescriptions, appointments, test results and other health details. ",
         URL: "#",
         linkText: "Continue",
         hiddenText: "to get full access"
       })}}
-      
+
+      {{ nhsappCard({
+        title: "Prescriptions",
+        href: "/pages/prescriptions-p5"
+      })}}
+
+      <h2 class="app-card__section-heading">NHS information and support</h2>
+
       {{ nhsappCardGroup({
         stacked: true,
-        heading: 'Messages',
+        classes: 'nhsapp-cards--secondary',
         cards: [
           {
-            title: "View your messages",
-            href: "/pages/messages-p5",
-            icon: true,
-            messages: data['messages']
+            title: "Check your symptoms using 111 online",
+            href: "#"
+          },
+          {
+            title: "Health A to Z",
+            href: "#"
+          },
+          {
+            title: "Find services near you",
+            href: "#"
           }
         ]
-      })}}
+      }) }}
 
     </div>
   </div>

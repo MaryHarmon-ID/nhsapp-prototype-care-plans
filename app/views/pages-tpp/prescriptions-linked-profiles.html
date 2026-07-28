@@ -1,0 +1,45 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Prescriptions" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <h2 class="app-card__section-heading">GP surgery</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Request a repeat prescription",
+            href: "#"
+          },
+        {
+          title: "Check the progress of prescriptions",
+          href: "#"
+        },
+          {
+            title: "Medicines record",
+            href: "#"
+          },
+         {
+            title: "Request an emergency prescription",
+            href: "#"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

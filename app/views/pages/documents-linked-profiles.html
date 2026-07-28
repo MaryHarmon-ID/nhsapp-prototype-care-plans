@@ -1,0 +1,28 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Documents" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <h2 class="app-card__section-heading">GP surgery</h2>
+
+      {{ nhsappCard({
+        title: "Your documents",
+        href: "#"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

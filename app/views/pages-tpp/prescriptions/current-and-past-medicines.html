@@ -1,0 +1,45 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Medicines record" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <!-- PANEL LINK CARD - Your health -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Acute (short-term) medicines",
+            href: "#"
+          },
+          {
+            title: "Repeat medicines: current",
+            href: "#"
+          },
+          {
+            title: "Repeat medicines: discontinued",
+            href: "#"
+          }
+        ]
+      })}}
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

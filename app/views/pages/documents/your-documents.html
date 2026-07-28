@@ -1,0 +1,89 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Your documents" %}
+
+{% block content %}
+
+ <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+            <!-- DYNAMIC PAGE TITLE -->
+            {{ dynamicPageTitle({
+              title: pageHeading,
+              titleSecondary: true,
+              description: pageDescription
+            })}}
+      
+
+      <div class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <p class="nhsuk-body-m">
+              <a href="test.com"><strong>Letter sent to patient added 13 March</strong></a> 
+            </p>
+            <div class="nhsapp-card__below">
+              <p class="nhsuk-u-secondary-text-color">
+                (RTF, 444KB)   
+              </p>
+            </div>                
+          </div>
+        </div>
+      </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <p class="nhsuk-body-m">
+          <a href="test.com"><strong>Summary clinical document added 20 April 2024</strong></a> 
+        </p>
+        <div class="nhsapp-card__below">
+          <p class="nhsuk-u-secondary-text-color">
+            (PDF, 256KB)      
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <p class="nhsuk-body-m">
+          <a href="test.com"><strong>Attachment added 2 February</strong></a> 
+        </p>
+        <div class="nhsapp-card__below">
+          <p class="nhsuk-u-secondary-text-color">
+            (JPG, 256KB)                     
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+          <p>
+            No further information available          
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <p>You may see medical abbreviations that you are not familiar with.</p>
+
+    {{ actionLink({
+      text: "Help with abbreviations",
+      href: "#"
+    }) }}
+
+    
+  </div>
+ </div>
+
+ {% endblock %}

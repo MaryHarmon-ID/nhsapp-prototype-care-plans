@@ -1,0 +1,52 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Profile" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Manage cookies and read legal information" %}
+{% set pageDescription = "Choose about cookies and check our privacy, accessibility and other policies" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-2">{{ pageHeading }}</h1>
+      <p class="nhsuk-u-margin-bottom-5">{{ pageDescription }}</p>
+
+      <!-- PANEL LINK CARD -->
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Manage cookies",
+            href: "#"
+          },
+          {
+            title: "Terms of use",
+            href: "#"
+          },
+          {
+            title: "Privacy policy",
+            href: "#"
+          },
+          {
+            title: "Manage your notifications",
+            href: "#"
+          },
+          {
+            title: "Accessibility statement",
+            href: "#"
+          },
+          {
+            title: "Open source licences",
+            href: "#"
+          }
+        ]
+      })}}
+
+    </div>
+  </div>
+
+  {% endblock %}

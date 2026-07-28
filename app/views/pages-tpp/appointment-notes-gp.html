@@ -1,0 +1,141 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Appointment notes and other information" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <div class="nhsapp-cards">
+      <div class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <p class="nhsuk-heading-s">
+              24 May 2025
+            </p>
+            <div class="nhsapp-card__below">
+              <p class="nhsuk-u-margin-top-1">
+                EXTERNAL USER            
+              </p>
+            </div>                
+          </div>
+        </div>
+      </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <p class="nhsuk-heading-s">
+          3 April 2025
+        </p>
+        <div class="nhsapp-card__below">
+          <p class="nhsuk-u-margin-top-1">
+            York Road Practice            
+            <br>
+            Nurse Donna
+            <br>
+            <b>Untitled</b>
+            <ul>
+              <li>Blood pressure recorded by patient at home (procedure): 150 / 90, average for last six weeks</li>
+              <li>Blood pressure (observable entity): 155/90</li>
+              <li>Amlodipine 10mg tablets, Patient to take Amlodipine 10mg tablets and monitor blood pressure</li>
+            </ul>             
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <p class="nhsuk-heading-s">
+          18 May 2022
+        </p>
+        <div class="nhsapp-card__below">
+          <p class="nhsuk-u-margin-top-1">
+            MESSAGING, IPLATO (Mr)            
+            <br>
+            <b>myGP</b>
+            <ul>
+              <li>Short message service text message sent to patient</li>
+              <li>Join our webinar on Thurs, 22nd May, 5-6pm to learn how to use our online service, eConsult. Register here: https://shorturl.at/N1Fqo/li>
+            </ul>             
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <p class="nhsuk-heading-s">
+          12 September 2020
+        </p>
+        <div class="nhsapp-card__below">
+          <p class="nhsuk-u-margin-top-1">
+            JEFFERIES, Alan (mr)           
+            <br>
+            <b>Comment</b>
+            <ul>
+              <li>Dear patient you are eligible for a free COVID booster vaccine this autumn. You can book an appointment via the link below ; ; https://www.nhs.uk/nhs-services/covid-19-services/covid-19-vaccination/; Derby Medical Centre; NHS app message sent on 12/09/2022 16:02:07</li>
+            </ul>             
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <p class="nhsuk-heading-s">
+          3 February 2020
+        </p>
+        <div class="nhsapp-card__below">
+          <p class="nhsuk-u-margin-top-1">
+            York Road Practice          
+            <br>
+            Nurse Donna          
+            <br>
+            <b>Seasonal allergies</b>
+            <ul>
+              <li>NO DATA AVAILABLE</li>
+            </ul>             
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+          <p>
+            No further information available          
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>You may see medical abbreviations that you are not familiar with.</p>
+
+  {{ actionLink({
+    text: "Help with abbreviations",
+    href: "#"
+  }) }}
+</div>
+
+</div>
+
+
+{% endblock %}

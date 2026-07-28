@@ -1,0 +1,79 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Health A-Z" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {% from 'card/macro.njk' import card %}
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+  {{ card({
+    href: "#",
+    primary: "true",
+    clickable: "true",
+    heading: "Conditions A to Z",
+    headingClasses: "nhsuk-heading-m",
+    description: "Find health conditions, including the symptoms and how they're treated"
+  }) }}
+  </li>
+</ul>
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+  {{ card({
+    href: "#",
+    primary: "true",
+    clickable: "true",
+    heading: "Symptoms A to Z",
+    headingClasses: "nhsuk-heading-m",
+    description: "Find symptoms such as types of pain, stomach problems or skin symptoms, and what to do"
+  }) }}
+  </li>
+</ul>
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+  {{ card({
+    href: "#",
+    primary: "true",
+    clickable: "true",
+    heading: "Tests and treatmemnts A to Z",
+    headingClasses: "nhsuk-heading-m",
+    description: "Find out about surgery and procedures, tests, screening and other treatments"
+  }) }}
+  </li>
+</ul>
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+  {{ card({
+    href: "#",
+    primary: "true",
+    clickable: "true",
+    heading: "Medicines A to Z",
+    headingClasses: "nhsuk-heading-m",
+    description: "Find out how your medicine works, how to take it and possible side effects"
+  }) }}
+  </li>
+</ul>
+
+
+    </div>
+  </div>
+
+{% endblock %}

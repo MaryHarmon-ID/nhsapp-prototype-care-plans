@@ -1,0 +1,36 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Complete an NHS health check" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+
+      <p>The NHS Health Check is a free check-up of your health. It can help spot early signs of conditions like heart disease, stroke and type 2 diabetes.</p>
+      <p>Doing your NHS Health Check online means you do not have to make a GP appointment.  The results are sent to your GP.</p>
+
+      <p>You're elifible for this service when you:</p>
+      <ul clas="nhsuk-list">
+        <li>are between 40 and 74 years old</li>
+        <li>do not have pre-existing heart or kidney conditions or diabetes</li>
+        <li>are not currently on statins to manage your cholesterol</li>
+      </ul>
+
+      {{ button({
+        text: "Start now",
+        classes: "nhsapp-button"
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

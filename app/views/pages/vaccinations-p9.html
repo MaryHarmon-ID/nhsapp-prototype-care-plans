@@ -1,0 +1,45 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Vaccinations" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Check and book an RSV vaccination",
+            href: "/pages/vaccinations/book-or-check-vaccinations"
+          },
+                    {
+            title: "Book, cancel or change a COVID-19 vaccination appointment",
+            href: "#"
+          },
+                    {
+            title: "Book or cancel a free NHS flu vaccination at a pharmacy",
+            href: "#"
+          },
+          {
+            title: "Your vaccinations",
+            href: "/pages/vaccinations/vaccine-record"
+          },
+          {
+            title: "COVID-19 vaccinations",
+            href: "#"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Which medicines do you want?" %}
+
+{% block content %}
+
+
+        <!---->
+        
+<div class="nhsuk-panel" data-qa="confirmation-panel-order-success">
+  <h1 class="nhsuk-panel__title">Your medicines have been requested</h1>
+<!---->
+</div>
+
+<p class="nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-6" data-qa="panel-sub-text">Your request has been sent to your GP surgery for approval.</p>
+<div data-qa="what-happens-next-details" class="nhsuk-u-margin-bottom-6">
+  
+  <h2 class="nhsuk-u-margin-padding-0 nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-0">What to do next</h2>
+  <p>Once approved, it can take 3 to 5 working days for a pharmacy to prepare your prescription.</p>
+</div>
+</div>
+  {% endblock %}

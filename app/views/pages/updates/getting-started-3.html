@@ -1,0 +1,85 @@
+{% extends 'layout-app-updates.html' %}
+
+{% set pageHeading = "What you'll find in the app" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+      
+      <!-- Home -->
+      <div class="heading-container">
+        <h3 class="nhsuk-heading-m heading-blue">
+  <img class="app-card-link__img" src="/images/updates-home.png" width="24px" height="24px">
+          Home
+        </h3>
+        <p class="heading-paragraph">Use services and view your health information. Includes prescriptions, appointments and test results.</p>
+      </div>
+
+        <!-- Messages -->
+      <div class="heading-container">
+        <h3 class="nhsuk-heading-m heading-blue">
+  <img class="app-card-link__img" src="/images/message.png" width="24px" height="24px">
+          Messages
+        </h3>
+        <p class="heading-paragraph">Securely receive and manage messages from health professionals.</p>
+      </div>
+
+      <!-- Profile -->
+      <div class="heading-container">
+        <h3 class="nhsuk-heading-m heading-blue">
+  <img class="app-card-link__img" src="/images/updates-profile.png" width="24px" height="24px">
+          Profile
+        </h3>
+        <p class="heading-paragraph">Manage your details, including health choices and app settings.</p>
+      </div>
+
+     <p>In many areas of the NHS App, you will find your personal health data. This may include sensitive information.</p>
+
+<div class="nhsapp-button-group">
+    <a href="/pages/home-p9" class="nhsuk-button nhsapp-button" role="button">
+        Done
+    </a>
+    <a href="/pages/updates/getting-started-2" class="nhsuk-link">Previous</a>
+</div>
+
+    </div>
+  </div>
+
+    <style>
+    /* Icon next to heading text */
+    .heading-icon {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    /* Heading color blue */
+    .heading-blue {
+      color: #005eb8; /* NHS blue */
+      display: flex;
+      align-items: center;
+    }
+
+    /* Container to align paragraph under heading text (not icon) */
+    .heading-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .heading-paragraph {
+      margin-left: 32px; /* same as icon width + margin */
+      margin-top: 4px;   /* small spacing under heading */
+    }
+  </style>
+
+{% endblock %}
+

@@ -1,0 +1,57 @@
+{% extends 'layout-app-help.html' %}
+
+{% set pageHeading = "Appointments" %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-6",
+    href: "/pages/updates/help-landing"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>{{ pageHeading }}</h1>
+
+
+      <h2>GP surgery</h2>
+
+  <ul class="nhsuk-list">
+    <li>
+<a href="/pages/updates/help-book-gp-appointment">Book a GP surgery appointment</a>    </li>
+    <li>
+      <a class="nhsuk-link" href="#">Manage GP appointments</a>
+    </li>
+    <li>
+<a href="/pages/updates/help-gp-notes">Check appointment notes</a>    </li>
+    </li>
+    <li>
+      <a class="nhsuk-link" href="#">Request a letter or information</a>
+    </li>
+  </ul>
+
+   <h2>Hospital</h2>
+
+  <ul class="nhsuk-list">
+    <li>
+      <a class="nhsuk-link" href="#">Check referrals</a>
+    </li>
+    <li>
+      <a class="nhsuk-link" href="#">Check waiting lists</a>
+    </li>
+    <li>
+      <a class="nhsuk-link" href="#">Manage hospital and specialist appointments</a>
+    </li>
+    <li>
+      <a class="nhsuk-link" href="#">Request a patient-initiated follow-up</a>
+    </li>
+  </ul>
+
+    </div>
+  </div>
+{% endblock %}

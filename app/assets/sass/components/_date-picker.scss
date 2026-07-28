@@ -23,8 +23,8 @@
 }
 
 .app-date-picker__item {
-  background: nhsuk-colour("grey-4");
-  color: nhsuk-colour("grey-1");
+  background: $color_nhsuk-grey-4;
+  color: $color_nhsuk-grey-1;
   display: inline-block;
   margin: 2px;
   min-height: 68px;
@@ -37,25 +37,25 @@
 }
 
 .app-date-picker__link {
-  background: nhsuk-colour("white");
+  background: $color_nhsuk-white;
   display: inline-block;
-  color: nhsuk-colour("blue");
+  color: $color_nhsuk-blue;
   min-height: 68px;
   text-decoration: none;
   width: 68px;
 
   &:visited {
-    color: nhsuk-colour("blue");
+    color: $color_nhsuk-blue;
   }
 
 }
 
 .app-date-picker__link--active {
-  background: nhsuk-colour("blue");
-  color: nhsuk-colour("white");
+  background: $color_nhsuk-blue;
+  color: $color_nhsuk-white;
 
   &:visited {
-    color: nhsuk-colour("white");
+    color: $color_nhsuk-white;
   }
 
   &:focus {
@@ -114,7 +114,7 @@
 
 .app-date-picker--v2 {
   .app-date-picker__link {
-    border: 1px solid nhsuk-colour("blue");
+    border: 1px solid $color_nhsuk-blue;
   }
 }
 

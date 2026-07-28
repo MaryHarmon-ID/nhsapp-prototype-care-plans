@@ -1,0 +1,35 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set linkedProfile = true %}
+
+{% set pageHeading = "Health conditions" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Allergies and adverse reactions",
+            href: "#"
+          },
+        {
+          title: "All health conditions",
+          href: "#"
+        }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

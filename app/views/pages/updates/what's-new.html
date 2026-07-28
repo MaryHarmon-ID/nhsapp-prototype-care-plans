@@ -1,0 +1,74 @@
+{% extends 'layout-app-updates.html' %}
+
+{% set pageHeading = "What's new" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <p>We’ve updated the NHS App to make it easier to use.</p>
+      <p>Some things have moved, but the same features are still here.</p>
+
+      <!-- Home -->
+      <div class="heading-container">
+        <h3 class="nhsuk-heading-m heading-blue">
+  <img class="app-card-link__img" src="/images/updates-home.png" width="24px" height="24px">
+          Home
+        </h3>
+        <p class="heading-paragraph">You can now find your services and health information on the home screen. This includes prescriptions, appointments and test results.</p>
+      </div>
+
+      <!-- Profile -->
+      <div class="heading-container">
+        <h3 class="nhsuk-heading-m heading-blue">
+  <img class="app-card-link__img" src="/images/updates-home.png" width="24px" height="24px">
+          Profile
+        </h3>
+        <p class="heading-paragraph">In your profile, you can manage your personal details, including health choices and app settings.</p>
+      </div>
+
+      <div class="nhsapp-button-group">
+        <a href="/pages/home-p9" class="nhsuk-button nhsapp-button" role="button">
+          Continue
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    /* Icon next to heading text */
+    .heading-icon {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    /* Heading color blue */
+    .heading-blue {
+      color: #005eb8; /* NHS blue */
+      display: flex;
+      align-items: center;
+    }
+
+    /* Container to align paragraph under heading text (not icon) */
+    .heading-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .heading-paragraph {
+      margin-left: 32px; /* same as icon width + margin */
+      margin-top: 4px;   /* small spacing under heading */
+    }
+  </style>
+
+{% endblock %}

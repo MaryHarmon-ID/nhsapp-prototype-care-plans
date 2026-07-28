@@ -1,0 +1,50 @@
+{% extends 'layout-app-updates.html' %}
+
+{% set pageHeading = "Moving around" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+<div class="app-card-link__media">
+  <img class="app-card-link__img" src="/images/homepage.png" alt="Homepage">
+</div>
+
+<style>
+  .app-card-link__media {
+    margin: 20px 0; /* Optional spacing */
+  }
+
+  .app-card-link__img {
+    display: block;       /* Makes the image a block-level element */
+    margin: 0 auto;       /* Horizontally centers it */
+    height: 400px;        /* Bigger image */
+    max-width: 90%;       /* Responsive on smaller screens */
+  }
+</style>
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        classes: "nhsuk-u-margin-bottom-5"
+      })}}
+
+<p> Use the menu at the bottom of the app to move between the main areas.</p>
+
+ <div class="nhsapp-button-group">
+    <a href="/pages/updates/getting-started-3" class="nhsuk-button nhsapp-button" role="button">
+        Next
+    </a>
+    <a href="/pages/updates/getting-started" class="nhsuk-link">Previous</a>
+</div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+
+
+
+

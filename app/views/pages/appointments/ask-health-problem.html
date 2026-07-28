@@ -1,0 +1,40 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Ask your GP about a health problem" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+
+      <p>Your GP surgery, Wealden Ridge provides this service. They use an online form supplied by Accurx.</p>
+
+      <p>You can use it to:</p>
+      <ul clas="nhsuk-list">
+        <li>describe your health problem</li>
+        <li>send the details to your GP</li>
+      </ul>
+
+       <p>Your GP surgery will then offer you an appointment or guidance.</p>
+
+      {{ button({
+        text: "Start now",
+        classes: "nhsapp-button"
+      }) }}
+
+
+      <p>
+        <a href="#" class="nhsuk-link--no-visited-state">Find out more about Visiba in our privacy policy</a>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Profile" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "All health conditions" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+                  <!-- DYNAMIC PAGE TITLE -->
+                  {{ dynamicPageTitle({
+                    title: pageHeading,
+                    titleSecondary: true,
+                    description: pageDescription
+                  })}}
+
+      <div class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <p class="nhsuk-heading-m">
+              22 April 2025 10:30am
+            </p>
+            <div class="nhsapp-card__below">
+                <p>Asthma / Ongoing for 6months, family history of asthma and allergies</p>
+                <p> Significance: Minor </p>
+                <p> Status: Open </p>
+            </div>
+          </div>
+      
+      
+
+
+    </div>
+  </div>
+
+{% endblock %}

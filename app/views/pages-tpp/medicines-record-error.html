@@ -1,0 +1,31 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "There was a problem showing your medicines record" %}
+{% set pageDescription = "Try loading the information again." %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+        <button class="nhsuk-button nhsuk-button--secondary nhsapp-button" data-module="nhsuk-button">
+        Try again
+      </button>
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

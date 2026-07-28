@@ -3,22 +3,29 @@
 // ==========================================================================
 
 .app-global-navigation-native {
-  background-color: nhsuk-colour("grey-5");
+  background-color: $color_nhsuk-grey-5;
+  padding: 8px 0;
   position: fixed;
   width: 100%;
   z-index: 1;
+
+  // Add scrolled state with border
+  &.scrolled {
+    border-bottom: 2px solid rgba(33, 43, 50, 0.1);
+  }
 }
 
 .app-global-navigation-native__nav {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .app-global-navigation-native__nav-list {
+  align-items: center;
   display: flex;
   list-style: none;
-  margin: 0 -12px 0 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -29,18 +36,91 @@
 }
 
 .app-global-navigation-native__nav-link {
-  display: block;
-  padding: 12px;
+  @include nhsuk-font-size(16, 1);
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+  gap: 4px;
+  padding: 12px 0;
+  text-decoration: none;
+
+  &:hover,
+  &:visited,
+  &:hover:visited,
+  &:focus,
+  &:focus:visited {
+    color: $color_nhsuk-blue;
+  }
 
   &:focus {
     background-color: transparent;
     box-shadow: none;
+    color: $color_nhsuk-blue;
   }
 }
 
 .app-global-navigation-native__nav-icon {
-  fill: $nhsuk-focus-text-color;
+  display: block;
+  fill: $color_nhsuk-blue;
   flex-shrink: 0;
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
+}
+
+.app-global-navigation-native__nav-button {
+  @include nhsuk-font-size(16);
+
+  border: 2px solid $color_nhsuk-grey-4;
+  border-radius: 8px;
+  color: $color_nhsuk-blue;
+  display: block;
+  font-weight: bold;
+  padding: 4px 8px;
+  text-decoration: none;
+
+  &:hover {
+    color: $color_nhsuk-blue;;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: $color_nhsuk-blue;
+
+    &:hover {
+      color: $color_nhsuk-blue;
+    }
+  }
+
+  &:focus {
+    border-color: $nhsuk-focus-color;
+  }
+
+  &:focus,
+  &:focus:visited {
+    color: $nhsuk-focus-text-color;
+  }
+}
+
+.app-global-navigation-native__logo {
+  padding: 8px 0;
+
+  &:focus,
+  &:focus:visited {
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+
+    .nhsuk-logo {
+      background-color: #ffeb3b;
+      box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+      outline: 4px solid transparent;
+
+      .nhsuk-logo__background {
+        fill: $nhsuk-focus-color;
+      }
+      .nhsuk-logo__text {
+        fill: $nhsuk-focus-text-color;
+      }
+    }
+  }
 }

@@ -1,0 +1,37 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Ask your GP surgery for access" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+ <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+    <p>Contact your surgery if you want to view all of yourhealth information in the NHS App, including</p>
+
+      <p>
+        <ul>
+          <li>test results</li>
+          <li>documents</li>
+          <li>appointment notes</li>
+        </ul>
+      </p>
+    
+     <p>Ask the surgery to give you access to your full health records in the NHS App.</p>
+
+
+      <button id="logoutButton" class="nhsuk-button nhsuk-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit">
+        Find GP surgery contact details
+      </button>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

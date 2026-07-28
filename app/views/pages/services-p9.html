@@ -17,8 +17,11 @@
         description: pageDescription
       })}}
 
-      <h2 class="nhsapp-cards__heading">Your GP services</h2>
-      <ul class="nhsapp-cards nhsapp-cards--stacked">
+      {{ nhsappSectionHeading({
+        headingText: "Your GP services"
+      })}}
+      
+      <ol class="nhsapp-cards nhsapp-cards--stacked">
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
@@ -54,11 +57,14 @@
             </div>
           </form>
         </li>
-      </ul>
+      </ol>
+
+      {{ nhsappSectionHeading({
+        headingText: "Other NHS services"
+      })}}
 
       {{ nhsappCardGroup({
         stacked: true,
-        heading: 'Other NHS services',
         cards: [
           {
             title: "Check if you need urgent medical help using 111 online",
@@ -71,9 +77,12 @@
         ]
       })}}
 
+      {{ nhsappSectionHeading({
+        headingText: "Find health information"
+      })}}
+
       {{ nhsappCardGroup({
         stacked: true,
-        heading: 'Find health information',
         cards: [
           {
             title: "Browse NHS health information",

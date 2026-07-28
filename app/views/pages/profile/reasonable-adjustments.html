@@ -1,0 +1,39 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Reasonable adjustmentss" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+
+      <p>NHS reasonable adjustments are small changes that help you to get the healthcare you need.</p>
+
+      <p>You may be able to get them if you have a disability or another need that makes accessing healthcare harder for you.</p>
+
+      <p>All health and care services must be as accessible to people with disabilities as they are for everyone else. This is stated in the <a class="nhsuk-link--no-visited-state href="#">Equality Act 2010</a></p>
+
+      <p><a class="nhsuk-link--no-visited-state" href="#">Find out more about reasonable adjustments</a></p>
+
+      <h2 class="app-card__section-heading">Your reasonable adjustments</h2>
+
+
+{% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
+
+{{ nhsappCard({
+  title: 'Requires distraction techniques while undergoing care procedure',
+  href: '#',
+  description: 'Review date: 16 March 2026'
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

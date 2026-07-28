@@ -1,0 +1,78 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "GP-ordered test results" %}
+
+{% block content %}
+
+
+    <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {{ nhsappSectionHeading({
+        headingText: "February 2026"
+      }) }}
+      
+      {{ nhsappCardGroup({
+        cards: [
+          {
+            title: 'Haemoglobin A1c Level',
+            href: '#',
+            html: '<p class="nhsuk-heading-s nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-0">4 Feb 2026</p>
+                   <p class="nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-1">Healthcare professional\'s comment</p>
+                   <p class="nhsuk-u-secondary-text-color">Normal - Take no action</p>'
+          },
+          {
+            title: 'O/E blood pressure reading',
+            href: '#',
+            html: '<p class="nhsuk-heading-s nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-0">4 February 2026</p>'
+          }
+        ]
+      }) }}
+      
+      {{ nhsappSectionHeading({
+        headingText: "July 2024"
+      }) }}
+      
+      {{ nhsappCardGroup({
+        cards: [
+          {
+            title: 'Full blood count',
+            href: '#',
+            html: '<p class="nhsuk-heading-s nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-0">4 July 2024</p>
+            <p class="nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-1">Healthcare professional\'s comment</p>
+            <p class="nhsuk-u-secondary-text-color">Normal - Take no action</p>'
+          }
+        ]
+      }) }}
+
+      {{ nhsappCardGroup({
+        cards: [
+          {
+            title: 'View all test results',
+            href: '#'
+          }
+        ]
+      }) }}
+
+      <p>You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+    </div>
+  </div>
+
+  {% endblock %}

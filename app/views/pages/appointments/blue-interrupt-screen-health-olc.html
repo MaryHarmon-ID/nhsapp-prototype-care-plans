@@ -1,0 +1,24 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Ask your GP about a health problem" %}
+
+{% block content %}
+
+<div class="nhsapp-card app-card--dark-blue">
+  <div class="nhsapp-card__content app-card__content">
+    <p class="nhsapp-card__description">Ask about a health problem</p>
+    <h2 class="nhsapp-card__heading nhsuk-heading-m nhsuk-u-padding-top-2">This service is provided by Supplier</h2>
+    <p class="nhsapp-card__description">Your GP has chosen this online consultation service provider.</p>
+    <a class="nhsuk-button nhsuk-button--reverse nhsapp-button" href="#">
+      Continue
+      <span class="nhsuk-u-visually-hidden">to supplier website</span>
+    </a>  
+    <p class="nhsapp-card__description"><a href="www.test.com">Find out more about online consultation services</a></p>
+  </div>
+</div>
+
+{% endblock %}

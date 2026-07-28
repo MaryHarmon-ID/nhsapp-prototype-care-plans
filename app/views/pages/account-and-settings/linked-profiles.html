@@ -4,8 +4,8 @@
 
 {% set backLink = true %}
 
-{% set pageHeading = "Linked profiles" %}
-{% set pageDescription = "You can access services in the app for the following people." %}
+{% set pageHeading = "Manage health services for others" %}
+{% set pageDescription = "Support family members and people you care for, or allow them to help you" %}
 
 {% block content %}
 
@@ -17,6 +17,10 @@
         title: pageHeading,
         titleSecondary: true,
         description: pageDescription
+      })}}
+
+      {{ nhsappSectionHeading({
+        headingText: "People you can access services for"
       })}}
 
       <!-- PANEL LINK CARD -->
@@ -31,6 +35,33 @@
         ]
       })}}
 
+      {{ nhsappSectionHeading({
+        headingText: "Add people"
+      })}}
+      <p>You can only add people at the same GP surgery as you.</p>
+
+      <ul class="nhsapp-cards nhsapp-cards--stacked">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#">
+                Apply to access services for someone else
+              </a>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/your-health/referrals">
+                Give someone you trust access to your services
+              </a>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+    
     </div>
   </div>
 

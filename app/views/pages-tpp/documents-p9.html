@@ -1,0 +1,43 @@
+{% extends 'layout-app-tpp.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Documents" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <h2 class="app-card__section-heading">GP surgery</h2>
+
+      {{ nhsappCard({
+        title: "Your documents",
+        href: "/pages/documents/documents-warning-screen"
+      }) }}
+
+      <h2 class="app-card__section-heading">Hospital</h2>
+
+            {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Hospital and specialist documents and questionnaires",
+             href: "/pages/documents/hospital-docs-questionnaires"
+          },
+          {
+            title: "Useful links from your health team",
+            href: "#"
+
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
