@@ -1,0 +1,221 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Home" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Emergency care plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <p>Check the plan you've agreed with your health team about how you want to be cared for.</p>
+
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p><a href="how-to-update-your-care-plan">Update your emergency care plan</a> with a health care professional.</p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+      <div>
+        {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          classes: "nhsuk-summary-list--no-border",
+          rows: [
+            {
+              key: {
+                text: "Source"
+              },
+              value: {
+                text: "ReSPECT plan (Recommended Summary Plan for Emergency Care and Treatment)"
+              }
+            },
+            {
+              key: {
+                text: "Last updated"
+              },
+              value: {
+                text: "15 March 2024, 09:33"
+              }
+            },
+            {
+              key: {
+                text: "Location"
+              },
+              value: {
+                html: "Ash Grove Medical Centre"
+              }
+            }
+          ]
+        }) }}
+
+      </div>
+
+      {% from "card/macro.njk" import card %}
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+          {{ card({
+            primary: true,
+            clickable: true,
+            href: "#",
+            heading: "My health and current condition",
+            headingSize: "m",
+            descriptionHtml: "<p>Summary of relevant information including health problems and personal and social circumstances
+            </p>
+            <dl class='nhsuk-summary-list nhsuk-summary-list--no-border'>
+              <div class='nhsuk-summary-list__row'>
+                <dt class='nhsuk-summary-list__key'>Legal proxy</dt>
+                <dd class='nhsuk-summary-list__value'>Yes</dd>
+              </div>
+              <div class='nhsuk-summary-list__row'>
+                <dt class='nhsuk-summary-list__key'>Other care planning or legal documents</dt>
+                <dd class='nhsuk-summary-list__value'>Yes</dd>
+              </div>
+              </dl> "
+          }) }}
+        </li>
+      </ul>
+
+      <h2>What matters to me</h2>
+      {% from 'nhsapp/components/card/macro.njk' import nhsappCardGroup %}
+      {% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: 'What I most value',
+            href: '#'
+          },
+          {
+            title: 'What I most fear / wish to avoid',
+            href: '#'
+          }
+        ]
+      }) }}
+
+      {% from "card/macro.njk" import card %}
+
+      {% set cardDescriptionHtml %}
+        <dl class='nhsuk-summary-list nhsuk-summary-list--no-border'>
+              <div class='nhsuk-summary-list__row'>
+                <dt class='nhsuk-summary-list__key'>Prioritise comfort</dt>
+                <dd class='nhsuk-summary-list__value'>Yes</dd>
+              </div>
+              <div class='nhsuk-summary-list__row'>
+                <dt class='nhsuk-summary-list__key'>CPR attempts</dt>
+                <dd class='nhsuk-summary-list__value'>Not recommended</dd>
+              </div>
+              </dl>
+              <p><a href='#'>Guidance on realistic interventions</a></p>
+      {% endset %}
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+          {{ card({
+            clickable: false,
+            heading: "Clinical recommendations",
+            headingSize: "m",
+            href: "/#",
+            descriptionHtml: cardDescriptionHtml
+          }) }}
+        </li>
+      </ul>
+
+      {% from "card/macro.njk" import card %}
+
+      {% set cardDescriptionHtml %}
+        <dl class='nhsuk-summary-list nhsuk-summary-list--no-border'>
+              <div class='nhsuk-summary-list__row'>
+                <dt class='nhsuk-summary-list__key'>Capacity</dt>
+                <dd class='nhsuk-summary-list__value'>The person has capacity to participate in making recommendations on this plan</dd>
+              </div>
+              <div class='nhsuk-summary-list__row'>
+                <dt class='nhsuk-summary-list__key'>Involvement</dt>
+                <dd class='nhsuk-summary-list__value'>This person has the mental capacity to participate in making these recommendations. They have been fully involved in this plan.</dd>
+              </div>
+              </dl>
+              <p><a href='#'>Clinicians' involved</a></p>
+      {% endset %}
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-two-thirds nhsuk-card-group__item">
+          {{ card({
+            clickable: false,
+            heading: "Making this plan",
+            headingSize: "m",
+            href: "/#",
+            descriptionHtml: cardDescriptionHtml
+          }) }}
+        </li>
+      </ul>
+
+      <h2>Emergency contacts</h2>
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Primary emergency contact
+          </h2>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Helen Thompson
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Relationship
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Daughter
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row nhsuk-summary-list__row--no-border">
+              <dt class="nhsuk-summary-list__key">
+                Contact details
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p>07700 900362</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <p><a href="#" class="nhsuk-link">All emergency contacts</a></p>
+
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+
+      {% from "button/macro.njk" import button %}
+
+      {{ button({
+        text: "Print your emergency plan",
+        classes: "nhsuk-button--secondary nhsuk-u-margin-top-5"
+      }) }}
+
+      <p>You may see medical abbreviations that you are not familiar with.</p>
+      {% from "action-link/macro.njk" import actionLink %}
+
+        {{ actionLink({
+          text: "Help with abbreviations",
+          href: "#"
+        }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
