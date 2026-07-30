@@ -32,7 +32,7 @@
                 text: "Last updated"
               },
               value: {
-                text: "15 March 2024, 09:33 at Ash Grove Medical Centre"
+                text: "15 March 2024, 09:33 by Dr Bally Valentine"
               }
             }
           ]
@@ -43,7 +43,7 @@
       {% from "inset-text/macro.njk" import insetText %}
 
       {% set insetTextHtml %}
-        <p>If you want to update your emergency care plan, contact Dr Bally Valentine at Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
       {% endset %}
 
       {{ insetText({
@@ -111,7 +111,7 @@
         <dl class='nhsuk-summary-list nhsuk-summary-list--no-border'>
               <div class='nhsuk-summary-list__row'>
                 <dt class='nhsuk-summary-list__key'>Prioritise comfort</dt>
-                <dd class='nhsuk-summary-list__value'>Yes <br/>Further guidance on realistic interventions available</dd>
+                <dd class='nhsuk-summary-list__value'>Further guidance on realistic interventions available</dd>
               </div>
               <div class='nhsuk-summary-list__row'>
                 <dt class='nhsuk-summary-list__key'>CPR attempts</dt>
@@ -160,8 +160,8 @@
         </li>
       </ul>
 
-      <h2><a href="#">Emergency contacts (3)</a></h2>
-      <div class="nhsuk-card">
+      <h2>Emergency contacts</h2>
+      <div class="nhsuk-card nhsuk-u-margin-bottom-4">
         <div class="nhsuk-card__content">
           <h2 class="nhsuk-card__heading nhsuk-heading-m">
             Primary emergency contact
@@ -194,6 +194,7 @@
           </dl>
         </div>
       </div>
+      <p class="nhsuk-u-margin-bottom-6"><a href="#">See all emergency contacts</a></p>
 
       <hr class="nhsuk-section-break nhsuk-section-break--visible">
 
