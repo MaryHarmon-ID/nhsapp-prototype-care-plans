@@ -69,7 +69,7 @@
         <li class="nhsuk-grid-column-full nhsuk-card-group__item">
           {{ card({
             clickable: true,
-            href: "#",
+            href: "my-health-and-current-conditions",
             heading: "My health and current condition",
             headingSize: "m",
             descriptionHtml: "<p>Summary of relevant information including health problems and personal circumstances
@@ -98,8 +98,8 @@
               heading: "What matters to me",
               headingVisuallyHiddenText: "Applicants"
             }) %}
-              <p><a href="#" class="nhsuk-card__link">What I most value</a></p>
-              <p><a href="#" class="nhsuk-card__link">What I most fear / wish to avoid</a></p>
+              <p><a href="what-matters-to-me" class="nhsuk-card__link">What I most value</a></p>
+              <p><a href="what-matters-to-me" class="nhsuk-card__link">What I most fear / wish to avoid</a></p>
             {% endcall %}
           </li>
         </ul>
@@ -126,7 +126,7 @@
             clickable: false,
             heading: "Clinical recommendations",
             headingSize: "m",
-            href: "/#",
+            href: "clinical-recommendations",
             descriptionHtml: cardDescriptionHtml
           }) }}
         </li>
@@ -145,7 +145,7 @@
                 <dd class='nhsuk-summary-list__value'>This person has the mental capacity to participate in making these recommendations. They have been fully involved in this plan.</dd>
               </div>
               </dl>
-              <p><a href='#'>Clinicians' involved</a></p>
+              <p><a href='making-this-plan'>Clinicians' involved</a></p>
       {% endset %}
 
       <ul class="nhsuk-grid-row nhsuk-card-group">
@@ -154,7 +154,7 @@
             clickable: false,
             heading: "Making this plan",
             headingSize: "m",
-            href: "/#",
+            href: "making-this-plan",
             descriptionHtml: cardDescriptionHtml
           }) }}
         </li>
@@ -194,7 +194,7 @@
           </dl>
         </div>
       </div>
-      <p class="nhsuk-u-margin-bottom-6"><a href="#">See all emergency contacts</a></p>
+      <p class="nhsuk-u-margin-bottom-6"><a href="emergency-contacts">See all emergency contacts</a></p>
 
       <hr class="nhsuk-section-break nhsuk-section-break--visible">
 
@@ -202,7 +202,8 @@
 
       {{ button({
         text: "Download or print your emergency plan",
-        classes: "nhsuk-button--secondary nhsuk-u-margin-top-5"
+        classes: "nhsuk-button--secondary nhsuk-u-margin-top-5",
+        href: "print-your-emergency-care-plan"
       }) }}
 
       <p>You may see medical abbreviations that you are not familiar with.</p>

@@ -1,0 +1,98 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Making this plan" %}
+
+{% set pageHeading = "Making this plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+         {{ backLink({
+      href: "emergency-care-plan",
+      text: "Back"
+    }) }}
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+<div class="emergency-care-plan-intro">
+
+  <p class="nhsuk-body-s">
+    <strong>Source:</strong> ReSPECT Plan<br>
+    <strong>Last updated:</strong> 6 January 2026, 09:33<br>
+  </p>
+</div>
+<h2 class="nhsuk-heading-m">
+  Who was involved
+</h2>
+
+<p>The healthcare professional(s) signing this plan is/are confirming that:</p>
+<ul>
+  <li> You have the mental capacity to participate in making these recommendations. You have been fully involved in this plan.</li>
+</ul>
+
+<details class="nhsuk-details nhsuk-expander">
+  <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+     View other possible answers
+    </span>
+  </summary>
+  <div class="nhsuk-details__text">
+    <ul>
+      <li>You do not have the mental capacity, even with support, to participate in making these recommendations. Your past and present views, where ascertainable, have been taken into account. The plan has been made, where applicable, in consultation with your legal proxy, or where no proxy, with relevant family members/friends. </li>
+      <li>You are less than 18 years old and have sufficient maturity and understanding to participate in making this plan.</li>
+      <li>You are less than 18 years old and do not have sufficient maturity and understanding to participate in making this plan Your views, when known, have been taken into account.</li>
+      <li>Those holding parental responsibility have been fully involved in discussing and making this plan</li>
+    </ul>
+
+  </div>
+</details>
+
+
+<h2 class="nhsuk-heading-m">
+  Healthcare professionals who signed your plan
+</h2>
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+
+    <h3 class="nhsuk-heading-s">Name</h3>
+    <p>
+      Dr Bally Valentine
+    </p>
+
+    <h3 class="nhsuk-heading-s">Role and speciality</h3>
+    <p>
+      GP
+    </p>
+
+    <h3 class="nhsuk-heading-s">Lead healthcare professional</h3>
+    <p>
+      Yes
+    </p>
+
+    <h3 class="nhsuk-heading-s">Professional registration number</h3>
+    <p>
+      GMC 4123485
+    </p>
+
+  </div>
+</div>
+
+
+<hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+<p class="nhsuk-body-s">
+  This information has come from care plans you have talked about with your GP or other healthcare provider.
+  It is a clinical record of agreed recommendation.
+  It is not a legally binding document.
+</p>
+
+{{ actionLink({
+  text: "How to update your emergency care plan",
+  href: "/pages/emergency-care-plan/how-to-update-your-emergency-care-plan"
+}) }}
+    </div>
+  </div>
+
+
+{% endblock %}

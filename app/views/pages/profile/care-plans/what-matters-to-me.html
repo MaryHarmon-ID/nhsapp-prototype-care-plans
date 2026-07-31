@@ -1,0 +1,59 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "What matters to me" %}
+
+{% set pageHeading = "What matters to me" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+         {{ backLink({
+      href: "emergency-care-plan",
+      text: "Back"
+    }) }}
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+<div class="emergency-care-plan-intro">
+
+  <p class="nhsuk-body-s">
+    <strong>Source:</strong> ReSPECT Plan<br>
+    <strong>Last updated:</strong> 6 January 2026, 09:33<br>
+  </p>
+</div>
+
+<h2 class="nhsuk-heading-m">
+  Preferred name
+</h2>
+<p> Joe</p>
+<h2 class="nhsuk-heading-m">
+  What I value most
+</h2>
+
+<p>At this point in my life I would like to be kept comfortable and only receive treatments which allow me to stay in my home. I am reluctant to be admitted to hospital.</p>
+
+<h2 class="nhsuk-heading-m">
+  What I most fear/wish to avoid
+</h2>
+
+<p>I don't want lots of painful investigations and treatments. I don't want anyone pressing on my chest if my heart stops.</p>
+
+
+<hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+<p class="nhsuk-body-s">
+  This information has come from care plans you have talked about with your GP or other healthcare provider.
+  It is a clinical record of agreed recommendation.
+  It is not a legally binding document.
+</p>
+
+{{ actionLink({
+  text: "How to update your emergency care plan",
+  href: "how-to-update-your-emergency-care-plan"
+}) }}
+    </div>
+  </div>
+
+
+{% endblock %}
