@@ -37,6 +37,7 @@
 
       <h2 class="app-card__section-heading">Personal details</h2>
 
+      {% if data.journey == 'profile' or data.journey == 'profilemenu' %}
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
@@ -62,6 +63,29 @@
           }
           ]
       })}}
+      {% else %}
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Contact details",
+            href: "#"
+          },
+          {
+            title: "Your GP surgery",
+            href: "/pages/profile/your-gp-surgery"
+          },
+          {
+            title: "Health choices",
+            href: "/pages/health-choices"
+          },
+         {
+            title: "Reasonable adjustments",
+            href: "/pages/profile/reasonable-adjustments"
+          }
+          ]
+      })}}
+      {% endif %}
 
       <h2 class="app-card__section-heading">App settings</h2>
 
