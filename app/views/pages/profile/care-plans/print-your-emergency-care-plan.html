@@ -1,5 +1,7 @@
 {% extends 'layout-app.html' %}
 
+{% set backLink = true %}
+
 {% set hub = "Print your emergency care plan" %}
 
 {% set pageHeading = "Print your emergency care plan" %}
@@ -9,10 +11,6 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-  {{ backLink({
-      href: "emergency-care-plan",
-      text: "Back"
-    }) }}
       <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
 
 <div class="emergency-care-plan-intro">

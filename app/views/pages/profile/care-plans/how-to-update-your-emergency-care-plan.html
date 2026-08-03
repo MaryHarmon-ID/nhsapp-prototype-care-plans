@@ -1,18 +1,14 @@
 {% extends 'layout-app.html' %}
 
+{% set backLink = true %}
+
 {% set hub = "How to update your emergency care plan" %}
 
 {% set pageHeading = "How to update your emergency care plan" %}
 
 {% block content %}
-
-  <div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-         {{ backLink({
-      href: "/pages/emergency-care-plan/emergency-care-plan",
-      text: "Back"
-    }) }}
-
       <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
 <h2 class="nhsuk-heading-m">
   Contact the organisation where you discussed your plan
