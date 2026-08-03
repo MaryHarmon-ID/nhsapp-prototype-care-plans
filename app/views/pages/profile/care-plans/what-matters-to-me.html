@@ -48,10 +48,15 @@
   It is not a legally binding document.
 </p>
 
-{{ actionLink({
-  text: "How to update your emergency care plan",
-  href: "how-to-update-your-emergency-care-plan"
-}) }}
+{% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
     </div>
   </div>
 
