@@ -1,0 +1,105 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Print your emergency care plan" %}
+
+{% set pageHeading = "Print your emergency care plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+  {{ backLink({
+      href: "emergency-care-plan",
+      text: "Back"
+    }) }}
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+<div class="emergency-care-plan-intro">
+<p>Recommended Summary Plan for Emergency Care and Treatment (ReSPECT)</p>
+  <p class="nhsuk-body-s">
+    <strong>Last updated:</strong> 6 January 2026, 09:33<br>
+    <strong>Created with:</strong>  Meadow Springs Care Home<br>
+  </p>
+</div>
+<ul class="nhsapp-cards nhsapp-cards--stacked">
+  <li class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
+          Download PDF
+        </a>
+      </div>
+
+      <svg
+        class="nhsapp-icon nhsapp-icon--chevron-right"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+        height="2rem"
+        width="2rem"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+        />
+      </svg>
+    </div>
+  </li>
+
+  <li class="nhsapp-card">
+    <div class="nhsapp-card__container">
+      <div class="nhsapp-card__content">
+        <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
+          Print
+        </a>
+      </div>
+
+      <svg
+        class="nhsapp-icon nhsapp-icon--chevron-right"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+        height="2rem"
+        width="2rem"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+        />
+      </svg>
+    </div>
+  </li>
+
+</ul>
+
+<p class="nhsuk-body-s">
+ When downloading this document, you become responsible for keeping it confidential. 
+</p>
+
+<hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+<p class="nhsuk-body-s">
+ You may see medical abbreviations that you are not familiar with.
+</p>
+
+{{ actionLink({
+  text: "Help with abbreviations",
+  href: ""
+}) }}
+
+{% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+    </div>
+  </div>
+
+
+{% endblock %}

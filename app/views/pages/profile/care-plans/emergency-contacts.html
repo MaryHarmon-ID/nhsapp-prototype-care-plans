@@ -1,0 +1,108 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Emergency contacts" %}
+
+{% set pageHeading = "Emergency contacts" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+         {{ backLink({
+      href: "emergency-care-plan",
+      text: "Back"
+    }) }}
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+<div class="emergency-care-plan-intro">
+
+  <p class="nhsuk-body-s">
+    <strong>Source:</strong> ReSPECT Plan<br>
+    <strong>Last updated:</strong> 6 January 2026, 09:33<br>
+  </p>
+</div>
+
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+
+    <h3 class="nhsuk-heading-s">Name</h3>
+    <p>
+      Clive Campbell
+    </p>
+
+    <h3 class="nhsuk-heading-s">Role and relationship</h3>
+    <p>
+      Nephew
+    </p>
+
+    <h3 class="nhsuk-heading-s">Phone number</h3>
+    <p>
+      07843 806541
+    </p>
+      <td class="nhsuk-table__cell">
+        <span class="nhsapp-tag nhsapp-tag--aqua-green"> Emergency contact </span>
+      </td>
+    
+
+  </div>
+</div>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+
+    <h3 class="nhsuk-heading-s">Name</h3>
+    <p>
+      Community Heart Failure Team
+    </p>
+
+
+    <h3 class="nhsuk-heading-s">Phone number</h3>
+    <p>
+      01248 543775
+    </p>
+
+  </div>
+</div>
+
+<div class="nhsuk-card">
+  <div class="nhsuk-card__content">
+
+    <h3 class="nhsuk-heading-s">Name</h3>
+    <p>
+      GP surgery
+    </p>
+
+
+    <h3 class="nhsuk-heading-s">Phone number</h3>
+    <p>
+      01248 543555
+    </p>
+
+  </div>
+</div>
+
+
+<hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+<p class="nhsuk-body-s">
+  This information has come from care plans you have talked about with your GP or other healthcare provider.
+  It is a clinical record of agreed recommendation.
+  It is not a legally binding document.
+</p>
+
+{% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+    </div>
+  </div>
+
+
+{% endblock %}
