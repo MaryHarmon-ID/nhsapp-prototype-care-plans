@@ -21,9 +21,15 @@
         <p>Contact your GP if someone is pressuring you to see this information.</p>
 
         <div class="nhsapp-button-group">
-          <a class="nhsuk-button nhsapp-button" href="emergency-care-plan" role="button">
-            Continue
-          </a>
+          {% if data.journey == 'homepagemenu' or data.journey == 'profilemenu' %}
+            <a class="nhsuk-button nhsapp-button" href="emergency-care-plan-menu" role="button">
+              Continue
+            </a>
+          {% else %}
+            <a class="nhsuk-button nhsapp-button" href="emergency-care-plan" role="button">
+              Continue
+            </a>
+          {% endif %}
           <a href="/pages/home-p9" class="nhsuk-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">Back to home</a>
         </div>
       </div>

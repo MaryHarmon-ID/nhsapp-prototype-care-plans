@@ -1,0 +1,136 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Emergency care plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+<div>
+        {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          classes: "nhsuk-summary-list--no-border",
+          rows: [
+            {
+              key: {
+                text: "Source"
+              },
+              value: {
+                text: "ReSPECT plan (Recommended Summary Plan for Emergency Care and Treatment)"
+              }
+            },
+            {
+              key: {
+                text: "Last updated"
+              },
+              value: {
+                text: "15 March 2024, 09:33 by Dr Bally Valentine"
+              }
+            }
+          ]
+        }) }}
+
+      </div>
+
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "My health and current conditions",
+            href: "my-health-and-current-conditions"
+          },
+          {
+            title: "What matters to me",
+            href: "what-matters-to-me"
+          },
+          {
+            title: "Clinical recommendations",
+            href: "clinical-recommendations"
+          },
+         {
+            title: "Making this plan",
+            href: "making-this-plan"
+          },
+           {
+            title: "Emergency contacts",
+            href: "emergency-contacts"
+          }
+          ]
+      })}}
+      {% from "button/macro.njk" import button %}
+      {% from "action-link/macro.njk" import actionLink %}
+
+
+
+
+{{ button({
+  text: "Print your emergency plan",
+  href: "/pages/emergency-care-plan/print-your-emergency-care-plan",
+  classes: "nhsuk-button--secondary"
+}) }}
+
+<p class="nhsuk-body">You may see medical abbreviations that you are not familiar with.</p>
+
+{{ actionLink({
+  text: "Help with abbreviations",
+  href: "#"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}

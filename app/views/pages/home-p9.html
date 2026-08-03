@@ -10,7 +10,7 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
-      {% if data.journey == 'homepage' %}
+      {% if data.journey == 'homepage' or data.journey == 'homepagemenu' %}
         {{ nhsappCardGroup({
         stacked: true,
         cards: [
@@ -28,7 +28,7 @@
           },
           {
             title: "Care plans",
-            href: "/pages/care-plans"
+            href: "/pages/profile/care-plans/care-plans"
           },
           {
             title: "Vaccinations",
