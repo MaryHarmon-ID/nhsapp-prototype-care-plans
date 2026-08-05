@@ -23,7 +23,16 @@
 <h2 class="nhsuk-heading-m">
   Recommendations
 </h2>
-<p> Priority should be given to comfort.</p>
+
+{% from "inset-text/macro.njk" import insetText %}
+
+{% set insetTextHtml %}
+  <p>Priority should be given to comfort.</p>
+{% endset %}
+
+{{ insetText({
+  html: insetTextHtml
+}) }}
 
 <h2 class="nhsuk-heading-m">
   Guidance on specificinterventions
