@@ -43,7 +43,7 @@
       {% from "inset-text/macro.njk" import insetText %}
 
       {% set insetTextHtml %}
-        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
       {% endset %}
 
       {{ insetText({
@@ -76,8 +76,8 @@
             </p>
             <dl class='nhsuk-summary-list nhsuk-summary-list--no-border'>
               <div class='nhsuk-summary-list__row'>
-                <dt class='nhsuk-summary-list__key'>Legal proxy</dt>
-                <dd class='nhsuk-summary-list__value'>No</dd>
+                <dt class='nhsuk-summary-list__key'>Someone who can make decisions for me</dt>
+                <dd class='nhsuk-summary-list__value'>No one selected</dd>
               </div>
               <div class='nhsuk-summary-list__row'>
                 <dt class='nhsuk-summary-list__key'>Other care planning or legal documents</dt>
@@ -99,7 +99,7 @@
               headingVisuallyHiddenText: "Applicants"
             }) %}
               <p><a href="what-matters-to-me" class="nhsuk-card__link">What I most value</a></p>
-              <p><a href="what-matters-to-me#fears" class="nhsuk-card__link">What I most fear / wish to avoid</a></p>
+              <p><a href="what-matters-to-me#fears" class="nhsuk-card__link">Things I want to avoid</a></p>
             {% endcall %}
           </li>
         </ul>
@@ -124,7 +124,7 @@
         <li class="nhsuk-grid-column-full nhsuk-card-group__item">
           {{ card({
             clickable: false,
-            heading: "Clinical recommendations",
+            heading: "Treatmentrecommendations",
             headingSize: "m",
             href: "clinical-recommendations",
             descriptionHtml: cardDescriptionHtml
@@ -145,7 +145,7 @@
                 <dd class='nhsuk-summary-list__value'>This person has the mental capacity to participate in making these recommendations. They have been fully involved in this plan.</dd>
               </div>
               </dl>
-              <p><a href='making-this-plan#healthcare-professionals'>Clinicians' involved</a></p>
+              <p><a href='making-this-plan#healthcare-professionals'>Healthcare professionals involved</a></p>
       {% endset %}
 
       <ul class="nhsuk-grid-row nhsuk-card-group">
@@ -198,13 +198,25 @@
 
       <hr class="nhsuk-section-break nhsuk-section-break--visible">
 
-      {% from "button/macro.njk" import button %}
+      <h2 class="nhsuk-u-margin-top-6">Emergency care plan document</h2>
 
-      {{ button({
-        text: "Download or print your emergency plan",
-        classes: "nhsuk-button--secondary nhsuk-u-margin-top-5",
-        href: "print-your-emergency-care-plan"
-      }) }}
+        {% from 'nhsapp/components/card/macro.njk' import nhsappCardGroup %}
+        {% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
+
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'View',
+              href: '#'
+            },
+            {
+              title: 'Download',
+              href: 'https://maryharmon-id.github.io/care-plan-pdfs/Joe-ReSPECT-plan.pdf',
+              description: '(PDF)'
+            }
+          ]
+        }) }}
 
       <p>You may see medical abbreviations that you are not familiar with.</p>
       {% from "action-link/macro.njk" import actionLink %}

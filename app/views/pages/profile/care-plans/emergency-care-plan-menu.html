@@ -43,7 +43,7 @@
       {% from "inset-text/macro.njk" import insetText %}
 
       {% set insetTextHtml %}
-        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
       {% endset %}
 
       {{ insetText({
@@ -75,17 +75,28 @@
           }
           ]
       })}}
-      {% from "button/macro.njk" import button %}
-      {% from "action-link/macro.njk" import actionLink %}
 
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
 
+      <h2 class="nhsuk-u-margin-top-6">Emergency care plan document</h2>
 
+        {% from 'nhsapp/components/card/macro.njk' import nhsappCardGroup %}
+        {% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
 
-{{ button({
-  text: "Download or print your emergency plan",
-  href: "print-your-emergency-care-plan",
-  classes: "nhsuk-button--secondary"
-}) }}
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'View',
+              href: '#'
+            },
+            {
+              title: 'Download',
+              href: 'https://maryharmon-id.github.io/care-plan-pdfs/Joe-ReSPECT-plan.pdf',
+              description: '(PDF)'
+            }
+          ]
+        }) }}
 
 <p class="nhsuk-body">You may see medical abbreviations that you are not familiar with.</p>
 
