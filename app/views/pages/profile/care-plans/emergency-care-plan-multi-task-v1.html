@@ -13,17 +13,19 @@
       <div class="nhsuk-grid-row">
         
           <div class="nhsuk-grid-column-full">
-          <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+          <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-1">{{ pageHeading }}</h1>
 
-          <p>This information has come from the ReSPECT plan you talked about with your GP or other healthcare provider.</p>
+          <!--<p>This information has come from the ReSPECT plan you talked about with your GP or other healthcare provider.</p>-->
+          <p class="nhsuk-body-s nhsuk-u-margin-bottom-5">Last updated: 15 March 2024, 09:33 <!--by Dr Bally Valentine--></p>
           </div>
 
           <div class="nhsuk-grid-column-two-thirds">
 
-          <h2 class="nhsuk-heading-m">Your health and current condition</h2>
+          <h2 class="nhsuk-heading-m">1. Your health and current condition</h2>
 
           {{ taskList({
             idPrefix: "current-condition",
+            classes: "nhsuk-u-margin-bottom-7",
             items: [
               {
                 title: {
@@ -70,9 +72,10 @@
             ]
           }) }}
 
-          <h2 class="nhsuk-heading-m">What matters to you</h2>
+          <h2 class="nhsuk-heading-m">2.What matters to you</h2>
           {{ taskList({
             idPrefix: "what-matters",
+            classes: "nhsuk-u-margin-bottom-7",
             items: [
               {
                 title: {
@@ -113,9 +116,10 @@
             ]
           }) }}
 
-          <h2 class="nhsuk-heading-m">Treatment recommendations</h2>
+          <h2 class="nhsuk-heading-m">3. Treatment recommendations</h2>
           {{ taskList({
             idPrefix: "treatment-recommendations",
+            classes: "nhsuk-u-margin-bottom-7",
             items: [
               {
                 title: {
@@ -159,9 +163,10 @@
             ]
           }) }}
 
-          <h2 class="nhsuk-heading-m">Legal information about making this plan</h2>
+          <h2 class="nhsuk-heading-m">4.Legal information about making this plan</h2>
           {{ taskList({
             idPrefix: "making-this-plan",
+            classes: "nhsuk-u-margin-bottom-7",
             items: [
               {
                 title: {
@@ -193,9 +198,10 @@
             ]
           }) }}
 
-          <h2 class="nhsuk-heading-m">Emergency contacts</h2>
+          <h2 class="nhsuk-heading-m">5.Emergency contacts</h2>
           {{ taskList({
             idPrefix: "emergency-contacts",
+            classes: "nhsuk-u-margin-bottom-7",
             items: [
               {
                 title: {
@@ -247,7 +253,7 @@
             ]
           }) }}
 
-          <p>Last updated: 15 March 2024, 09:33 by Dr Bally Valentine</p>
+          <!-- <p>Last updated: 15 March 2024, 09:33 by Dr Bally Valentine</p> -->
 
           {% from "inset-text/macro.njk" import insetText %}
 
@@ -259,12 +265,12 @@
             html: insetTextHtml
           }) }}
 
-          <p class="nhsuk-body">You may see medical abbreviations that you are not familiar with.</p>
+          <!--<p class="nhsuk-body">You may see medical abbreviations that you are not familiar with.</p>
 
           {{ actionLink({
             text: "Help with abbreviations",
             href: "#"
-          }) }}
+        }) }}-->
       
         </div>
         
