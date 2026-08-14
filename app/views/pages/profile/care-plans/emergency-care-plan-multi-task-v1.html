@@ -255,15 +255,21 @@
 
           <!-- <p>Last updated: 15 March 2024, 09:33 by Dr Bally Valentine</p> -->
 
-          {% from "inset-text/macro.njk" import insetText %}
+          {% from "card/macro.njk" import card %}
 
-          {% set insetTextHtml %}
-            <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
-          {% endset %}
+            {% set cardDescriptionHtml %}
+              <ul>
+                <li>you would like to update your emergency care plan</li>
+              </ul>
+              <p>Tell them it is a ReSPECT plan. Let them know if you can remember where or who you created the plan with.</p>
+            {% endset %}
 
-          {{ insetText({
-            html: insetTextHtml
-          }) }}
+            {{ card({
+              type: "non-urgent",
+              heading: "Speak to your GP if:",
+              descriptionHtml: cardDescriptionHtml
+            }) }}
+
 
           <!--<p class="nhsuk-body">You may see medical abbreviations that you are not familiar with.</p>
 

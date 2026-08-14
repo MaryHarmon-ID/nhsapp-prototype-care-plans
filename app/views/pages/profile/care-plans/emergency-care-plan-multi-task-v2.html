@@ -78,8 +78,8 @@
                 href: "#",
                 status: {
                   tag: {
-                    text: "Unavailable",
-                    classes: "nhsapp-tag--grey"
+                    text: "Available",
+                    classes: "nhsapp-tag--aqua-green"
                   }
                 }
               },
@@ -116,9 +116,24 @@
             ]
           }) }}
 
-          <p>Last updated: 15 March 2024, 09:33 <!--by Dr Bally Valentine--></p>
+          <p>Last updated: 15 March 2024, 09:33 by Dr Bally Valentine</p>
 
-          {% from "inset-text/macro.njk" import insetText %}
+          {% from "card/macro.njk" import card %}
+
+            {% set cardDescriptionHtml %}
+              <ul>
+                <li>you would like to update your emergency care plan</li>
+              </ul>
+              <p>Tell them it is a ReSPECT plan. You can call them on <a href="tel:01234567890">01234 567890</a></p>
+            {% endset %}
+
+            {{ card({
+              type: "non-urgent",
+              heading: "Speak to Ash Grove Medical Centre if:",
+              descriptionHtml: cardDescriptionHtml
+            }) }}
+
+          <!--{% from "inset-text/macro.njk" import insetText %}
 
           {% set insetTextHtml %}
             <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
@@ -133,7 +148,7 @@
           {{ actionLink({
             text: "Help with abbreviations",
             href: "#"
-          }) }}
+          }) }}-->
       
         </div>
         
