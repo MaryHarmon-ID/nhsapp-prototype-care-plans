@@ -1,0 +1,319 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Emergency care plan" %}
+
+    {% from "button/macro.njk" import button %}
+    {% from "task-list/macro.njk" import taskList %}
+
+    {% block content %}
+      <div class="nhsuk-grid-row">
+        
+          <div class="nhsuk-grid-column-full">
+          <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+          <p>This information has come from the ReSPECT plan you talked about with your GP or other healthcare provider.</p>
+          </div>
+
+          <div class="nhsuk-grid-column-two-thirds">
+
+          <h2 class="nhsuk-heading-m">Your health and current condition</h2>
+
+          {{ taskList({
+            idPrefix: "current-condition",
+            items: [
+              {
+                title: {
+                  text: "Health summary"
+                },
+                hint: {
+                  text: "Shared understanding of relevant information for this plan including diagnoses and personal circumstances."
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Health and welfare proxy"
+                },
+                hint: {
+                  text: "Someone who can make decision for you."
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Other care planning or legal documents"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              }
+            ]
+          }) }}
+
+          <h2 class="nhsuk-heading-m">What matters to you</h2>
+          {{ taskList({
+            idPrefix: "what-matters",
+            items: [
+              {
+                title: {
+                  text: "Preferred name"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "What you most value"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Things you want to avoid"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              }
+            ]
+          }) }}
+
+          <h2 class="nhsuk-heading-m">Treatment recommendations</h2>
+          {{ taskList({
+            idPrefix: "treatment-recommendations",
+            items: [
+              {
+                title: {
+                  text: "Overall recommendation"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Guidance on specific interventions"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "CPR recommendation"
+                },
+                hint: {
+                  text: "Recommendation about cardiopulmonary resuscitation"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Available",
+                    classes: "nhsapp-tag--aqua-green"
+                  }
+                }
+              }
+            ]
+          }) }}
+
+          <h2 class="nhsuk-heading-m">Legal information about making this plan</h2>
+          {{ taskList({
+            idPrefix: "making-this-plan",
+            items: [
+              {
+                title: {
+                  text: "Your capacity"
+                },
+                hint: {
+                  text: "Whether you were able to participate in making this plan"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Healthcare professionals who signed your plan"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              }
+            ]
+          }) }}
+
+          <h2 class="nhsuk-heading-m">Emergency contacts</h2>
+          {{ taskList({
+            idPrefix: "emergency-contacts",
+            items: [
+              {
+                title: {
+                  text: "Primary emergency contact"
+                },
+                hint: {
+                  text: "The person you would most want to be contacted in an emergency"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Other emergency contacts"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              }
+            ]
+          }) }}
+
+          <h2 class="nhsuk-heading-m">Emergency care plan document</h2>
+
+          {% from 'nhsapp/components/card/macro.njk' import nhsappCardGroup %}
+          {% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
+
+          {{ nhsappCardGroup({
+            stacked: true,
+            cards: [
+              {
+                title: 'View',
+                href: '/documents/Joe-ReSPECT-plan.pdf'
+              },
+              {
+                title: 'Download',
+                href: '/documents/Joe-ReSPECT-plan.pdf',
+                description: '(PDF)'
+              }
+            ]
+          }) }}
+
+          <p>Last updated: 15 March 2024, 09:33 by Dr Bally Valentine</p>
+
+          {% from "inset-text/macro.njk" import insetText %}
+
+          {% set insetTextHtml %}
+            <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+          {% endset %}
+
+          {{ insetText({
+            html: insetTextHtml
+          }) }}
+
+          <p class="nhsuk-body">You may see medical abbreviations that you are not familiar with.</p>
+
+          {{ actionLink({
+            text: "Help with abbreviations",
+            href: "#"
+          }) }}
+      
+        </div>
+        
+      </div>
+
+      
+
+
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}

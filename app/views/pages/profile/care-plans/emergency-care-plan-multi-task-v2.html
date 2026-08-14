@@ -1,0 +1,188 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Emergency care plan" %}
+
+    {% from "button/macro.njk" import button %}
+    {% from "task-list/macro.njk" import taskList %}
+
+    {% block content %}
+      <div class="nhsuk-grid-row">
+        
+          <div class="nhsuk-grid-column-full">
+          <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+          <p>This information has come from the ReSPECT plan you talked about with your GP or other healthcare provider.</p>
+          </div>
+
+          <div class="nhsuk-grid-column-two-thirds">
+
+          {{ taskList({
+            idPrefix: "respect-plan",
+            items: [
+              {
+                title: {
+                  text: "Your health and current condition"
+                },
+                hint: {
+                  text: "Shared understanding of relevant information for this plan including diagnoses and personal circumstances."
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "What matters to you"
+                },
+                hint: {
+                  text: "Your preferred name, what you most value and things you want to avoid."
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Treatment recommendations"
+                },
+                hint: {
+                  text: "What to prioritise, guidance on specific interventions and CPR recommendation."
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Available",
+                    classes: "nhsapp-tag--aqua-green"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Legal information about making this plan"
+                },
+                hint: {
+                  text: "Your capacity and the healthcare professionals who signed your plan."
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "Emergency contacts"
+                },
+                hint: {
+                  text: "The people or organisations to be contacted in an emergency"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Unavailable",
+                    classes: "nhsapp-tag--grey"
+                  }
+                }
+              },
+              {
+                title: {
+                  text: "View or download your plan"
+                },
+                hint: {
+                  text: "View the ReSPECT plan document or download a copy"
+                },
+                href: "#",
+                status: {
+                  tag: {
+                    text: "Available",
+                    classes: "nhsapp-tag--aqua-green"
+                  }
+                }
+              }
+            ]
+          }) }}
+
+          <p>Last updated: 15 March 2024, 09:33 <!--by Dr Bally Valentine--></p>
+
+          {% from "inset-text/macro.njk" import insetText %}
+
+          {% set insetTextHtml %}
+            <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+          {% endset %}
+
+          {{ insetText({
+            html: insetTextHtml
+          }) }}
+
+          <p class="nhsuk-body">You may see medical abbreviations that you are not familiar with.</p>
+
+          {{ actionLink({
+            text: "Help with abbreviations",
+            href: "#"
+          }) }}
+      
+        </div>
+        
+      </div>
+
+      
+
+
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}
