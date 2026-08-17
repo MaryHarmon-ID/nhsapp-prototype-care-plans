@@ -1,0 +1,67 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "My health and current condition" %}
+
+{% set pageHeading = "My health and current condition" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+<div class="emergency-care-plan-intro">
+
+  <p class="nhsuk-body-s">
+    <strong>Source:</strong> ReSPECT Plan<br>
+    <strong>Last updated:</strong> 6 January 2026, 09:33<br>
+  </p>
+</div>
+<h2 class="nhsuk-heading-m">
+  Health summary
+</h2>
+
+<p>
+  Joe has multiple medical conditions including heart failure, diabetes, chronic kidney disease and anaemia. These are
+generally well managed with oversight in his care facility and occasional input from his community medical team who know
+his situation well, however has required admission to hospital for management at times of crisis when one of his conditions
+becomes unstable.</p>
+<p>
+  Joe is aware that his conditions can be managed with ongoing treatment but cannot be reversed and
+may deteriorate in time. have advanced heart failure and have become increasingly frail over the last two years. I become breathless when walking short distances and often need to rest.
+</p>
+
+<h2 class="nhsuk-heading-m">
+  Someone who can make decisions for me
+</h2>
+
+<p class="nhsuk-body">
+  No one appointed
+</p>
+
+
+
+<hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+<p class="nhsuk-body-s">
+  This information has come from care plans you have talked about with your GP or other healthcare provider.
+  It is a clinical record of agreed recommendation.
+  It is not a legally binding document.
+</p>
+
+{% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Emergency care plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-2">{{ pageHeading }}</h1>
+
+      <!--<p>This information has come from the ReSPECT plan you talked about with your GP or other healthcare provider.</p>-->
+      <p class="nhsuk-body-s nhsuk-u-margin-bottom-3">Last updated: 15 March 2024, 09:33 by Dr Bally Valentine</p>
+
+      <h2 class="nhsapp-cards__heading">Some information available in these sections</h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Treatment recommendations",
+            href: "round-2/clinical-recommendations",
+            description: "CPR recommendation"
+          },
+         {
+            title: "Legal information about making this plan",
+            href: "round-2/making-this-plan",
+            description: "Healthcare professionals who signed your plan"
+          },
+           {
+            title: "Emergency care plan document",
+            href: "round-2/print-your-emergency-care-plan",
+            description: "PDF"
+          }
+          ]
+      })}}
+
+      <h2 class="nhsapp-cards__heading">No information available in these sections</h2>
+      <p>This does not necessarily mean anything was missed.</p>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "My health and current conditions",
+            href: "round-2/my-health-and-current-conditions"
+          },
+          {
+            title: "What matters to me",
+            href: "round-2/what-matters-to-me"
+          },
+           {
+            title: "Emergency contacts",
+            href: "round-2/emergency-contacts"
+          }
+          ]
+      })}}
+
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+
+      {% from "card/macro.njk" import card %}
+
+            {% set cardDescriptionHtml %}
+              <ul>
+                <li>you would like to update your emergency care plan</li>
+              </ul>
+              <p>Tell them it is a ReSPECT plan written with Dr Bally Valentine.</p>
+            {% endset %}
+
+            {{ card({
+              type: "non-urgent",
+              heading: "Speak to Ash Grove Medical Centre if:",
+              descriptionHtml: cardDescriptionHtml
+            }) }}
+
+    <div>
+
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}
