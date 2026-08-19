@@ -4,95 +4,102 @@
 
 {% set hub = "Making this plan" %}
 
-{% set pageHeading = "Making this plan" %}
+{% set pageHeading = "Legal information about making this plan" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+      <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
 
-<div class="emergency-care-plan-intro">
+      <p>
+        There is no information to show here.
+      </p>
 
-  <p class="nhsuk-body-s">
-    <strong>Source:</strong> ReSPECT Plan<br>
-    <strong>Last updated:</strong> 6 January 2026, 09:33<br>
-  </p>
-</div>
-<h2 class="nhsuk-heading-m">
-  Who was involved
-</h2>
+      <p>
+        <!--The NHS App may not show all the information in your care plan.--> If you cannot find the information you need, contact your GP practice.
+      </p>
 
-<p>The healthcare professional(s) signing this plan is/are confirming that:</p>
-<ul>
-  <li> You have the mental capacity to participate in making these recommendations. You have been fully involved in this plan.</li>
-</ul>
+      {% from "summary-list/macro.njk" import summaryList %}
 
-<details class="nhsuk-details">
-  <summary class="nhsuk-details__summary">
-    <span class="nhsuk-details__summary-text">
-     View other possible answers
-    </span>
-  </summary>
-  <div class="nhsuk-details__text">
-    <ul>
-      <li>You do not have the mental capacity, even with support, to participate in making these recommendations. Your past and present views, where ascertainable, have been taken into account. The plan has been made, where applicable, in consultation with your legal proxy, or where no proxy, with relevant family members/friends. </li>
-      <li>You are less than 18 years old and have sufficient maturity and understanding to participate in making this plan.</li>
-      <li>You are less than 18 years old and do not have sufficient maturity and understanding to participate in making this plan Your views, when known, have been taken into account.</li>
-      <li>Those holding parental responsibility have been fully involved in discussing and making this plan</li>
-    </ul>
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Capacity"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            },
+            {
+              key: {
+                text: "Healthcare professionals who signed your plan"
+              },
+              value: {
+                html: '
+                <div class="nhsuk-card nhsuk-u-margin-top-2">
+                  <div class="nhsuk-card__content">
 
-  </div>
-</details>
+                    <h3 class="nhsuk-heading-s">Name</h3>
+                    <p>
+                      Dr Bally Valentine
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Role and speciality</h3>
+                    <p>
+                      GP
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Lead healthcare professional</h3>
+                    <p>
+                      Yes
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Professional registration number</h3>
+                    <p>
+                      GMC 4123485
+                    </p>
+
+                  </div>
+                </div>
+                '
+              }
+            }
+          ]
+        }) }}
+
+        <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+          <li class="nhsuk-pagination-item--previous">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="clinical-recommendations" rel="prev">
+              <span class="nhsuk-pagination__title">
+                Previous<span class="nhsuk-u-visually-hidden"> page</span>
+              </span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">Treatment recommendations</span>
+              <svg class="nhsuk-icon nhsuk-icon--arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+                <path d="M10.7 6.3c.4.4.4 1 0 1.4L7.4 11H19a1 1 0 0 1 0 2H7.4l3.3 3.3c.4.4.4 1 0 1.4a1 1 0 0 1-1.4 0l-5-5A1 1 0 0 1 4 12c0-.3.1-.5.3-.7l5-5a1 1 0 0 1 1.4 0Z" />
+              </svg>
+            </a>
+          </li>
+          <li class="nhsuk-pagination-item--next">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="emergency-contacts" rel="next">
+              <span class="nhsuk-pagination__title">
+                Next<span class="nhsuk-u-visually-hidden"> page</span>
+              </span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">Emergency contacts</span>
+              <svg class="nhsuk-icon nhsuk-icon--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+                <path d="m14.7 6.3 5 5c.2.2.3.4.3.7 0 .3-.1.5-.3.7l-5 5a1 1 0 0 1-1.4-1.4l3.3-3.3H5a1 1 0 0 1 0-2h11.6l-3.3-3.3a1 1 0 1 1 1.4-1.4Z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
 
-<h2 id="healthcare-professionals" class="nhsuk-heading-m">
-  Healthcare professionals who signed your plan
-</h2>
-<div class="nhsuk-card">
-  <div class="nhsuk-card__content">
 
-    <h3 class="nhsuk-heading-s">Name</h3>
-    <p>
-      Dr Bally Valentine
-    </p>
-
-    <h3 class="nhsuk-heading-s">Role and speciality</h3>
-    <p>
-      GP
-    </p>
-
-    <h3 class="nhsuk-heading-s">Lead healthcare professional</h3>
-    <p>
-      Yes
-    </p>
-
-    <h3 class="nhsuk-heading-s">Professional registration number</h3>
-    <p>
-      GMC 4123485
-    </p>
-
-  </div>
-</div>
-
-
-<hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
-
-<p class="nhsuk-body-s">
-  This information has come from care plans you have talked about with your GP or other healthcare provider.
-  It is a clinical record of agreed recommendation.
-  It is not a legally binding document.
-</p>
-
-{% from "inset-text/macro.njk" import insetText %}
-
-      {% set insetTextHtml %}
-        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
-      {% endset %}
-
-      {{ insetText({
-        html: insetTextHtml
-      }) }}
     </div>
   </div>
 
