@@ -13,12 +13,57 @@
       <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
 
       <p>
-        There is no information to show here.
-      </p>
-
-      <p>
         The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
       </p>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Capacity"
+              },
+              value: {
+                html: '<p>There is no information to show here.</p>'
+              }
+            },
+            {
+              key: {
+                text: "Healthcare professionals who signed your plan"
+              },
+              value: {
+                html: '
+                <div class="nhsuk-card nhsuk-u-margin-top-2">
+                  <div class="nhsuk-card__content">
+
+                    <h3 class="nhsuk-heading-s">Name</h3>
+                    <p>
+                      Dr Bally Valentine
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Role and speciality</h3>
+                    <p>
+                      GP
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Lead healthcare professional</h3>
+                    <p>
+                      Yes
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Professional registration number</h3>
+                    <p>
+                      GMC 4123485
+                    </p>
+
+                  </div>
+                </div>
+                '
+              }
+            }
+          ]
+        }) }}
 
       <p>This information comes from a care plan you discussed with your GP or another healthcare professional. It includes recommendations you agreed together. It is not legally binding.</p>
 
