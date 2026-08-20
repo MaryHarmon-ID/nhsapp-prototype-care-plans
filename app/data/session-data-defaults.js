@@ -1,9 +1,6 @@
 module.exports = {
 
-  // Insert values here
-  "journey": "profile",
-  // Defaults page view to native
-  "web": "no", 
+
 
   // Set linked profile details
   "linkedProfileFirstName": "Clive",

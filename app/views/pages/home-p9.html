@@ -10,7 +10,6 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
-      {% if data.journey == 'homepage' or data.journey == 'homepagemenu' %}
         {{ nhsappCardGroup({
         stacked: true,
         cards: [
@@ -27,10 +26,6 @@
             href: "/pages/test-results-p9"
           },
           {
-            title: "Care plans",
-            href: "/pages/profile/care-plans/care-plans"
-          },
-          {
             title: "Vaccinations",
             href: "/pages/vaccinations-p9"
           },
@@ -44,38 +39,7 @@
           }
         ]
       }) }}
-      {% else %}
-        
-      {{ nhsappCardGroup({
-        stacked: true,
-        cards: [
-          {
-            title: "Prescriptions",
-            href: "/pages/prescriptions-p9"
-          },
-          {
-            title: "Appointments",
-            href: "/pages/appointments-p9"
-          },
-          {
-            title: "Test results",
-            href: "/pages/test-results-p9"
-          },
-          {
-            title: "Vaccinations",
-            href: "/pages/vaccinations-p9"
-          },
-          {
-            title: "Health conditions",
-            href: "/pages/health-conditions"
-          },
-          {
-            title: "Documents",
-            href: "/pages/documents-p9"
-          }
-        ]
-      }) }}
-      {% endif %}
+      
 
       <h2 class="app-card__section-heading">NHS information and support</h2>
 

@@ -21,12 +21,12 @@
         <p>Contact your GP if someone is pressuring you to see this information.</p>
 
         <div class="nhsapp-button-group">
-          {% if data.journey == 'homepagemenu' or data.journey == 'profilemenu' %}
-            <a class="nhsuk-button nhsapp-button" href="emergency-care-plan-menu" role="button">
+          {% if data.journey == 'cp-tags' %}
+            <a class="nhsuk-button nhsapp-button" href="emergency-care-plan-menu-labels" role="button">
               View emergency care plan
             </a>
           {% else %}
-            <a class="nhsuk-button nhsapp-button" href="emergency-care-plan" role="button">
+            <a class="nhsuk-button nhsapp-button" href="emergency-care-plan-menu-new" role="button">
               View emergency care plan
             </a>
           {% endif %}
