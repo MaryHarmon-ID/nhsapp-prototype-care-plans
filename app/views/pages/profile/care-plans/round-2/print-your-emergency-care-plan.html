@@ -4,7 +4,7 @@
 
 {% set hub = "Print your emergency care plan" %}
 
-{% set pageHeading = "Print your emergency care plan" %}
+{% set pageHeading = "Emergency care plan document" %}
 
 {% block content %}
 
@@ -15,17 +15,14 @@
 
 <div class="emergency-care-plan-intro">
 <p>Recommended Summary Plan for Emergency Care and Treatment (ReSPECT)</p>
-  <p class="nhsuk-body-s">
-    <strong>Last updated:</strong> 6 January 2026, 09:33<br>
-    <strong>Created with:</strong>  Meadow Springs Care Home<br>
-  </p>
+
 </div>
 <ul class="nhsapp-cards nhsapp-cards--stacked">
   <li class="nhsapp-card">
     <div class="nhsapp-card__container">
       <div class="nhsapp-card__content">
-        <a href="Joe-ReSPECT-plan.pdf" class="nhsapp-card__link nhsuk-link--no-visited-state">
-          Download PDF
+        <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
+          View
         </a>
       </div>
 
@@ -44,12 +41,11 @@
       </svg>
     </div>
   </li>
-
   <li class="nhsapp-card">
     <div class="nhsapp-card__container">
       <div class="nhsapp-card__content">
-        <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
-          Print
+        <a href="Joe-ReSPECT-plan.pdf" class="nhsapp-card__link nhsuk-link--no-visited-state">
+          Download PDF
         </a>
       </div>
 
@@ -75,6 +71,9 @@
  When downloading this document, you become responsible for keeping it confidential. 
 </p>
 
+<p class="nhsuk-body-s">This information comes from a care plan you discussed with your GP or another healthcare professional. It includes recommendations you agreed together. It is not legally binding.</p>
+
+
 <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
 
 <p class="nhsuk-body-s">
@@ -86,15 +85,6 @@
   href: ""
 }) }}
 
-{% from "inset-text/macro.njk" import insetText %}
-
-      {% set insetTextHtml %}
-        <p>If you want to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
-      {% endset %}
-
-      {{ insetText({
-        html: insetTextHtml
-      }) }}
 
     </div>
   </div>

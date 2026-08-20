@@ -15,6 +15,8 @@
           {{ pageHeading }}
       </h1>
 
+      <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
+
       <p class="nhsuk-body-s nhsuk-u-margin-bottom-5">Last updated: 15 March 2024, 09:33</p>
 
       <!-- {% from "contents-list/macro.njk" import contentsList %}
@@ -63,7 +65,7 @@
               },
               value: {
                 html: '<p>There is no information to show here.</p>
-                <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>'
+                '
               }
             },
             {
@@ -71,8 +73,7 @@
                 text: "Guidance on specific interventions"
               },
               value: {
-                html: '<p>There is no information to show here.</p>
-                <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>'
+                html: '<p>There is no information to show here.</p>'
               }
             },
             {
@@ -85,16 +86,6 @@
             }
           ]
         }) }}
-
-      {% from "inset-text/macro.njk" import insetText %}
-
-      {% set insetTextHtml %}
-        <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
-      {% endset %}
-
-      {{ insetText({
-        html: insetTextHtml
-      }) }}
 
       <p>This information comes from a care plan you discussed with your GP or another healthcare professional. It includes recommendations you agreed together. It is not legally binding.</p>
 

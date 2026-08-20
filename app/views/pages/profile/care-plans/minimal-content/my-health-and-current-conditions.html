@@ -2,9 +2,9 @@
 
 {% set backLink = true %}
 
-{% set hub = "My health and current condition" %}
+{% set hub = " Health and current condition" %}
 
-{% set pageHeading = "My health and current condition" %}
+{% set pageHeading = "Health and current condition" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
@@ -19,17 +19,6 @@
       <p>
         The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
       </p>
-
-
-        {% from "inset-text/macro.njk" import insetText %}
-
-      {% set insetTextHtml %}
-        <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
-      {% endset %}
-
-      {{ insetText({
-        html: insetTextHtml
-      }) }}
 
       <p>This information comes from a care plan you discussed with your GP or another healthcare professional. It includes recommendations you agreed together. It is not legally binding.</p>
 
