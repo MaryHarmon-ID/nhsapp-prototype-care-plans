@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iPhone Prototype Mockup</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg-ink: #07090f;
+        --bg-mid: #111827;
+        --panel: rgba(18, 24, 38, 0.78);
+        --panel-border: rgba(255, 255, 255, 0.14);
+        --text: #f7f8fb;
+        --muted: #aeb7c6;
+        --control: rgba(255, 255, 255, 0.1);
+        --control-strong: rgba(255, 255, 255, 0.18);
+        --accent: #5ec8f2;
+        --accent-ink: #02131f;
+        --phone-w: 430;
+        --phone-h: 932;
+        --scale: 1;
+        --radius: 66px;
+        --screen-radius: 52px;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 18% 8%, rgba(52, 96, 145, 0.22), transparent 34%),
+          radial-gradient(circle at 80% 84%, rgba(87, 109, 144, 0.18), transparent 30%),
+          linear-gradient(140deg, #07090f 0%, #111827 48%, #05070b 100%);
+        color: var(--text);
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .page {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        min-height: 100dvh;
+      }
+
+      .controls {
+        position: relative;
+        z-index: 20;
+        padding: 18px 22px 0;
+        transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+      }
+
+      .controls__inner {
+        display: grid;
+        grid-template-columns: minmax(180px, 1fr) auto auto auto auto;
+        gap: 10px;
+        align-items: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid var(--panel-border);
+        border-radius: 20px;
+        background: var(--panel);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(26px) saturate(160%);
+      }
+
+      .url-field {
+        min-width: 0;
+        height: 44px;
+        padding: 0 14px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        outline: 0;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--text);
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+      }
+
+      .url-field:focus {
+        border-color: rgba(94, 200, 242, 0.85);
+        box-shadow: 0 0 0 4px rgba(94, 200, 242, 0.16);
+      }
+
+      .control-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        height: 44px;
+        min-width: 44px;
+        padding: 0 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 14px;
+        background: var(--control);
+        color: var(--text);
+        cursor: pointer;
+        transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+      }
+
+      .control-button:hover {
+        background: var(--control-strong);
+        border-color: rgba(255, 255, 255, 0.24);
+      }
+
+      .control-button:active {
+        transform: translateY(1px);
+      }
+
+      .control-button--primary {
+        border-color: rgba(94, 200, 242, 0.45);
+        background: linear-gradient(180deg, #87dcff 0%, #4abce8 100%);
+        color: var(--accent-ink);
+        font-weight: 700;
+      }
+
+      .control-button svg,
+      .restore-button svg {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 auto;
+      }
+
+      .orientation-toggle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+        height: 44px;
+        min-inline-size: 0;
+        margin: 0;
+        padding: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .orientation-option {
+        min-width: 44px;
+        height: 34px;
+        padding: 0 10px;
+        border: 0;
+        border-radius: 10px;
+        background: transparent;
+        color: var(--muted);
+        cursor: pointer;
+      }
+
+      .orientation-option[aria-pressed="true"] {
+        background: rgba(255, 255, 255, 0.22);
+        color: var(--text);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset;
+      }
+
+      .stage {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 0;
+        padding: 26px 24px 34px;
+      }
+
+      .phone-space {
+        position: relative;
+        width: calc(var(--phone-w) * var(--scale) * 1px);
+        height: calc(var(--phone-h) * var(--scale) * 1px);
+        transition: width 220ms ease, height 220ms ease;
+      }
+
+      .phone {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(var(--phone-w) * 1px);
+        height: calc(var(--phone-h) * 1px);
+        transform: scale(var(--scale));
+        transform-origin: top left;
+        border-radius: var(--radius);
+        background:
+          linear-gradient(115deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.08) 17%, rgba(0, 0, 0, 0.14) 50%, rgba(255, 255, 255, 0.28) 84%, rgba(255, 255, 255, 0.55)),
+          linear-gradient(145deg, #dce0e6 0%, #8d96a4 17%, #eef1f5 41%, #7e8794 69%, #f8fafc 100%);
+        box-shadow:
+          0 56px 110px rgba(0, 0, 0, 0.58),
+          0 20px 36px rgba(0, 0, 0, 0.32),
+          inset 0 0 0 2px rgba(255, 255, 255, 0.42),
+          inset 0 0 0 7px rgba(33, 36, 43, 0.18);
+      }
+
+      .phone::before,
+      .phone::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .phone::before {
+        inset: 10px;
+        border-radius: 58px;
+        background: #080a0f;
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+          inset 0 12px 20px rgba(255, 255, 255, 0.025);
+      }
+
+      .phone::after {
+        inset: 0;
+        border-radius: inherit;
+        background:
+          linear-gradient(92deg, rgba(255, 255, 255, 0.44), transparent 7%, transparent 92%, rgba(255, 255, 255, 0.3)),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.44), transparent 11%, transparent 88%, rgba(0, 0, 0, 0.38));
+        mix-blend-mode: screen;
+        opacity: 0.42;
+      }
+
+      .side-button {
+        position: absolute;
+        z-index: 0;
+        width: 4px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #b7bdc6, #707986);
+        box-shadow: inset 1px 0 rgba(255, 255, 255, 0.45);
+      }
+
+      .side-button--left-top {
+        left: -2px;
+        top: 168px;
+        height: 58px;
+      }
+
+      .side-button--left-bottom {
+        left: -2px;
+        top: 248px;
+        height: 92px;
+      }
+
+      .side-button--right {
+        right: -2px;
+        top: 214px;
+        height: 128px;
+      }
+
+      .screen {
+        position: absolute;
+        z-index: 2;
+        inset: 14px;
+        display: grid;
+        grid-template-rows: 54px minmax(0, 1fr) 30px;
+        overflow: hidden;
+        border-radius: var(--screen-radius);
+        background: #f5f6f8;
+        color: #101318;
+        box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.86),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+      }
+
+      .dynamic-island {
+        position: absolute;
+        z-index: 8;
+        top: 14px;
+        left: 50%;
+        width: 126px;
+        height: 37px;
+        border-radius: 999px;
+        background:
+          radial-gradient(circle at 83% 50%, rgba(34, 43, 56, 0.9) 0 7%, transparent 8%),
+          linear-gradient(180deg, #050507 0%, #111217 100%);
+        transform: translateX(-50%);
+        box-shadow:
+          inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+          0 1px 2px rgba(0, 0, 0, 0.45);
+      }
+
+      .status-bar {
+        position: relative;
+        z-index: 6;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        height: 54px;
+        padding: 12px 28px 0;
+        color: #050607;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0;
+        background: #f4f5f7;
+      }
+
+      .status-time {
+        justify-self: start;
+        min-width: 60px;
+      }
+
+      .status-spacer {
+        width: 126px;
+      }
+
+      .status-icons {
+        display: inline-flex;
+        align-items: center;
+        justify-self: end;
+        gap: 7px;
+      }
+
+      .signal {
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 2px;
+        height: 13px;
+      }
+
+      .signal span {
+        display: block;
+        width: 3px;
+        border-radius: 2px;
+        background: #050607;
+      }
+
+      .signal span:nth-child(1) { height: 4px; }
+      .signal span:nth-child(2) { height: 7px; }
+      .signal span:nth-child(3) { height: 10px; }
+      .signal span:nth-child(4) { height: 13px; }
+
+      .network {
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .battery {
+        position: relative;
+        width: 27px;
+        height: 13px;
+        border: 1.8px solid #050607;
+        border-radius: 4px;
+      }
+
+      .battery::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 18px;
+        height: 7px;
+        border-radius: 2px;
+        background: #050607;
+      }
+
+      .battery::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: -4px;
+        width: 2px;
+        height: 5px;
+        border-radius: 0 2px 2px 0;
+        background: #050607;
+      }
+
+      .browser-viewport {
+        position: relative;
+        min-height: 0;
+        background: #ffffff;
+      }
+
+      .browser-frame {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #ffffff;
+      }
+
+      .embed-state {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        padding: 28px;
+        background:
+          radial-gradient(circle at top, rgba(10, 91, 196, 0.08), transparent 38%),
+          linear-gradient(180deg, #ffffff 0%, #eef3f8 100%);
+        color: #111827;
+        text-align: center;
+      }
+
+      .embed-state[hidden] {
+        display: none;
+      }
+
+      .embed-card {
+        width: min(100%, 310px);
+        padding: 26px 24px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow: 0 18px 44px rgba(15, 23, 42, 0.11);
+      }
+
+      .embed-icon {
+        display: inline-grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        margin-bottom: 14px;
+        border-radius: 50%;
+        background: #eaf3ff;
+        color: #005eb8;
+      }
+
+      .embed-icon svg {
+        width: 23px;
+        height: 23px;
+      }
+
+      .embed-title {
+        margin: 0 0 8px;
+        color: #111827;
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: 0;
+      }
+
+      .embed-message {
+        margin: 0;
+        color: #4b5563;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .embed-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        margin-top: 18px;
+        padding: 0 14px;
+        border-radius: 8px;
+        background: #005eb8;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .home-area {
+        position: relative;
+        z-index: 5;
+        background: rgba(246, 247, 249, 0.96);
+      }
+
+      .home-indicator {
+        position: absolute;
+        left: 50%;
+        bottom: 9px;
+        width: 136px;
+        height: 5px;
+        border-radius: 999px;
+        background: #050607;
+        transform: translateX(-50%);
+      }
+
+      .glass-sheen {
+        position: absolute;
+        z-index: 6;
+        inset: 14px;
+        border-radius: var(--screen-radius);
+        pointer-events: none;
+        background:
+          linear-gradient(122deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.08) 18%, transparent 34%),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 12%, transparent 88%, rgba(255, 255, 255, 0.08));
+        opacity: 0.46;
+        mix-blend-mode: screen;
+      }
+
+      .restore-button {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 40;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 50%;
+        background: rgba(18, 24, 38, 0.72);
+        color: var(--text);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+        backdrop-filter: blur(18px) saturate(160%);
+      }
+
+      .presentation .controls {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+      }
+
+      .presentation .page {
+        grid-template-rows: 0 minmax(0, 1fr);
+      }
+
+      .presentation .stage {
+        padding-top: 34px;
+      }
+
+      .presentation .restore-button {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .presentation .restore-button:hover {
+        background: rgba(29, 38, 57, 0.86);
+      }
+
+      body.landscape {
+        --phone-w: 932;
+        --phone-h: 430;
+        --radius: 58px;
+        --screen-radius: 44px;
+      }
+
+      body.landscape .phone {
+        border-radius: var(--radius);
+      }
+
+      body.landscape .screen {
+        inset: 14px;
+        grid-template-rows: 48px minmax(0, 1fr) 22px;
+      }
+
+      body.landscape .dynamic-island {
+        top: 13px;
+        width: 118px;
+        height: 34px;
+      }
+
+      body.landscape .status-bar {
+        height: 48px;
+        padding: 9px 30px 0;
+      }
+
+      body.landscape .side-button--left-top {
+        top: 116px;
+        height: 50px;
+      }
+
+      body.landscape .side-button--left-bottom {
+        top: 188px;
+        height: 84px;
+      }
+
+      body.landscape .side-button--right {
+        top: 140px;
+        height: 112px;
+      }
+
+      @media (max-width: 760px) {
+        .controls {
+          padding: 12px 12px 0;
+        }
+
+        .controls__inner {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 8px;
+          border-radius: 16px;
+        }
+
+        .control-button,
+        .orientation-toggle {
+          width: 100%;
+        }
+
+        .stage {
+          padding: 16px 10px 18px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="controls" id="controls" aria-label="Simulator controls">
+        <form class="controls__inner" id="urlForm" novalidate>
+          <label class="visually-hidden" for="urlInput">Website URL</label>
+          <input
+            class="url-field"
+            id="urlInput"
+            name="url"
+            type="text"
+            inputmode="url"
+            value="https://nhsapp-prototype-cp-d8ae16721d0e.herokuapp.com/pages/home-p9?journey=cp-tags"
+            spellcheck="false"
+            autocomplete="url"
+            aria-label="Website URL">
+          <button class="control-button control-button--primary" type="submit">
+            <span>Load</span>
+          </button>
+          <button class="control-button" id="refreshControl" type="button" aria-label="Refresh page" title="Refresh page">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20 4v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <fieldset class="orientation-toggle" aria-label="Orientation">
+            <button class="orientation-option" id="portraitButton" type="button" aria-pressed="true" title="Portrait">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8" y="2.5" width="8" height="19" rx="2.3" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M11 18h2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button class="orientation-option" id="landscapeButton" type="button" aria-pressed="false" title="Landscape">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2.5" y="8" width="19" height="8" rx="2.3" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M18 11v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </fieldset>
+          <button class="control-button" id="fullscreenControl" type="button" aria-label="Enter fullscreen" title="Enter fullscreen">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+      <section class="stage" id="stage" aria-label="iPhone app simulator">
+        <div class="phone-space" id="phoneSpace">
+          <article class="phone" id="phone" aria-label="iPhone 15 app mockup">
+            <span class="side-button side-button--left-top" aria-hidden="true"></span>
+            <span class="side-button side-button--left-bottom" aria-hidden="true"></span>
+            <span class="side-button side-button--right" aria-hidden="true"></span>
+
+            <div class="screen">
+              <div class="dynamic-island" aria-hidden="true"></div>
+
+              <div class="status-bar" aria-label="Status bar">
+                <span class="status-time">9:41</span>
+                <span class="status-spacer" aria-hidden="true"></span>
+                <span class="status-icons" aria-hidden="true">
+                  <span class="signal">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <span class="network">5G</span>
+                  <span class="battery"></span>
+                </span>
+              </div>
+
+              <div class="browser-viewport">
+                <iframe
+                  class="browser-frame"
+                  id="browserFrame"
+                  title="Prototype app viewport"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allow="clipboard-read; clipboard-write; fullscreen"
+                  src="https://nhsapp-prototype-cp-d8ae16721d0e.herokuapp.com/pages/home-p9?journey=homepage"></iframe>
+
+                <div class="embed-state" id="embedState" role="alert" hidden>
+                  <div class="embed-card">
+                    <span class="embed-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <rect x="4" y="10" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </span>
+                    <h2 class="embed-title">This website prevents embedding</h2>
+                    <p class="embed-message" id="embedMessage">
+                      The requested page appears to block iframe display using browser security headers such as X-Frame-Options or Content Security Policy.
+                    </p>
+                    <a class="embed-link" id="openExternally" href="https://nhsapp-prototype-cp-d8ae16721d0e.herokuapp.com/pages/home-p9?journey=homepage" target="_blank" rel="noopener noreferrer">
+                      Open in a new tab
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="home-area" aria-hidden="true">
+                <span class="home-indicator"></span>
+              </div>
+            </div>
+
+            <div class="glass-sheen" aria-hidden="true"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <button class="restore-button" id="restoreControls" type="button" aria-label="Show simulator controls" title="Show controls">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21a2 2 0 0 1-4 0v-.09a1.7 1.7 0 0 0-1.03-1.56 1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1.03H3a2 2 0 0 1 0-4h.09A1.7 1.7 0 0 0 4.6 8a1.7 1.7 0 0 0-.34-1.88l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 8.97 3.6 1.7 1.7 0 0 0 10 2.09V2a2 2 0 0 1 4 0v.09a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 8c.2.6.76 1 1.56 1H21a2 2 0 0 1 0 4h-.09A1.7 1.7 0 0 0 19.4 15Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <script>
+      (() => {
+        const DEFAULT_URL = 'https://nhsapp-prototype-cp-d8ae16721d0e.herokuapp.com/pages/home-p9?journey=homepage';
+        const EMBED_TIMEOUT = 9000;
+        const FRAME_EDGE_GAP = 24;
+        const KNOWN_RESTRICTED_FRAME_HOSTS = new Set([
+          'www.nhswebsite-staging.nhs.uk',
+        ]);
+
+        const body = document.body;
+        const stage = document.getElementById('stage');
+        const urlForm = document.getElementById('urlForm');
+        const urlInput = document.getElementById('urlInput');
+        const frame = document.getElementById('browserFrame');
+        const embedState = document.getElementById('embedState');
+        const embedMessage = document.getElementById('embedMessage');
+        const openExternally = document.getElementById('openExternally');
+        const refreshControl = document.getElementById('refreshControl');
+        const portraitButton = document.getElementById('portraitButton');
+        const landscapeButton = document.getElementById('landscapeButton');
+        const fullscreenControl = document.getElementById('fullscreenControl');
+        const restoreControls = document.getElementById('restoreControls');
+
+        let currentUrl = DEFAULT_URL;
+        let embedTimer = 0;
+        let loadingUrl = DEFAULT_URL;
+
+        function normaliseUrl(value) {
+          const trimmed = value.trim();
+
+          if (!trimmed) {
+            return DEFAULT_URL;
+          }
+
+          try {
+            const isLocalPath = /^(\/|\.\/|\.\.\/)/.test(trimmed);
+            const hasProtocol = /^[a-z][a-z0-9+.-]*:\/\//i.test(trimmed);
+            let candidate = trimmed;
+
+            if (!isLocalPath && !hasProtocol) {
+              candidate = `https://${trimmed}`;
+            }
+
+            const url = new URL(candidate, window.location.href);
+
+            if (!['http:', 'https:'].includes(url.protocol)) {
+              throw new Error('Unsupported protocol');
+            }
+
+            return url.href;
+          } catch (error) {
+            throw new Error('Enter a valid URL or local path.');
+          }
+        }
+
+        function formatControlValue(value) {
+          try {
+            const url = new URL(value);
+
+            if (url.origin === window.location.origin) {
+              return `${url.pathname}${url.search}${url.hash}`;
+            }
+
+            return url.href;
+          } catch (error) {
+            return value;
+          }
+        }
+
+        function updateLoadedTarget(value) {
+          urlInput.value = formatControlValue(value);
+          openExternally.href = value;
+        }
+
+        function isKnownEmbeddingRestrictedUrl(value) {
+          try {
+            const url = new URL(value);
+            return KNOWN_RESTRICTED_FRAME_HOSTS.has(url.hostname);
+          } catch (error) {
+            return false;
+          }
+        }
+
+        function showEmbedMessage(message) {
+          embedMessage.textContent = message;
+          embedState.hidden = false;
+        }
+
+        function showRestrictedEmbedMessage(value) {
+          const url = new URL(value);
+
+          window.clearTimeout(embedTimer);
+          showEmbedMessage(
+            `${url.hostname} refuses to be displayed inside this simulator. This is controlled by the website's iframe security settings, usually X-Frame-Options or Content Security Policy.`
+          );
+        }
+
+        function hideEmbedMessage() {
+          embedState.hidden = true;
+        }
+
+        function startEmbedTimer() {
+          window.clearTimeout(embedTimer);
+
+          // Browser security prevents reliable inspection of cross-origin frames.
+          // A timeout is the safest non-invasive signal that a page refused or failed embedding.
+          embedTimer = window.setTimeout(() => {
+            showEmbedMessage(
+              'The requested page did not load inside the simulator. It may block iframe display using X-Frame-Options, Content Security Policy, or another embedding restriction.'
+            );
+          }, EMBED_TIMEOUT);
+        }
+
+        function attachFrameNavigationHandler() {
+          try {
+            const frameDocument = frame.contentDocument;
+            const frameWindow = frame.contentWindow;
+
+            if (!frameDocument || !frameWindow) {
+              return;
+            }
+
+            if (frameDocument.documentElement.dataset.mockupNavigationAttached === 'true') {
+              return;
+            }
+
+            frameDocument.documentElement.dataset.mockupNavigationAttached = 'true';
+
+            frameDocument.addEventListener('click', (event) => {
+              if (
+                event.defaultPrevented ||
+                event.button !== 0 ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+              ) {
+                return;
+              }
+
+              const target = event.target;
+              const link = typeof target.closest === 'function'
+                ? target.closest('a[href]')
+                : null;
+
+              if (!link || link.hasAttribute('download')) {
+                return;
+              }
+
+              const href = link.getAttribute('href').trim();
+
+              if (!href || href.startsWith('#')) {
+                return;
+              }
+
+              const url = new URL(href, frameWindow.location.href);
+
+              if (!['http:', 'https:'].includes(url.protocol)) {
+                return;
+              }
+
+              event.preventDefault();
+              loadUrl(url.href);
+            }, true);
+          } catch (error) {
+            // Cross-origin frames cannot be instrumented. Local prototype pages can be.
+          }
+        }
+
+        function inspectFrameAfterLoad() {
+          window.clearTimeout(embedTimer);
+
+          window.setTimeout(() => {
+            try {
+              const frameUrl = frame.contentWindow.location.href;
+
+              if (frameUrl === 'about:blank' && loadingUrl !== 'about:blank') {
+                showEmbedMessage(
+                  'The requested page could not be displayed inside the simulator. It appears to prevent iframe embedding for security reasons.'
+                );
+                return;
+              }
+
+              if (frameUrl !== 'about:blank') {
+                currentUrl = frameUrl;
+                loadingUrl = frameUrl;
+                updateLoadedTarget(frameUrl);
+              }
+
+              attachFrameNavigationHandler();
+              hideEmbedMessage();
+            } catch (error) {
+              // A cross-origin frame cannot be inspected. If it reached this state,
+              // the browser has at least accepted the navigation into the iframe.
+              hideEmbedMessage();
+            }
+          }, 120);
+        }
+
+        function loadUrl(value) {
+          try {
+            currentUrl = normaliseUrl(value);
+            loadingUrl = currentUrl;
+            updateLoadedTarget(currentUrl);
+            hideEmbedMessage();
+
+            if (isKnownEmbeddingRestrictedUrl(currentUrl)) {
+              showRestrictedEmbedMessage(currentUrl);
+              return;
+            }
+
+            startEmbedTimer();
+            frame.src = currentUrl;
+          } catch (error) {
+            showEmbedMessage(error.message);
+          }
+        }
+
+        function refreshFrame() {
+          hideEmbedMessage();
+          loadingUrl = currentUrl;
+
+          if (isKnownEmbeddingRestrictedUrl(currentUrl)) {
+            showRestrictedEmbedMessage(currentUrl);
+            return;
+          }
+
+          startEmbedTimer();
+          frame.src = currentUrl;
+        }
+
+        function setOrientation(orientation) {
+          const isLandscape = orientation === 'landscape';
+          body.classList.toggle('landscape', isLandscape);
+          portraitButton.setAttribute('aria-pressed', String(!isLandscape));
+          landscapeButton.setAttribute('aria-pressed', String(isLandscape));
+          window.requestAnimationFrame(fitPhoneToStage);
+        }
+
+        function fitPhoneToStage() {
+          const isLandscape = body.classList.contains('landscape');
+          const phoneWidth = isLandscape ? 932 : 430;
+          const phoneHeight = isLandscape ? 430 : 932;
+          const bounds = stage.getBoundingClientRect();
+          const stageStyles = window.getComputedStyle(stage);
+          const paddingX = parseFloat(stageStyles.paddingLeft) + parseFloat(stageStyles.paddingRight);
+          const paddingY = parseFloat(stageStyles.paddingTop) + parseFloat(stageStyles.paddingBottom);
+          const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+          const visibleStageHeight = Math.min(bounds.height, viewportHeight - bounds.top);
+          const availableWidth = Math.max(bounds.width - paddingX - (FRAME_EDGE_GAP * 2), 160);
+          const availableHeight = Math.max(visibleStageHeight - paddingY - FRAME_EDGE_GAP, 160);
+          const maxScale = isLandscape ? 1.6 : 1.5;
+          const scale = Math.min(availableWidth / phoneWidth, availableHeight / phoneHeight, maxScale);
+
+          document.documentElement.style.setProperty('--scale', scale.toFixed(4));
+        }
+
+        function togglePresentationMode(force) {
+          const shouldPresent = typeof force === 'boolean'
+            ? force
+            : !body.classList.contains('presentation');
+
+          body.classList.toggle('presentation', shouldPresent);
+          window.requestAnimationFrame(fitPhoneToStage);
+        }
+
+        async function toggleFullscreen() {
+          try {
+            if (!document.fullscreenElement) {
+              await document.documentElement.requestFullscreen();
+            } else {
+              await document.exitFullscreen();
+            }
+          } catch (error) {
+            showEmbedMessage('Fullscreen is not available in this browser context.');
+          }
+        }
+
+        urlForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          loadUrl(urlInput.value);
+        });
+
+        refreshControl.addEventListener('click', refreshFrame);
+        portraitButton.addEventListener('click', () => setOrientation('portrait'));
+        landscapeButton.addEventListener('click', () => setOrientation('landscape'));
+        fullscreenControl.addEventListener('click', toggleFullscreen);
+        restoreControls.addEventListener('click', () => togglePresentationMode(false));
+
+        frame.addEventListener('load', inspectFrameAfterLoad);
+
+        frame.addEventListener('error', () => {
+          window.clearTimeout(embedTimer);
+          showEmbedMessage(
+            'The requested page could not be displayed inside the simulator. It may prevent iframe embedding for security reasons.'
+          );
+        });
+
+        document.addEventListener('keydown', (event) => {
+          const modifier = event.metaKey || event.ctrlKey;
+
+          if (!modifier || !event.shiftKey) {
+            return;
+          }
+
+          if (event.key.toLowerCase() === 'h') {
+            event.preventDefault();
+            togglePresentationMode();
+          }
+
+          if (event.key.toLowerCase() === 'f') {
+            event.preventDefault();
+            toggleFullscreen();
+          }
+        });
+
+        window.addEventListener('resize', fitPhoneToStage);
+        if (window.visualViewport) {
+          window.visualViewport.addEventListener('resize', fitPhoneToStage);
+        }
+        document.addEventListener('fullscreenchange', fitPhoneToStage);
+
+        updateLoadedTarget(DEFAULT_URL);
+        startEmbedTimer();
+        fitPhoneToStage();
+      })();
+    </script>
+  </body>
+</html>
