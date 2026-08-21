@@ -1,6 +1,9 @@
 module.exports = {
 
-
+  // Insert values here
+  "journey": "cp-tags",
+  // Defaults page view to native
+  "web": "no", 
 
   // Set linked profile details
   "linkedProfileFirstName": "Clive",
