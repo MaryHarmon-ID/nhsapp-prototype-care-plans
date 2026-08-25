@@ -20,209 +20,273 @@
       <p class="nhsuk-body-s">Last updated: 15 March 2024, 09:33</p>
 
       <h2 class="nhsuk-heading-m">Health and current conditions</h2>
-      {% from "details/macro.njk" import details %}
-
       <div class="nhsuk-expander-group">
-        {% call details({
-          summary: "Health summary",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>
-            Joe has multiple medical conditions including heart failure, diabetes, chronic kidney disease and anaemia. These are
-            generally well managed with oversight in his care facility and occasional input from his community medical team who know
-            his situation well, however has required admission to hospital for management at times of crisis when one of his conditions
-            becomes unstable.
-          </p>
-          <p>
-            Joe is aware that his conditions can be managed with ongoing treatment but cannot be reversed and
-            may deteriorate in time. have advanced heart failure and have become increasingly frail over the last two years. I become breathless when walking short distances and often need to rest.
-          </p>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Health summary
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>
+              Joe has multiple medical conditions including heart failure, diabetes, chronic kidney disease and anaemia. These are
+              generally well managed with oversight in his care facility and occasional input from his community medical team who know
+              his situation well, however has required admission to hospital for management at times of crisis when one of his conditions
+              becomes unstable.
+            </p>
+            <p>
+              Joe is aware that his conditions can be managed with ongoing treatment but cannot be reversed and
+              may deteriorate in time. have advanced heart failure and have become increasingly frail over the last two years. I become breathless when walking short distances and often need to rest.
+            </p>
+          </div>
+        </details>
 
-        {% call details({
-          summary: "Someone who can make decisions for me",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>No one appointed</p>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Someone who can make decisions for me
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>No one appointed</p>
+          </div>
+        </details>
       </div>
-      <h3 class="nhsuk-heading-s">Other care planning or legal documents</h3>
-      <p>None listed</p>
+
+      <div class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <p class="nhsuk-heading-xs">
+              Other care planning or legal documents
+            </p>
+            <p>None listed</p>
+          </div>
+        </div>
+      </div>
+
 
       <h2 class="nhsuk-heading-m">What matters to me</h2>
-      {% from "details/macro.njk" import details %}
       <div class="nhsuk-expander-group">
-        {% call details({
-          summary: "Preferred name",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>Joe</p>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Preferred name
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>Joe</p>
+          </div>
+        </details>
 
-        {% call details({
-          summary: "What I most value",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>At this point in my life I would like to be kept comfortable and only receive treatments which allow me to stay in my home. 
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What I most value
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>At this point in my life I would like to be kept comfortable and only receive treatments which allow me to stay in my home. 
             I am reluctant to be admitted to hospital.</p>
-        {% endcall %}
+        </div>
+        </details>
 
-        {% call details({
-          summary: "Things I want to avoid",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>I don't want lots of painful investigations and treatments. I don't want anyone pressing on my chest if my heart stops.</p>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-6">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Things I want to avoid
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>I don't want lots of painful investigations and treatments. I don't want anyone pressing on my chest if my heart stops.</p>
+          </div>
+        </details>
       </div>
 
       <h2 class="nhsuk-heading-m">Treatment recommendations</h2>
-      {% from "details/macro.njk" import details %}
       <div class="nhsuk-expander-group">
-        {% call details({
-          summary: "Overall recommendation",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>Priority should be given to comfort</p>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Overall recommendation
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>Priority should be given to comfort</p>
+          </div>
+        </details>
 
-        {% call details({
-          summary: "Guidance on specific interventions",
-          classes: "nhsuk-expander"
-        }) %}
-          <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Prioritise treatments that can be administered in the community (e.g. IV diuretics if appropriate).</li>
-            <li>Involve community heart failure team early.</li>
-            <li>Avoid invasive treatments such as organ support or CPR.</li>
-            <li>Consider assessment in emergency department in unforseen, potentially treatable situations e.g. after a fall.</li>
-            <li>Prioritise comfort and symptom control in event of deterioration of diagnosed conditions.</li>
-          </ul>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Guidance on specific interventions
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Prioritise treatments that can be administered in the community (e.g. IV diuretics if appropriate).</li>
+              <li>Involve community heart failure team early.</li>
+              <li>Avoid invasive treatments such as organ support or CPR.</li>
+              <li>Consider assessment in emergency department in unforseen, potentially treatable situations e.g. after a fall.</li>
+              <li>Prioritise comfort and symptom control in event of deterioration of diagnosed conditions.</li>
+            </ul>
+          </div>
+        </details>
 
-        {% call details({
-          summary: "Cardiopulmonary resuscitation (CPR) recommendation",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>CPR is NOT recommended.</p>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-6">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Cardiopulmonary resuscitation (CPR) recommendation
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>CPR is NOT recommended.</p>
+          </div>
+        </details>
       </div>
 
       <h2 class="nhsuk-heading-m">Legal information about this plan</h2>
-      {% from "details/macro.njk" import details %}
       <div class="nhsuk-expander-group">
-        {% call details({
-          summary: "Capacity",
-          classes: "nhsuk-expander"
-        }) %}
-          <p>The healthcare professional(s) signing this plan is/are confirming that:</p>
-          <ul>
-            <li> You have the mental capacity to participate in making these recommendations. You have been fully involved in this plan.</li>
-          </ul>
-        {% endcall %}
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Capacity
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>The healthcare professional signing this plan is confirming that:</p>
+            <ul>
+              <li> You have the mental capacity to participate in making these recommendations. You have been fully involved in this plan.</li>
+            </ul>
+          </div>
+        </details>
 
-        {% call details({
-          summary: "Healthcare professionals who signed your plan",
-          classes: "nhsuk-expander"
-        }) %}
-          <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Healthcare professionals who signed your plan
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <div class="nhsuk-card">
+                <div class="nhsuk-card__content">
 
-              <h3 class="nhsuk-heading-s">Name</h3>
-              <p>
-                Dr Bally Valentine
-              </p>
+                <h3 class="nhsuk-heading-s">Name</h3>
+                <p>
+                  Dr Bally Valentine
+                </p>
 
-              <h3 class="nhsuk-heading-s">Role and speciality</h3>
-              <p>
-                GP
-              </p>
+                <h3 class="nhsuk-heading-s">Role and speciality</h3>
+                <p>
+                  GP
+                </p>
 
-              <h3 class="nhsuk-heading-s">Lead healthcare professional</h3>
-              <p>
-                Yes
-              </p>
+                <h3 class="nhsuk-heading-s">Lead healthcare professional</h3>
+                <p>
+                  Yes
+                </p>
 
-              <h3 class="nhsuk-heading-s">Professional registration number</h3>
-              <p>
-                GMC 4123485
-              </p>
+                <h3 class="nhsuk-heading-s">Professional registration number</h3>
+                <p>
+                  GMC 4123485
+                </p>
 
+              </div>
             </div>
           </div>
-        {% endcall %}
+        </details>
       </div>
 
       <h2 class="nhsuk-heading-m">Emergency contacts</h2>
-      {% from "details/macro.njk" import details %}
       <div class="nhsuk-expander-group">
-        {% call details({
-          summary: "Primary emergency contact",
-          classes: "nhsuk-expander"
-        }) %}
-          <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Primary emergency contact
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
 
-              <h3 class="nhsuk-heading-s">Name</h3>
-              <p>
-                Clive Campbell
-              </p>
+                <h3 class="nhsuk-heading-s">Name</h3>
+                <p>
+                  Clive Campbell
+                </p>
 
-              <h3 class="nhsuk-heading-s">Role and relationship</h3>
-              <p>
-                Nephew
-              </p>
+                <h3 class="nhsuk-heading-s">Role and relationship</h3>
+                <p>
+                  Nephew
+                </p>
 
-              <h3 class="nhsuk-heading-s">Phone number</h3>
-              <p>
-                07843 806541
-              </p>
-                <td class="nhsuk-table__cell">
-                  <span class="nhsapp-tag nhsapp-tag--aqua-green"> Primary emergency contact </span>
-                </td>
-              
+                <h3 class="nhsuk-heading-s">Phone number</h3>
+                <p>
+                  07843 806541
+                </p>
+                  <td class="nhsuk-table__cell">
+                    <span class="nhsapp-tag nhsapp-tag--aqua-green"> Primary emergency contact </span>
+                  </td>
+                
 
+              </div>
             </div>
           </div>
-        {% endcall %}
+        </details>
 
-        {% call details({
-          summary: "Other emergency contacts",
-          classes: "nhsuk-expander"
-        }) %}
-          <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Other emergency contacts
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
 
-              <h3 class="nhsuk-heading-s">Name</h3>
-              <p>
-                Community Heart Failure Team
-              </p>
+                <h3 class="nhsuk-heading-s">Name</h3>
+                <p>
+                  Community Heart Failure Team
+                </p>
 
 
-              <h3 class="nhsuk-heading-s">Phone number</h3>
-              <p>
-                01248 543775
-              </p>
+                <h3 class="nhsuk-heading-s">Phone number</h3>
+                <p>
+                  01248 543775
+                </p>
 
+              </div>
+            </div>
+
+            <div class="nhsuk-card">
+              <div class="nhsuk-card__content">
+
+                <h3 class="nhsuk-heading-s">Name</h3>
+                <p>
+                  GP surgery
+                </p>
+
+
+                <h3 class="nhsuk-heading-s">Phone number</h3>
+                <p>
+                  01248 543555
+                </p>
+
+              </div>
             </div>
           </div>
-
-          <div class="nhsuk-card">
-            <div class="nhsuk-card__content">
-
-              <h3 class="nhsuk-heading-s">Name</h3>
-              <p>
-                GP surgery
-              </p>
-
-
-              <h3 class="nhsuk-heading-s">Phone number</h3>
-              <p>
-                01248 543555
-              </p>
-
-            </div>
-          </div>
-        {% endcall %}
+        </details>
       </div>
+
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. It includes recommendations you agreed together. It is not legally binding.</p>
 
       <hr class="nhsuk-section-break nhsuk-section-break--visible">
 
