@@ -53,11 +53,25 @@
           ]
         }) }}
 
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            About this plan
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
+          It includes recommendations you agreed together. It is not legally binding.</p>
+        </div>
+      </details>
+
+
+
       {% from "inset-text/macro.njk" import insetText %}
 
-      <h2 class="nhsuk-heading-xs">About this plan</h2>
+      <!--<h2 class="nhsuk-heading-xs">About this plan</h2>
       <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
-        It includes recommendations you agreed together. It is not legally binding.</p>
+        It includes recommendations you agreed together. It is not legally binding.</p>-->
 
       {% set insetTextHtml %}
         <p>If you need to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
