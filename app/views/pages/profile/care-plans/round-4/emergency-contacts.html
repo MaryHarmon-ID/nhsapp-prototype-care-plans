@@ -1,0 +1,94 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Emergency contacts" %}
+
+{% set pageHeading = "Emergency contacts" %}
+
+{% block content %}
+
+
+   <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+   <h2 class="nhsuk-heading-m">Primary emergency contact</h2>
+   <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+        Clive Campbell
+      </h2>
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Role and relationship
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Nephew
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row" style="border: none;">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>07843 806541</p>
+          </dd>
+        </div>
+      </div>
+    </div>
+
+   <h2 class="nhsuk-heading-m">Other emergency contacts</h2>
+   <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+        Community Heart Failure Team
+      </h2>
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+        <div class="nhsuk-summary-list__row" style="border: none;">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>01248 543775</p>
+          </dd>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+        GP surgery
+      </h2>
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+        <div class="nhsuk-summary-list__row" style="border: none;">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>01248 543555</p>
+          </dd>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="nhsuk-heading-m">About this plan</h2>
+      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
+        It includes recommendations you agreed together. It is not legally binding.</p>
+
+      
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+    </div>
+  </div>
+
+
+{% endblock %}

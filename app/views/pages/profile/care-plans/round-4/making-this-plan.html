@@ -1,0 +1,91 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Making this plan" %}
+
+{% set pageHeading = "Making this plan" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your involvement in making this plan"
+              },
+              value: {
+                html: '
+                <p>
+                  You have the mental capacity to participate in making these recommendations. You have been fully involved in this plan.
+                </p>
+                '
+              }
+            }
+          ]
+        }) }}
+
+      <h2 class="nhsuk-heading-xs">Healthcare professionals who signed your plan</h2>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Dr Bally Valentine
+          </h2>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Role and speciality
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                GP
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Lead healthcare professional
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p>Yes</p>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row" style="border: none;">
+              <dt class="nhsuk-summary-list__key">
+                Professional registration number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p>GMC 4123485</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+        
+
+      <h2 class="nhsuk-heading-m">About this plan</h2>
+      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
+        It includes recommendations you agreed together. It is not legally binding.</p>
+
+      
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

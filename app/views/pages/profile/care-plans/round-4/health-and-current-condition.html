@@ -1,0 +1,89 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Your health and current condition" %}
+
+{% set pageHeading = "Your health and current condition" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Health summary"
+              },
+              value: {
+                html: '
+                <p>
+                  Joe has multiple medical conditions including heart failure, diabetes, chronic kidney disease and anaemia. These are
+                  generally well managed with oversight in his care facility and occasional input from his community medical team who know
+                  his situation well, however has required admission to hospital for management at times of crisis when one of his conditions
+                  becomes unstable.
+                </p>
+                <p>
+                  Joe is aware that his conditions can be managed with ongoing treatment but cannot be reversed and
+                  may deteriorate in time. have advanced heart failure and have become increasingly frail over the last two years. 
+                  I become breathless when walking short distances and often need to rest.
+                </p>
+                '
+              }
+            },
+            {
+              key: {
+                text: "Someone who can make decisions for me"
+              },
+              value: {
+                html: '
+                  <p>
+                    No one appointed
+                  </p>
+                '
+              }
+            },
+            {
+              key: {
+                text: "Other care planning or legal documents"
+              },
+              value: {
+                html: '
+                <p>
+                  No other care plans at present
+                </p>
+                '
+              }
+            }
+          ]
+        }) }}
+
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+      
+    </div>
+  </div>
+
+
+{% endblock %}

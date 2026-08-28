@@ -1,0 +1,89 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Treatment recommendations" %}
+
+{% set pageHeading = "Treatment recommendations" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">
+          {{ pageHeading }}
+      </h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your care priority"
+              },
+              value: {
+                html: '
+                    <p>Priority should be given to comfort.</p>
+                '
+              }
+            },
+            {
+              key: {
+                text: "Guidance on specific interventions"
+              },
+              value: {
+                html: '
+                  <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>Prioritise treatments that can be administered in the community (e.g. IV diuretics if appropriate).</li>
+                    <li>Involve community heart failure team early.</li>
+                    <li>Avoid invasive treatments such as organ support or CPR.</li>
+                    <li>Consider assessment in emergency department in unforseen, potentially treatable situations e.g. after a fall.</li>
+                    <li>Prioritise comfort and symptom control in event of deterioration of diagnosed conditions.</li>
+                  </ul>
+                '
+              }
+            },
+            {
+              key: {
+                text: "Cardiopulmonary resuscitation (CPR) recommendation"
+              },
+              value: {
+                html: 'CPR is NOT recommended'
+              }
+            }
+          ]
+        }) }}
+
+      <h2 class="nhsuk-heading-m">About this plan</h2>
+      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
+        It includes recommendations you agreed together. It is not legally binding.</p>
+
+      
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Emergency care plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <p>
+        You can view information from your emergency care plan here.
+      </p>
+
+      <p class="nhsuk-body-s">Last updated: 15 March 2024, 09:33</p>
+
+      <h2 class="nhsuk-heading-m">
+        Care plan sections
+      </h2>
+
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Your health and current condition",
+            href: "health-and-current-condition"
+          },
+          {
+            title: "What matters to you",
+            href: "what-matters-to-you"
+          },
+          {
+            title: "Care and treatment recommendations",
+            href: "care-and-treatment-recommendations"
+          },
+         {
+            title: "Making this plan",
+            href: "making-this-plan"
+          },
+           {
+            title: "Emergency contacts",
+            href: "emergency-contacts"
+          }
+          ]
+      })}}
+
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6">Emergency care plan document</h2>
+      <p style="color: #d5281b; font-family:monospace;">NEED TO RESOLVE HOW AND WHERE TO DISPLAY THIS SECTION</p>
+
+        {% from 'nhsapp/components/card/macro.njk' import nhsappCardGroup %}
+        {% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
+
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'View',
+              href: '/documents/Joe-ReSPECT-plan.pdf'
+            },
+            {
+              title: 'Download',
+              href: '/documents/Joe-ReSPECT-plan.pdf',
+              description: '(PDF)'
+            }
+          ]
+        }) }}
+
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "What matters to you" %}
+
+{% set pageHeading = "What matters to you" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Preferred name"
+              },
+              value: {
+                html: '<p>Joe</p>'
+              }
+            },
+            {
+              key: {
+                text: "What I value most"
+              },
+              value: {
+                html: '
+                <p>
+                  At this point in my life I would like to be kept comfortable and only receive treatments which allow me to stay in my home. 
+                  I am reluctant to be admitted to hospital.
+                </p>
+                '
+              }
+            },
+            {
+              key: {
+                text: "Things I want to avoid"
+              },
+              value: {
+                html: "
+                <p>
+                  I don't want lots of painful investigations and treatments. I don't want anyone pressing on my chest if my heart stops.
+                </p>
+                "
+              }
+            }
+          ]
+        }) }}
+
+      {% from "inset-text/macro.njk" import insetText %}
+
+      <h2 class="nhsuk-heading-m">About this plan</h2>
+      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
+        It includes recommendations you agreed together. It is not legally binding.</p>
+
+      {% set insetTextHtml %}
+        <p>Need to update your emergency care plan? <br/>Contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+    </div>
+  </div>
+
+
+{% endblock %}
