@@ -1,0 +1,86 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Health and current condition" %}
+
+{% set pageHeading = "Health and current condition" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
+
+      <p>
+        There is no information to show here.
+      </p>
+
+      <p>
+        The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
+      </p>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Health summary"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            },
+            {
+              key: {
+                text: "Someone who can make decisions for me"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            },
+            {
+              key: {
+                text: "Other care planning or legal documents"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            }
+          ]
+        }) }}
+
+      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. It includes recommendations you agreed together. It is not legally binding.</p>
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+      <!--<hr class="nhsuk-section-break nhsuk-section-break--visible">
+
+        <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+          <li class="nhsuk-pagination-item--next">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="what-matters-to-me" rel="next">
+              <span class="nhsuk-pagination__title">
+                Next<span class="nhsuk-u-visually-hidden"> page</span>
+              </span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">What matters to you</span>
+              <svg class="nhsuk-icon nhsuk-icon--arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+                <path d="m14.7 6.3 5 5c.2.2.3.4.3.7 0 .3-.1.5-.3.7l-5 5a1 1 0 0 1-1.4-1.4l3.3-3.3H5a1 1 0 0 1 0-2h11.6l-3.3-3.3a1 1 0 1 1 1.4-1.4Z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>-->
+      
+    </div>
+  </div>
+
+
+{% endblock %}

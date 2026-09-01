@@ -19,25 +19,67 @@
 {% from 'nhsapp/components/card/macro.njk' import nhsappCardGroup %}
 {% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
 
-{{ nhsappCardGroup({
-  stacked: true,
-  cards: [
-    {
-      title: 'Emergency care plan',
-      href: 'about-your-care-plan',
-      classes: 'nhsapp-cards--respect-purple',
-      description: 'ReSPECT (Recommended Summary Plan for Emergency Care and Treatment) plan'
-    },
-    {
-      title: 'Manage your health care plans',
-      href: 'pkb-care-plans'
-    },
-    {
-      title: "View your Universal Care plan",
-      href: "#"
-}
-  ]
-}) }}
+      {% if data.journey == 'round-2-menu' or data.journey == 'round-2-cards' %}
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'Emergency care plan',
+              href: 'round-2/about-your-care-plan',
+              description: 'ReSPECT (Recommended Summary Plan for Emergency Care and Treatment) plan'
+            },
+            {
+              title: 'Manage your health care plans',
+              href: 'pkb-care-plans'
+            },
+            {
+              title: "View your Universal Care plan",
+              href: "#"
+            }
+          ]
+        }) }}
+
+        {% elif data.journey == 'round-3-minimal' or data.journey == 'round-3-tags' %}
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'Emergency care plan',
+              href: 'round-3/about-your-care-plan',
+              description: 'ReSPECT (Recommended Summary Plan for Emergency Care and Treatment) plan'
+            },
+            {
+              title: 'Manage your health care plans',
+              href: 'pkb-care-plans'
+            },
+            {
+              title: "View your Universal Care plan",
+              href: "#"
+            }
+          ]
+        }) }}
+
+      {% elif data.journey == 'round-4-complete' or data.journey == 'round-4-partial' %}
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'Emergency care plan',
+              href: 'round-4/sensitive-information-warning',
+              description: 'ReSPECT (Recommended Summary Plan for Emergency Care and Treatment) plan'
+            },
+            {
+              title: 'Manage your health care plans',
+              href: 'pkb-care-plans'
+            },
+            {
+              title: "View your Universal Care plan",
+              href: "#"
+            }
+          ]
+        }) }}
+
+      {% endif %}
 
     </div>
   </div>

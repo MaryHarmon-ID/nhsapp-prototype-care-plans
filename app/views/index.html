@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  NHS App prototype nav updates
+  NHS App prototype Care Plans
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,8 +20,7 @@
 
 
       <h2 class="nhsuk-heading-s">Round 1</h2>
-        {{ data | log }}
-      <p>Round 1 explored different layouts for the Emergency care plan page as wireframes.</p>
+      <p>We explored different layouts for the Emergency care plan page as wireframes.</p>
       <ul>
         <li>Stacked card links were used to create a menu linking to the different sections of a ReSPECT Plan.</li>
         <li>A combination of card types were used to explore whether surfacing information on the emergency care plan page would improve usability.</li>
@@ -33,13 +32,14 @@
       <h2 class="nhsuk-heading-s">Round 2</h2>
 
       <p>Round 2 continued the exploration started in Round 1 at a higher fidelity.</p>
-
+      <!-- Nunjucks code to tell the system to store the version for the session, meaning the prototype user gets to see the version they select on this page.
+       The versions are then named by the addition of '?journey=x' on the end of the URLs--> {{ data | log }}
       <ul clas="nhsuk-list">
         <li>
-          <a href="#">Stacked cards</a>
+          <a href="/pages/home-p9?journey=round-2-menu">Stacked cards</a>
         </li>
         <li>
-          <a href="#">Combination of card types</a>
+          <a href="/pages/home-p9?journey=round-2-cards">Combination of card types</a>
         </li>
       </ul>
 
@@ -53,10 +53,10 @@
 
       <ul clas="nhsuk-list">
         <li>
-          <a href="#">Description of empty state only</a>
+          <a href="/pages/home-p9?journey=round-3-minimal">Description of empty state only</a>
         </li>
         <li>
-          <a href="#">Description of empty state with use of tags</a>
+          <a href="/pages/home-p9?journey=round-3-tags">Description of empty state with use of tags</a>
         </li>
       </ul>
 
@@ -69,7 +69,10 @@
 
       <ul clas="nhsuk-list">
         <li>
-          <a href="#">TBC</a>
+          <a href="/pages/home-p9?journey=round-4-complete">Complete plan</a>
+        </li>
+        <li>
+          <a href="/pages/home-p9?journey=round-4-partial">Partially complete plan</a>
         </li>
       </ul>
 

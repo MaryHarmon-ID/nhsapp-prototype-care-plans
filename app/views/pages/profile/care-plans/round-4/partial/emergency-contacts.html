@@ -1,0 +1,77 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Emergency contacts" %}
+
+{% set pageHeading = "Emergency contacts" %}
+
+{% block content %}
+
+
+   <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">{{ pageHeading }}</h1>
+
+      <p>
+        There is no information to show here.
+      </p>
+
+      <p>
+        The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
+      </p>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Primary emergency contact"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            },
+            {
+              key: {
+                text: "Other emergency contacts"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            }
+          ]
+        }) }}
+
+      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. It includes recommendations you agreed together. It is not legally binding.</p>
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+      <!--<hr class="nhsuk-section-break nhsuk-section-break--visible">
+
+        <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
+        <ul class="nhsuk-list nhsuk-pagination__list">
+          <li class="nhsuk-pagination-item--previous">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="making-this-plan" rel="prev">
+              <span class="nhsuk-pagination__title">
+                Previous<span class="nhsuk-u-visually-hidden"> page</span>
+              </span>
+              <span class="nhsuk-u-visually-hidden">:</span>
+              <span class="nhsuk-pagination__page">Legal information about making this plan</span>
+              <svg class="nhsuk-icon nhsuk-icon--arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" focusable="false" aria-hidden="true">
+                <path d="M10.7 6.3c.4.4.4 1 0 1.4L7.4 11H19a1 1 0 0 1 0 2H7.4l3.3 3.3c.4.4.4 1 0 1.4a1 1 0 0 1-1.4 0l-5-5A1 1 0 0 1 4 12c0-.3.1-.5.3-.7l5-5a1 1 0 0 1 1.4 0Z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>-->
+
+    </div>
+  </div>
+
+
+{% endblock %}
