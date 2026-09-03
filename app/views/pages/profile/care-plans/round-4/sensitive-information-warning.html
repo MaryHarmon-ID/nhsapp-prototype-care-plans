@@ -2,7 +2,7 @@
 
 {% set hub = "Services" %}
 
-{% set pageHeading = "About your care plan" %}
+{% set pageHeading = "Sensitive information" %}
 
 {% block content %}
 
@@ -23,11 +23,11 @@
         <div class="nhsapp-button-group">
           {% if data.journey == 'round-4-partial' %}
             <a class="nhsuk-button nhsapp-button" href="partial/emergency-care-plan-partial" role="button">
-              View emergency care plan
+              Continue
             </a>
           {% else %}
             <a class="nhsuk-button nhsapp-button" href="emergency-care-plan" role="button">
-              View emergency care plan
+              Continue
             </a>
           {% endif %}
           <a href="/pages/home-p9" class="nhsuk-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">Back to home</a>
