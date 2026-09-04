@@ -14,72 +14,13 @@
       <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
 
       <p>
-        There is no information to show here.
+        No information available.
       </p>
-
-      <p>
-        The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
-      </p>
-
-      {% from "summary-list/macro.njk" import summaryList %}
-
-        {{ summaryList({
-          rows: [
-            {
-              key: {
-                text: "Preferred name"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            },
-            {
-              key: {
-                text: "Your priorities for care and treatment"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            },
-            {
-              key: {
-                text: "What you value most"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            },
-            {
-              key: {
-                text: "Things you want to avoid"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            }
-          ]
-        }) }}
-
-      <details class="nhsuk-details">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            About this plan
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
-          It includes recommendations you agreed together. It is not legally binding.</p>
-        </div>
-      </details>
 
       {% from "inset-text/macro.njk" import insetText %}
 
-      <!--<h2 class="nhsuk-heading-xs">About this plan</h2>
-      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
-        It includes recommendations you agreed together. It is not legally binding.</p>-->
-
       {% set insetTextHtml %}
-        <p>If you need to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
       {% endset %}
 
       {{ insetText({

@@ -2,7 +2,7 @@
 
 {% set backLink = true %}
 
-{% set hub = "Your health and current condition" %}
+{% set hub = "Emergency care plan" %}
 
 {% set pageHeading = "Your health and current condition" %}
 
@@ -13,61 +13,17 @@
       <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
 
       <p>
-        There is no information to show here.
+        No information available.
       </p>
-
-      <p>
-        The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
-      </p>
-
-      {% from "summary-list/macro.njk" import summaryList %}
-
-        {{ summaryList({
-          rows: [
-            {
-              key: {
-                text: "Health summary"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            },
-            {
-              key: {
-                text: "Someone appointed to make health and care decisions for you"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            },
-            {
-              key: {
-                text: "Other care planning or legal documents"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            }
-          ]
-        }) }}
 
       {% from "inset-text/macro.njk" import insetText %}
 
       {% set insetTextHtml %}
-        <p>If you need to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
       {% endset %}
 
       {{ insetText({
         html: insetTextHtml
-      }) }}
-
-      <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible">
-
-      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
-
-      {{ actionLink({
-        text: "Help with abbreviations",
-        href: "#"
       }) }}
       
     </div>

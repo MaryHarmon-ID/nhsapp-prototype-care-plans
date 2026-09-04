@@ -2,55 +2,23 @@
 
 {% set backLink = true %}
 
-{% set hub = "Emergency contacts" %}
+{% set hub = "Emergency care plan" %}
 
 {% set pageHeading = "Emergency contacts" %}
 
 {% block content %}
 
 
-   <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-2">{{ pageHeading }}</h1>
+   <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
 
       <p>
-        There is no information to show here.
+        No information available.
       </p>
 
-      <p>
-        The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
-      </p>
-
-      {% from "summary-list/macro.njk" import summaryList %}
-
-        {{ summaryList({
-          rows: [
-            {
-              key: {
-                text: "Primary emergency contact"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            },
-            {
-              key: {
-                text: "Other emergency contacts"
-              },
-              value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
-              }
-            }
-          ]
-        }) }}
-
-      <h2 class="nhsuk-heading-xs">About this plan</h2>
-      <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
-        It includes recommendations you agreed together. It is not legally binding.</p>
-
-      
       {% from "inset-text/macro.njk" import insetText %}
 
       {% set insetTextHtml %}
-        <p>If you need to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
+      <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
       {% endset %}
 
       {{ insetText({

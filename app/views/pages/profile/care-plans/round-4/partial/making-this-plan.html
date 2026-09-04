@@ -2,7 +2,7 @@
 
 {% set backLink = true %}
 
-{% set hub = "Making this plan" %}
+{% set hub = "Emergency care plan" %}
 
 {% set pageHeading = "Making this plan" %}
 
@@ -11,10 +11,6 @@
     <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading-l">{{ pageHeading }}</h1>
-
-      <p>
-        The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.
-      </p>
 
       {% from "summary-list/macro.njk" import summaryList %}
 
@@ -69,16 +65,15 @@
         <p>This information comes from a care plan you discussed with your GP or another healthcare professional. 
           It includes recommendations you agreed together. It is not legally binding.</p>
 
-        
-        {% from "inset-text/macro.njk" import insetText %}
+      {% from "inset-text/macro.njk" import insetText %}
 
-        {% set insetTextHtml %}
-          <p>If you need to update your emergency care plan, contact Ash Grove Medical Centre: <a href="tel:01234567890">01234 567890</a></p>
-        {% endset %}
+      {% set insetTextHtml %}
+      <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
+      {% endset %}
 
-        {{ insetText({
-          html: insetTextHtml
-        }) }}
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
 
 
     </div>
