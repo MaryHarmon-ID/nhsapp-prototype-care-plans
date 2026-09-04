@@ -7,6 +7,12 @@
 {% set pageHeading = "Emergency care plan" %}
 
 {% block content %}
+<style>
+  .nhsapp-badge-small__indicator--respect-purple {
+  background-color: #BABADE;
+}
+
+</style> 
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -145,12 +151,24 @@
         </li>
       </ul>
 
+      <h2 class="nhsuk-heading-m">
+        Care plan document
+      </h2>
+
       <div class="nhsapp-card nhsapp-card">
         <div class="nhsapp-card__container">
           <div class="nhsapp-card__content">
             <a href="emergency-care-plan-document" class="nhsapp-card__link nhsuk-link--no-visited-state">
               Emergency care plan document
-            </a>
+            </a></br>
+            <!--<span class="nhsapp-badge-small nhsuk-body-m">
+              <span
+                class="nhsapp-badge-small__indicator nhsapp-badge-small__indicator--respect-purple"
+                aria-hidden="true"
+              ></span>
+              <span class="nhsuk-u-visually-hidden">ReSPECT Plan</span>
+              <span>PDF</span>
+            </span>-->
           </div>
 
           <svg
@@ -169,33 +187,18 @@
         </div>
       </div>
 
-      <!--<hr class="nhsuk-section-break nhsuk-section-break--visible">
-
-      <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6">Emergency care plan document</h2>
-      <p style="color: #d5281b; font-family:monospace;">NEED TO RESOLVE HOW AND WHERE TO DISPLAY THIS SECTION</p>
-
-        {% from 'nhsapp/components/card/macro.njk' import nhsappCardGroup %}
-        {% from 'nhsapp/components/card/macro.njk' import nhsappCard %}
-
-        {{ nhsappCardGroup({
-          stacked: true,
-          cards: [
-            {
-              title: 'View',
-              href: '/documents/Joe-ReSPECT-plan.pdf'
-            },
-            {
-              title: 'Download',
-              href: '/documents/Joe-ReSPECT-plan.pdf',
-              description: '(PDF)'
-            }
-          ]
-    }) }}-->
-
       {% from "inset-text/macro.njk" import insetText %}
 
       {% set insetTextHtml %}
         <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
+        <button
+          class="nhsuk-button nhsuk-button--secondary nhsapp-button"
+          data-module="nhsuk-button"
+          type="submit"
+        >
+          Contact your GP practice
+        </button>
+
       {% endset %}
 
       {{ insetText({
