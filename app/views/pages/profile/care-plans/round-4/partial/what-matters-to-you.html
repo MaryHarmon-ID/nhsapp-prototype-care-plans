@@ -17,23 +17,6 @@
         No information available.
       </p>
 
-      {% from "inset-text/macro.njk" import insetText %}
-
-      {% set insetTextHtml %}
-      <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP practice.</p>
-      <button
-          class="nhsuk-button nhsuk-button--secondary nhsapp-button"
-          data-module="nhsuk-button"
-          href="https://www.nhs.uk/service-search/find-a-gp"
-        >
-          Contact a GP
-        </button>
-      {% endset %}
-
-      {{ insetText({
-        html: insetTextHtml
-      }) }}
-
 
     </div>
   </div>
