@@ -1,0 +1,72 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Care and treatment recommendations" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">
+          {{ pageHeading }}
+      </h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your care priority"
+              },
+              value: {
+                html: '
+                    <p>Priority should be given to comfort.</p>
+                '
+              }
+            },
+            {
+              key: {
+                text: "Guidance on specific interventions"
+              },
+              value: {
+                html: '
+                  <ul class="nhsuk-list nhsuk-list--bullet">
+                    <li>Prioritise treatments that can be administered in the community (e.g. IV diuretics if appropriate).</li>
+                    <li>Involve community heart failure team early.</li>
+                    <li>Avoid invasive treatments such as organ support or CPR.</li>
+                    <li>Consider assessment in emergency department in unforseen, potentially treatable situations e.g. after a fall.</li>
+                    <li>Prioritise comfort and symptom control in event of deterioration of diagnosed conditions.</li>
+                  </ul>
+                '
+              }
+            },
+            {
+              key: {
+                text: "Cardiopulmonary resuscitation (CPR) recommendation"
+              },
+              value: {
+                html: 'CPR is NOT recommended'
+              }
+            }
+          ]
+        }) }}
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Care and treatment recommendations" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">
+          {{ pageHeading }}
+      </h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your care priority"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            },
+            {
+              key: {
+                text: "Guidance on specific interventions"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            },
+            {
+              key: {
+                text: "Cardiopulmonary resuscitation (CPR) recommendation"
+              },
+              value: {
+                html: 'CPR is NOT recommended'
+              }
+            }
+          ]
+        }) }}
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

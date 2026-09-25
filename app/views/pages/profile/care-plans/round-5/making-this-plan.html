@@ -1,0 +1,82 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "How your plan was made" %}
+
+{% block content %}
+<style>
+  .last-row {
+    border: none;
+}
+
+</style> 
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your involvement in making this plan"
+              },
+              value: {
+                html: '
+                <p>
+                  You have the mental capacity to participate in making these recommendations. You have been fully involved in this plan.
+                </p>
+                '
+              }
+            }
+          ]
+        }) }}
+
+      <h2 class="nhsuk-heading-xs">Healthcare professionals who signed your plan</h2>
+
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            Dr Bally Valentine
+          </h2>
+          <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Role and speciality
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                GP
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Lead healthcare professional
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p>Yes</p>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row last-row">
+              <dt class="nhsuk-summary-list__key">
+                Professional registration number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p>GMC 4123485</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

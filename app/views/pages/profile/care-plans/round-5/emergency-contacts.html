@@ -1,0 +1,112 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Emergency contacts" %}
+
+{% block content %}
+<style>
+  .last-row {
+    border: none;
+}
+
+</style> 
+
+
+   <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+   <h2 class="nhsuk-heading-xs">Primary emergency contact</h2>
+   <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+        Clive Campbell
+      </h2>
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Role and relationship
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Nephew
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>07843 806541</p>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row last-row">
+          <dt class="nhsuk-summary-list__key">
+            Involved in making this plan
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>Yes</p>
+          </dd>
+        </div>
+      </dl>
+      </div>
+    </div>
+
+   <h2 class="nhsuk-heading-xs">Other emergency contacts</h2>
+   <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+        Community Heart Failure Team
+      </h2>
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>01248 543775</p>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row last-row">
+          <dt class="nhsuk-summary-list__key">
+            Involved in making this plan
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>No</p>
+          </dd>
+        </div>
+      </dl>
+      </div>
+    </div>
+
+    <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+        GP surgery
+      </h2>
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Phone number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>01248 543555</p>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row last-row">
+          <dt class="nhsuk-summary-list__key">
+            Involved in making this plan
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>No</p>
+          </dd>
+        </div>
+      </dl>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

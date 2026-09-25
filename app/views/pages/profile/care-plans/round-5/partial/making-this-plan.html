@@ -1,0 +1,69 @@
+{% extends 'layout-app.html' %}
+
+{% set backLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "How your plan was made" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your involvement in making this plan"
+              },
+              value: {
+                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+              }
+            },
+            {
+              key: {
+                text: "Healthcare professionals who signed your plan"
+              },
+              value: {
+                html: '
+                <div class="nhsuk-card nhsuk-u-margin-top-2">
+                  <div class="nhsuk-card__content">
+
+                    <h3 class="nhsuk-heading-s">Name</h3>
+                    <p>
+                      Dr Bally Valentine
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Role and speciality</h3>
+                    <p>
+                      GP
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Lead healthcare professional</h3>
+                    <p>
+                      Yes
+                    </p>
+
+                    <h3 class="nhsuk-heading-s">Professional registration number</h3>
+                    <p>
+                      GMC 4123485
+                    </p>
+
+                  </div>
+                </div>
+                '
+              }
+            }
+          ]
+        }) }}
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

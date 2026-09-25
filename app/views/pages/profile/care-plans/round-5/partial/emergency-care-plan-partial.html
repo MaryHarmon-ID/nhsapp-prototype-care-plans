@@ -1,0 +1,238 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Documents" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Emergency care plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <p>
+        Your emergency care plan records what matters to you and recommendations for your care and treatment in an emergency.
+      </p>
+
+      <h2 class="app-card__section-heading">Care plan sections</h2>
+
+      <ul class="nhsapp-cards nhsapp-cards--stacked">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="health-and-current-condition" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                Your health and current condition
+              </a>
+            </div>
+
+            <svg
+              class="nhsapp-icon nhsapp-icon--chevron-right"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              height="2rem"
+              width="2rem"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="what-matters-to-you" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                What matters to you
+              </a>
+            </div>
+
+            <svg
+              class="nhsapp-icon nhsapp-icon--chevron-right"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              height="2rem"
+              width="2rem"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="care-and-treatment-recommendations" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                Care and treatment recommendations
+              </a>
+            </div>
+
+            <svg
+              class="nhsapp-icon nhsapp-icon--chevron-right"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              height="2rem"
+              width="2rem"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="making-this-plan" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                How your plan was made
+              </a>
+            </div>
+
+            <svg
+              class="nhsapp-icon nhsapp-icon--chevron-right"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              height="2rem"
+              width="2rem"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+              />
+            </svg>
+          </div>
+        </li>
+
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="emergency-contacts" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                Emergency contacts
+              </a>
+            </div>
+
+            <svg
+              class="nhsapp-icon nhsapp-icon--chevron-right"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+              height="2rem"
+              width="2rem"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+              />
+            </svg>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="app-card__section-heading">
+        Care plan document
+      </h2>
+
+      <div class="nhsapp-card nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <a href="emergency-care-plan-document" class="nhsapp-card__link nhsuk-link--no-visited-state">
+              Emergency care plan document
+            </a>
+          </div>
+
+          <svg
+            class="nhsapp-icon nhsapp-icon--chevron-right"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+            height="2rem"
+            width="2rem"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <h2 class="nhsuk-heading-s">About this plan</h2>
+      <p>Last updated: 15 March 2024, 09:33</br>
+        Created at: Shrewsbury Hospital</p>
+      <p>This care plan includes information and recommendations you agreed with a healthcare professional. It is not legally binding.</p>
+      
+      {% from "inset-text/macro.njk" import insetText %}
+
+      {% set insetTextHtml %}
+        <p>The NHS App may not show all the information in your care plan. If you cannot find the information you need, contact your GP surgery.</p>
+      {% endset %}
+
+      {{ insetText({
+        html: insetTextHtml
+      }) }}
+
+      <hr class="nhsuk-section-break nhsuk-section-break--visible">
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'none') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'block';
+        bottomNav.style.display = 'none';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      // Get a reference to the hidden div
+      var hiddenDiv = document.getElementById('logoutActionSheet');
+      var bottomNav = document.getElementById('bottomNav');
+
+      // Check if the div is currently hidden
+      if (hiddenDiv.style.display === 'block') {
+        // If hidden, show the div
+        hiddenDiv.style.display = 'none';
+        bottomNav.style.display = 'block';
+        hiddenDiv.focus()
+      } else {
+        // If visible, hide the div
+        hiddenDiv.style.display = 'block';
+      }
+    });
+  </script>
+{% endblock %}
