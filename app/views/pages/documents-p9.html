@@ -99,6 +99,26 @@
             ]
           }) }}
 
+          {% elif data.journey == 'round-5-complete' or data.journey == 'round-5-partial' %}
+          {{ nhsappCardGroup({
+            stacked: true,
+            cards: [
+              {
+                title: 'Emergency care plan',
+                href: '/pages/profile/care-plans/round-5/sensitive-information-warning',
+                description: 'ReSPECT (Recommended Summary Plan for Emergency Care and Treatment) plan'
+              },
+              {
+                title: 'Manage your health care plans',
+                href: '/pages/profile/care-plans/pkb-care-plans'
+              },
+              {
+                title: "View your Universal Care plan",
+                href: "#"
+              }
+            ]
+          }) }}
+
         {% endif %}
 
 
