@@ -7,6 +7,11 @@
 {% set pageHeading = "Care and treatment recommendations" %}
 
 {% block content %}
+<style>
+  .nhsuk-u-secondary-text-colour {
+    color: #4c6272;
+  }
+</style> 
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -26,7 +31,7 @@
                 text: "Your care priority"
               },
               value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+                html: '<p class="nhsuk-body-s nhsuk-u-secondary-text-colour">No information available</p>'
               }
             },
             {
@@ -34,7 +39,7 @@
                 text: "Guidance on specific interventions"
               },
               value: {
-                html: '<span class="nhsapp-tag nhsapp-tag--grey"> No information available </span>'
+                html: '<p class="nhsuk-body-s nhsuk-u-secondary-text-colour">No information available</p>'
               }
             },
             {

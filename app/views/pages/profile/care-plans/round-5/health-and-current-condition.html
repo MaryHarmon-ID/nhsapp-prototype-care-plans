@@ -7,6 +7,12 @@
 {% set pageHeading = "Your health and current condition" %}
 
 {% block content %}
+<style>
+  .nhsuk-summary-list__key .nhsuk-body-s {
+    font-weight: normal;
+  }
+</style>
+
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
@@ -40,7 +46,10 @@
             },
             {
               key: {
-                text: "The person chosen to make health and care decisions for you"
+                html: "Someone who can legally make health and care decisions for you<br/>
+                <span class='nhsuk-body-s'>
+                  This is someone who has legal authority to make these decisions if you cannot make them yourself.
+                </span>"
               },
               value: {
                 html: '
