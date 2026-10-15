@@ -5,7 +5,7 @@
 
   {% set bodyClasses = "nhs-app-web" %}
 
-  {% if linkedProfile === true or backLink === true %}
+  {% if linkedProfile === true or showBackLink === true %}
     {% set mainClasses = "app-main-wrapper--no-top-padding" %}
   {% else %}
   {% endif %}
@@ -56,6 +56,7 @@
 {% endblock %}
 
 {% block head %}
+  {{ super() }}
   <meta name="theme-color" content="#f0f4f5">
 {% endblock %}
 
@@ -78,7 +79,7 @@
     {% include "components/switch-profile-banner/include.html" %}
   {% endif %}
   <!-- BACK LINK -->
-  {% if backLink === true %}
+  {% if showBackLink === true %}
     {% if containerFullWidth === true %}
       <div class="nhsuk-width-container">
         <div class="nhsuk-grid-row">
