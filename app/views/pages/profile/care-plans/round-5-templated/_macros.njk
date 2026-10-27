@@ -1,0 +1,66 @@
+{#
+  Shared helpers for the round-5-templated care plan pages.
+  Data comes from app/data/fakeCarePlanData.js via res.locals.carePlan (see app/locals.js).
+#}
+
+{% macro noInformation() -%}
+  <p class="nhsuk-u-secondary-text-colour">No information available</p>
+{%- endmacro %}
+
+{# Renders a list of strings as paragraphs, or the empty state if there are none. #}
+{% macro paragraphs(items) -%}
+  {%- if items and items.length -%}
+    {%- for item in items %}
+      <p>{{ item }}</p>
+    {%- endfor %}
+  {%- else -%}
+    {{ noInformation() }}
+  {%- endif -%}
+{%- endmacro %}
+
+{# Renders a single string as a paragraph, or the empty state if it is blank. #}
+{% macro paragraph(text) -%}
+  {%- if text -%}
+    <p>{{ text }}</p>
+  {%- else -%}
+    {{ noInformation() }}
+  {%- endif -%}
+{%- endmacro %}
+
+{# Renders a list of strings as a bulleted list, or the empty state if there are none. #}
+{% macro bulletList(items) -%}
+  {%- if items and items.length -%}
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      {%- for item in items %}
+      <li>{{ item }}</li>
+      {%- endfor %}
+    </ul>
+  {%- else -%}
+    {{ noInformation() }}
+  {%- endif -%}
+{%- endmacro %}
+
+{# Renders a card with a heading and summary list rows. Rows with no value are skipped. #}
+{% macro detailCard(heading, rows) -%}
+  <div class="nhsuk-card">
+    <div class="nhsuk-card__content">
+      <h3 class="nhsuk-card__heading nhsuk-heading-m">
+        {{ heading }}
+      </h3>
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-last-row-border">
+        {%- for row in rows %}
+        {%- if row.value %}
+        <div class="nhsuk-summary-list__row{% if loop.last %} last-row{% endif %}">
+          <dt class="nhsuk-summary-list__key">
+            {{ row.key }}
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>{{ row.value }}</p>
+          </dd>
+        </div>
+        {%- endif %}
+        {%- endfor %}
+      </dl>
+    </div>
+  </div>
+{%- endmacro %}

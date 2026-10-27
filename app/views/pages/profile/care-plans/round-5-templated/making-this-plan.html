@@ -1,0 +1,59 @@
+{% extends 'layout-app.html' %}
+
+{% set showBackLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "How your plan was made" %}
+
+{% block content %}
+<style>
+  .last-row {
+    border: none;
+}
+
+</style> 
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <p>This explains how decisions about your plan were made and who was involved.</p>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+      {% from "pages/profile/care-plans/round-5-templated/_macros.njk" import paragraphs, detailCard, noInformation %}
+
+      {% set howYourPlanWasMade = carePlan.howYourPlanWasMade %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your involvement in making this plan"
+              },
+              value: {
+                html: paragraphs(howYourPlanWasMade.involvementParagraphs)
+              }
+            }
+          ]
+        }) }}
+
+      <h2 class="nhsuk-heading-xs">Healthcare professionals who signed your plan</h2>
+
+      {% for professional in howYourPlanWasMade.signingHealthcareProfessionals %}
+        {{ detailCard(professional.name, [
+          { key: "Role and speciality", value: professional.roleAndSpeciality },
+          { key: "Lead healthcare professional", value: professional.leadHealthcareProfessional },
+          { key: "Professional registration number", value: professional.professionalRegistrationNumber }
+        ]) }}
+      {% else %}
+        {{ noInformation() }}
+      {% endfor %}
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

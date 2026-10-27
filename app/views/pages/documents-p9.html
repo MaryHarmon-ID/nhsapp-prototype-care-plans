@@ -99,13 +99,13 @@
             ]
           }) }}
 
-          {% elif data.journey == 'round-5-complete' or data.journey == 'round-5-partial' %}
+          {% elif data.journey == 'round-5-complete' or data.journey == 'round-5-partial' or data.journey == 'round-5-templated' or data.journey == 'round-5-templated-partial' %}
           {{ nhsappCardGroup({
             stacked: true,
             cards: [
               {
                 title: 'Emergency care plan',
-                href: '/pages/profile/care-plans/round-5/sensitive-information-warning',
+                href: '/pages/profile/care-plans/' + ('round-5-templated' if (data.journey == 'round-5-templated' or data.journey == 'round-5-templated-partial') else 'round-5') + '/sensitive-information-warning',
                 description: 'ReSPECT (Recommended Summary Plan for Emergency Care and Treatment) plan'
               },
               {
