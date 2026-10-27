@@ -1,0 +1,38 @@
+{% extends 'layout-app.html' %}
+
+{% set showBackLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Your emergency care plan document" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <div id="documentContainer" data-qa="document-preview-container">
+        <div id="document_0" class="documentContainer nhsuk-u-margin-top-5">
+          <img alt="First page of your ReSPECT plan containing who this plan belongs to, shared understanding of your health and current condition, what matters to you and recommendations for emergency care and treatment." src="/assets/images/Joe-ReSPECT-P1.jpg" />
+        </div>
+        <div id="document_1" class="documentContainer nhsuk-u-margin-top-5">
+          <img alt="Second page of your ReSPECT plan containing your capacity, involvement in making this plan, clinicians' signatures, emergency contacts and reviews." src="/assets/images/Joe-ReSPECT-P2.jpg" />
+        </div>
+          
+      <p class="nhsuk-body-s nhsuk-u-margin-top-5">
+      You may see medical abbreviations that you are not familiar with.
+      </p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: ""
+      }) }}
+
+
+    </div>
+  </div>
+
+
+{% endblock %}
