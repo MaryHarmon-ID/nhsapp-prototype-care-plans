@@ -1,0 +1,71 @@
+{% extends 'layout-app.html' %}
+
+{% set showBackLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Your health and current condition" %}
+
+{% block content %}
+<style>
+  .nhsuk-summary-list__key .nhsuk-body-s {
+    font-weight: normal;
+  }
+</style>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <p>A summary of your current health, relevant conditions and personal circumstances.</p>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+      {% from "pages/profile/care-plans/round-5-templated/_macros.njk" import paragraphs %}
+
+      {% set healthAndCurrentCondition = carePlan.healthAndCurrentCondition %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Health summary"
+              },
+              value: {
+                html: paragraphs(healthAndCurrentCondition.healthSummaryParagraphs)
+              }
+            },
+            {
+              key: {
+                html: "Someone who can legally make health and care decisions for you<br/>
+                <span class='nhsuk-body-s'>
+                  This is someone who has legal authority to make these decisions if you cannot make them yourself.
+                </span>"
+              },
+              value: {
+                html: paragraphs(healthAndCurrentCondition.legalDecisionMakerParagraphs)
+              }
+            },
+            {
+              key: {
+                text: "Other care planning or legal documents"
+              },
+              value: {
+                html: paragraphs(healthAndCurrentCondition.otherCarePlanningDocumentsParagraphs)
+              }
+            }
+          ]
+        }) }}
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+      
+    </div>
+  </div>
+
+
+{% endblock %}

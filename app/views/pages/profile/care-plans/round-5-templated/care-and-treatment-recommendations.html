@@ -1,0 +1,67 @@
+{% extends 'layout-app.html' %}
+
+{% set showBackLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Care and treatment recommendations" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">
+          {{ pageHeading }}
+      </h1>
+
+      <p>Recommendations from your healthcare team about the treatments that may or may not be appropriate for you in an emergency.</p>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+      {% from "pages/profile/care-plans/round-5-templated/_macros.njk" import paragraph, paragraphs, bulletList %}
+
+      {% set careAndTreatmentRecommendations = carePlan.careAndTreatmentRecommendations %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Your care priority"
+              },
+              value: {
+                html: paragraphs(careAndTreatmentRecommendations.carePriorityParagraphs)
+              }
+            },
+            {
+              key: {
+                text: "Guidance on specific interventions"
+              },
+              value: {
+                html: bulletList(careAndTreatmentRecommendations.specificInterventionGuidanceItems)
+              }
+            },
+            {
+              key: {
+                text: "Cardiopulmonary resuscitation (CPR) recommendation"
+              },
+              value: {
+                html: paragraph(careAndTreatmentRecommendations.cardiopulmonaryResuscitationRecommendation)
+              }
+            }
+          ]
+        }) }}
+
+      <p class="nhsuk-body nhsuk-u-margin-top-5">You may see medical abbreviations that you are not familiar with.</p>
+
+      {{ actionLink({
+        text: "Help with abbreviations",
+        href: "#"
+      }) }}
+
+
+
+    </div>
+  </div>
+
+
+{% endblock %}
