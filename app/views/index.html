@@ -27,6 +27,11 @@
         <li>
           <a href="/pages/home-p9?journey=round-5-partial">Partially complete plan</a>
         </li>
+        {% for dataset in carePlanDatasetLinks %}
+        <li>
+          <a href="/pages/home-p9?journey={{ dataset.journey }}&carePlanDataset={{ dataset.name | urlencode }}">Templated {{ "partially complete " if dataset.isPartial }}plan ({{ dataset.name }})</a>
+        </li>
+        {% endfor %}
       </ul>
 
       <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible app-section-break--width-4">

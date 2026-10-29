@@ -1,0 +1,62 @@
+{% extends 'layout-app.html' %}
+
+{% set showBackLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "Emergency contacts" %}
+
+{% from "pages/profile/care-plans/round-5-templated/_macros.njk" import detailCard %}
+
+{% macro contactCard(contact) %}
+  {{ detailCard(contact.name, [
+    { key: "Role and relationship", value: contact.roleAndRelationship },
+    { key: "Phone number", value: contact.phoneNumber },
+    { key: "Involved in making this plan", value: contact.involvedInMakingThisPlan }
+  ]) }}
+{% endmacro %}
+
+{% block content %}
+<style>
+  .last-row {
+    border: none;
+}
+
+</style> 
+
+  {% set emergencyContacts = carePlan.emergencyContacts %}
+  {% set hasPrimaryContact = emergencyContacts.primaryEmergencyContact and emergencyContacts.primaryEmergencyContact.name %}
+  {% set hasOtherContacts = emergencyContacts.otherEmergencyContacts and emergencyContacts.otherEmergencyContacts.length %}
+
+   <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+   <p>Details of people who were involved in discussions about your plan, including your emergency contact where recorded.</p>
+
+   {% if hasPrimaryContact or hasOtherContacts %}
+
+     {% if hasPrimaryContact %}
+     <h2 class="nhsuk-heading-xs">Primary emergency contact</h2>
+     {{ contactCard(emergencyContacts.primaryEmergencyContact) }}
+     {% endif %}
+
+     {% if hasOtherContacts %}
+     <h2 class="nhsuk-heading-xs">Other emergency contacts</h2>
+     {% for contact in emergencyContacts.otherEmergencyContacts %}
+       {{ contactCard(contact) }}
+     {% endfor %}
+     {% endif %}
+
+   {% else %}
+
+      <p class="nhsuk-u-secondary-text-colour">
+        No information available.
+      </p>
+
+   {% endif %}
+
+
+    </div>
+  </div>
+
+
+{% endblock %}

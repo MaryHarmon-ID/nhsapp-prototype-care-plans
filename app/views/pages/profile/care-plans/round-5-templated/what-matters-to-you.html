@@ -1,0 +1,64 @@
+{% extends 'layout-app.html' %}
+
+{% set showBackLink = true %}
+
+{% set hub = "Emergency care plan" %}
+
+{% set pageHeading = "What matters to you" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-u-margin-bottom-5">{{ pageHeading }}</h1>
+
+      <p>What is important to you and what you would want healthcare professionals to consider when making decisions about your care.</p>
+
+      {% from "summary-list/macro.njk" import summaryList %}
+      {% from "pages/profile/care-plans/round-5-templated/_macros.njk" import paragraph, paragraphs %}
+
+      {% set whatMattersToYou = carePlan.whatMattersToYou %}
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Preferred name"
+              },
+              value: {
+                html: paragraph(whatMattersToYou.preferredName)
+              }
+            },
+            {
+              key: {
+                text: "Your priorities for care and treatment"
+              },
+              value: {
+                html: paragraphs(whatMattersToYou.careAndTreatmentPrioritiesParagraphs)
+              }
+            },
+            {
+              key: {
+                text: "What you value most"
+              },
+              value: {
+                html: paragraphs(whatMattersToYou.valuedMostParagraphs)
+              }
+            },
+            {
+              key: {
+                text: "Things you want to avoid"
+              },
+              value: {
+                html: paragraphs(whatMattersToYou.thingsToAvoidParagraphs)
+              }
+            }
+          ]
+        }) }}
+
+    </div>
+  </div>
+
+
+{% endblock %}
