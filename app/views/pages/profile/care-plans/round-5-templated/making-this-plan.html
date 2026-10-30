@@ -6,6 +6,12 @@
 
 {% set pageHeading = "How your plan was made" %}
 
+{% macro contactCard(contact) %}
+  {{ detailCard(contact.name, [
+    { key: "Role and relationship", value: contact.roleAndRelationship }
+  ]) }}
+{% endmacro %}
+
 {% block content %}
 <style>
   .last-row {
@@ -50,6 +56,15 @@
       {% else %}
         {{ noInformation() }}
       {% endfor %}
+
+      <hr class="nhsuk-section-break nhsuk-section-break--visible"/>
+
+      <h2 class="nhsuk-heading-xs nhsuk-u-margin-top-5">Others involved in making your plan</h2>
+      {% if emergencyContacts.primaryEmergencyContact and emergencyContacts.primaryEmergencyContact.name %}
+        {{ contactCard(emergencyContacts.primaryEmergencyContact) }}
+      {% else %}
+        {{ noInformation() }}
+      {% endif %}
 
 
     </div>
