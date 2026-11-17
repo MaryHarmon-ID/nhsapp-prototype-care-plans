@@ -145,225 +145,78 @@ const sampleJoe = {
   },
 };
 
-// Invented for demonstrations, so reviewers can see the pages with different
-// content: CPR recommended, a legal decision maker, two signing professionals
-// and a single other contact. Phone numbers come from Ofcom's ranges reserved
-// for drama use. The registration numbers are made up.
+// Chooses which sample care plan the prototype shows by default. To switch,
+// replace the name in quotes with another name from fakeCarePlanDatasets below.
+// You can also switch for a single session by adding
+// ?carePlanDataset=sample-two to any URL.
+
 /** @type {CarePlanResponse} */
-const sampleTwo = {
-  carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT)",
-  carePlanDocumentPdfUrl: "#",
-  carePlanLastUpdatedDateTime: "23 October 2026 10:12",
-  carePlanCreatedAtOrganisationName: "Fake GP Surgery",
+const sampleMuriel = {
+  // Copied from the uploaded ResPECT Plus document.
+  carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT) Plus",
+  // Copied from the uploaded ResPECT Plus document.
+  carePlanDocumentPdfUrl: "/documents/ReSPECT Plus-Muriel.pdf",
+  // Copied from the uploaded ResPECT Plus document and made Bristol community hospital up.
+  carePlanLastUpdatedDateTime: "09 September 2026",
+  carePlanCreatedAtOrganisationName: "Bristol Community Hospital",
+  // Copied from the uploaded ResPECT Plus document.
   healthAndCurrentCondition: {
     healthSummaryParagraphs: [
-      "Fake patient with multiple chronic conditions.",
-      "Fake second line.",
-    ],
-    legalDecisionMakerParagraphs: ["Fake data for legal decision maker."],
-    otherCarePlanningDocumentsParagraphs: ["Fake other care planning documents."],
+  "Acute kidney injury stage 1. Patient fully aware. Patient has been updated with regards to the primary diagnosis and the complications that are going to be involved with treatments going forward.",
+  "Osteoarthritis and atrial fibrillation need to be heavily monitored throughout the patients treatment. Lives alone - help available. Lives in Extra Care housing Visual impairment. Cognitivie im (cont.)",
+  ],
+    legalDecisionMakerParagraphs: ["Yes, Robert Jones, son"],
+    otherCarePlanningDocumentsParagraphs: ["Has ADRT (advance decision to refuste treatment) (Mental Capacity Act 2005). Bedside drawer in binder. Has advance care plan."],
   },
+  // Copied from the uploaded ResPECT Plus document.
   whatMattersToYou: {
-    preferredName: "Obvious Fake Name",
-    careAndTreatmentPrioritiesParagraphs: [
-      "Fake care and treatment priority.",
-    ],
+    preferredName: "Muriel",
+    careAndTreatmentPrioritiesParagraphs: ["For care at home and any discomfort or distress treated effectively; not for hospital admission, but for active treatment in the community (eg oral antibiotics for infections)"],
     valuedMostParagraphs: [
-      "Fake valued most.",
+      "I would like to remain in a state of comfort I want to remain active as much as I can",
     ],
     thingsToAvoidParagraphs: [
-      "Fake things to avoid.",
-      "Second Fake thing to avoid.",
+      "I don't want to be a burden or feel unnecessary pain",
     ],
   },
+  // Copied from the uploaded ResPECT Plus document.
   careAndTreatmentRecommendations: {
-    carePriorityParagraphs: ["Fake care priority."],
+    carePriorityParagraphs: ["Balance extending life with comfort and valued outcomes."],
     specificInterventionGuidanceItems: [
-      "Fake specific intervention guidance.",
-      "Another fake specific intervention guidance.",
-      "Even more fake specific intervention guidance.",
+      "CPR attempts recommended.",
     ],
-    cardiopulmonaryResuscitationRecommendation: "Fake CPR recommendation",
+    cardiopulmonaryResuscitationRecommendation: "CPR is NOT recommended",
   },
+  // Copied from the uploaded ResPECT Plus document.
   howYourPlanWasMade: {
     involvementParagraphs: [
-      "Fake involvement paragraph.",
-      "Another fake involvement paragraph.",
+      "The person has capacity to participate in making recommendationso on this plan.",
     ],
     signingHealthcareProfessionals: [
       {
-        name: "Fake Doctor Name",
+        name: "Dr Martin Hobbs",
         roleAndSpeciality: "GP",
         leadHealthcareProfessional: "Yes",
-        professionalRegistrationNumber: "Fake Number",
-      },
-      {
-        name: "Fake Nurse Name",
-        roleAndSpeciality: "Community respiratory nurse",
-        leadHealthcareProfessional: "No",
-        professionalRegistrationNumber: "Fake Number",
+        professionalRegistrationNumber: "GMC 5843214",
       },
     ],
   },
+  // Copied from the NHS App prototype's emergency contacts page, except the
+  // phone numbers, which come from Ofcom's ranges reserved for drama use.
   emergencyContacts: {
     primaryEmergencyContact: {
-      name: "Fake relative",
-      roleAndRelationship: "Daughter",
-      phoneNumber: "00000 000000",
+      name: "Edward Jones",
+      roleAndRelationship: "Spouse",
+      phoneNumber: "07986547411",
       involvedInMakingThisPlan: "Yes",
     },
     otherEmergencyContacts: [
-      { name: "Fake other contact", phoneNumber: "00000 000000", involvedInMakingThisPlan: "No" },
+      { name: "Robert Jones", roleAndRelationship: "Son", phoneNumber: "01918798745", involvedInMakingThisPlan: "Yes" },
+      { name: "John Robinson", roleAndRelationship: "Friend", phoneNumber: "01913216547", involvedInMakingThisPlan: "No" },
+      { name: "Alison Robinson", roleAndRelationship: "Sister", phoneNumber: "071236987545", involvedInMakingThisPlan: "No" },
     ],
   },
 };
-
-// Invented for demonstrations, so reviewers can see the pages with different
-// content: CPR recommended, a legal decision maker, two signing professionals
-// and a single other contact. Phone numbers come from Ofcom's ranges reserved
-// for drama use. The registration numbers are made up.
-/** @type {CarePlanResponse} */
-const sampleThree = {
-  carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT)",
-  carePlanDocumentPdfUrl: "#",
-  carePlanLastUpdatedDateTime: "23 October 2026 10:12",
-  carePlanCreatedAtOrganisationName: "Fake GP Surgery",
-  healthAndCurrentCondition: {
-    healthSummaryParagraphs: [
-      "Fake patient with multiple chronic conditions.",
-      "Fake second line.",
-    ],
-    legalDecisionMakerParagraphs: ["Fake data for legal decision maker."],
-    otherCarePlanningDocumentsParagraphs: ["Fake other care planning documents."],
-  },
-  whatMattersToYou: {
-    preferredName: "Obvious Fake Name",
-    careAndTreatmentPrioritiesParagraphs: [
-      "Fake care and treatment priority.",
-    ],
-    valuedMostParagraphs: [
-      "Fake valued most.",
-    ],
-    thingsToAvoidParagraphs: [
-      "Fake things to avoid.",
-      "Second Fake thing to avoid.",
-    ],
-  },
-  careAndTreatmentRecommendations: {
-    carePriorityParagraphs: ["Fake care priority."],
-    specificInterventionGuidanceItems: [
-      "Fake specific intervention guidance.",
-      "Another fake specific intervention guidance.",
-      "Even more fake specific intervention guidance.",
-    ],
-    cardiopulmonaryResuscitationRecommendation: "Fake CPR recommendation",
-  },
-  howYourPlanWasMade: {
-    involvementParagraphs: [
-      "Fake involvement paragraph.",
-      "Another fake involvement paragraph.",
-    ],
-    signingHealthcareProfessionals: [
-      {
-        name: "Fake Doctor Name",
-        roleAndSpeciality: "GP",
-        leadHealthcareProfessional: "Yes",
-        professionalRegistrationNumber: "Fake Number",
-      },
-      {
-        name: "Fake Nurse Name",
-        roleAndSpeciality: "Community respiratory nurse",
-        leadHealthcareProfessional: "No",
-        professionalRegistrationNumber: "Fake Number",
-      },
-    ],
-  },
-  emergencyContacts: {
-    primaryEmergencyContact: {
-      name: "Fake relative",
-      roleAndRelationship: "Daughter",
-      phoneNumber: "00000 000000",
-      involvedInMakingThisPlan: "Yes",
-    },
-    otherEmergencyContacts: [
-      { name: "Fake other contact", phoneNumber: "00000 000000", involvedInMakingThisPlan: "No" },
-    ],
-  },
-};
-
-// Invented for demonstrations, so reviewers can see the pages with different
-// content: CPR recommended, a legal decision maker, two signing professionals
-// and a single other contact. Phone numbers come from Ofcom's ranges reserved
-// for drama use. The registration numbers are made up.
-/** @type {CarePlanResponse} */
-const sampleFour = {
-  carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT)",
-  carePlanDocumentPdfUrl: "#",
-  carePlanLastUpdatedDateTime: "23 October 2026 10:12",
-  carePlanCreatedAtOrganisationName: "Fake GP Surgery",
-  healthAndCurrentCondition: {
-    healthSummaryParagraphs: [
-      "Fake patient with multiple chronic conditions.",
-      "Fake second line.",
-    ],
-    legalDecisionMakerParagraphs: ["Fake data for legal decision maker."],
-    otherCarePlanningDocumentsParagraphs: ["Fake other care planning documents."],
-  },
-  whatMattersToYou: {
-    preferredName: "Obvious Fake Name",
-    careAndTreatmentPrioritiesParagraphs: [
-      "Fake care and treatment priority.",
-    ],
-    valuedMostParagraphs: [
-      "Fake valued most.",
-    ],
-    thingsToAvoidParagraphs: [
-      "Fake things to avoid.",
-      "Second Fake thing to avoid.",
-    ],
-  },
-  careAndTreatmentRecommendations: {
-    carePriorityParagraphs: ["Fake care priority."],
-    specificInterventionGuidanceItems: [
-      "Fake specific intervention guidance.",
-      "Another fake specific intervention guidance.",
-      "Even more fake specific intervention guidance.",
-    ],
-    cardiopulmonaryResuscitationRecommendation: "Fake CPR recommendation",
-  },
-  howYourPlanWasMade: {
-    involvementParagraphs: [
-      "Fake involvement paragraph.",
-      "Another fake involvement paragraph.",
-    ],
-    signingHealthcareProfessionals: [
-      {
-        name: "Fake Doctor Name",
-        roleAndSpeciality: "GP",
-        leadHealthcareProfessional: "Yes",
-        professionalRegistrationNumber: "Fake Number",
-      },
-      {
-        name: "Fake Nurse Name",
-        roleAndSpeciality: "Community respiratory nurse",
-        leadHealthcareProfessional: "No",
-        professionalRegistrationNumber: "Fake Number",
-      },
-    ],
-  },
-  emergencyContacts: {
-    primaryEmergencyContact: {
-      name: "Fake relative",
-      roleAndRelationship: "Daughter",
-      phoneNumber: "00000 000000",
-      involvedInMakingThisPlan: "Yes",
-    },
-    otherEmergencyContacts: [
-      { name: "Fake other contact", phoneNumber: "00000 000000", involvedInMakingThisPlan: "No" },
-    ],
-  },
-};
-
 
 
 // Joe's plan as the NHS App prototype's "partially complete plan" shows it.
