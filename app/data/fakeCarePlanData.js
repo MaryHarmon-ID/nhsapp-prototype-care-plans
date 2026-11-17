@@ -155,7 +155,7 @@ const sampleMuriel = {
   // Copied from the uploaded ResPECT Plus document.
   carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT) Plus",
   // Copied from the uploaded ResPECT Plus document.
-  carePlanDocumentPdfUrl: "/documents/ReSPECT Plus-Muriel.pdf",
+  carePlanDocumentPdfUrl: "/documents/ReSPECT-Plus-Muriel.pdf",
   // Copied from the uploaded ResPECT Plus document and made Bristol community hospital up.
   carePlanLastUpdatedDateTime: "09 September 2026",
   carePlanCreatedAtOrganisationName: "Bristol Community Hospital",
@@ -261,9 +261,7 @@ const sampleJoePartial = {
 const fakeCarePlanDatasets = {
   "sample-joe": sampleJoe,
   "sample-joe-partial": sampleJoePartial,
-  "sample-two": sampleTwo,
-  "sample-four": sampleFour,
-  "sample-three": sampleThree,
+  "sample-murial": sampleMuriel,
 };
 
 /** @type {CarePlanResponse} */
