@@ -272,6 +272,7 @@ const sampleJoePartial = {
   howYourPlanWasMade: {
     ...sampleJoe.howYourPlanWasMade,
     involvementParagraphs: [],
+    othersInvolvedInPlanning: [],
   },
   emergencyContacts: {
     primaryEmergencyContact: { name: "", phoneNumber: "", involvedInMakingThisPlan: "" },

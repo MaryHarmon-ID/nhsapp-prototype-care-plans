@@ -60,7 +60,8 @@
       <hr class="nhsuk-section-break nhsuk-section-break--visible"/>
 
       <h2 class="nhsuk-heading-xs nhsuk-u-margin-top-5">Others involved in making your plan</h2>
-      {% if howYourPlanWasMade.othersInvolvedInPlanning %}
+      {% if howYourPlanWasMade.othersInvolvedInPlanning
+        and howYourPlanWasMade.othersInvolvedInPlanning.length > 0 %}
         {% for person in howYourPlanWasMade.othersInvolvedInPlanning %}
           {{ contactCard(person) }}
         {% endfor %}
