@@ -86,7 +86,7 @@ const sampleJoe = {
   // Copied from the NHS App prototype's emergency care plan document page.
   carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT)",
   // Copied from the NHS App prototype's emergency care plan document page.
-  carePlanDocumentPdfUrl: "/documents/Joe-ReSPECT-plan.pdf",
+  carePlanDocumentPdfUrl: "/assets/documents/Joe-ReSPECT-plan.pdf",
   // The same fictional values the NHS App prototype shows.
   carePlanLastUpdatedDateTime: "15 March 2024, 09:33",
   carePlanCreatedAtOrganisationName: "Meadow Springs Medical Centre",
@@ -168,7 +168,7 @@ const sampleMuriel = {
   // Copied from the uploaded ResPECT Plus document.
   carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT) Plus",
   // Copied from the uploaded ResPECT Plus document.
-  carePlanDocumentPdfUrl: "/documents/ReSPECT-Plus-Muriel.pdf",
+  carePlanDocumentPdfUrl: "/assets/documents/ReSPECT-Plus-Muriel.pdf",
   // Copied from the uploaded ResPECT Plus document and made Bristol community hospital up.
   carePlanLastUpdatedDateTime: "09 September 2026",
   carePlanCreatedAtOrganisationName: "Bristol Community Hospital",
@@ -250,7 +250,7 @@ const sampleMuriel = {
 const sampleJoePartial = {
   ...sampleJoe,
   // Copied from the NHS App prototype's partial emergency care plan document page.
-  carePlanDocumentPdfUrl: "/documents/Joe-ReSPECT-plan-partial.pdf",
+  carePlanDocumentPdfUrl: "/assets/documents/Joe-ReSPECT-plan-partial.pdf",
   // Copied from the NHS App prototype's partial emergency care plan page.
   carePlanCreatedAtOrganisationName: "Shrewsbury Hospital",
   healthAndCurrentCondition: {
