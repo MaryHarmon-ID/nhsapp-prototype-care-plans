@@ -21,15 +21,15 @@
       <h2 class="nhsuk-heading-s">Round 5</h2>
 
       <ul clas="nhsuk-list">
-        <li>
+        <!--<li>
           <a href="/pages/home-p9?journey=round-5-complete">Complete plan</a>
         </li>
         <li>
           <a href="/pages/home-p9?journey=round-5-partial">Partially complete plan</a>
-        </li>
+        </li>-->
         {% for dataset in carePlanDatasetLinks %}
         <li>
-          <a href="/pages/home-p9?journey={{ dataset.journey }}&carePlanDataset={{ dataset.name | urlencode }}">Templated {{ "partially complete " if dataset.isPartial }}plan ({{ dataset.name }})</a>
+          <a href="/pages/home-p9?journey={{ dataset.journey }}&carePlanDataset={{ dataset.name | urlencode }}"> <!--{{ "partially complete " if dataset.isPartial }}--> {{ dataset.name }}</a>
         </li>
         {% endfor %}
       </ul>
