@@ -60,8 +60,10 @@
       <hr class="nhsuk-section-break nhsuk-section-break--visible"/>
 
       <h2 class="nhsuk-heading-xs nhsuk-u-margin-top-5">Others involved in making your plan</h2>
-      {% if emergencyContacts.primaryEmergencyContact and emergencyContacts.primaryEmergencyContact.name %}
-        {{ contactCard(emergencyContacts.primaryEmergencyContact) }}
+      {% if howYourPlanWasMade.othersInvolvedInPlanning %}
+        {% for person in howYourPlanWasMade.othersInvolvedInPlanning %}
+          {{ contactCard(person) }}
+        {% endfor %}
       {% else %}
         {{ noInformation() }}
       {% endif %}

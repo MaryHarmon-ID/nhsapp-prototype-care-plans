@@ -36,9 +36,16 @@
  */
 
 /**
+ * @typedef {object} OthersInvolvedInPlanning
+ * @property {string} name
+ * @property {string} roleAndRelationship
+ */
+
+/**
  * @typedef {object} HowYourPlanWasMadeContent
  * @property {string[]} involvementParagraphs
  * @property {SigningHealthcareProfessional[]} signingHealthcareProfessionals
+ * @property {OthersInvolvedInPlanning[]} othersInvolvedInPlanning
  */
 
 /**
@@ -128,6 +135,12 @@ const sampleJoe = {
         professionalRegistrationNumber: "GMC 4123485",
       },
     ],
+    othersInvolvedInPlanning: [
+      {
+        name: "Clive Campbell",
+        roleAndRelationship: "Nephew",
+      },
+    ],
   },
   // Copied from the NHS App prototype's emergency contacts page, except the
   // phone numbers, which come from Ofcom's ranges reserved for drama use.
@@ -190,7 +203,7 @@ const sampleMuriel = {
   // Copied from the uploaded ResPECT Plus document.
   howYourPlanWasMade: {
     involvementParagraphs: [
-      "The person has capacity to participate in making recommendationso on this plan.",
+      "The person has capacity to participate in making recommendations on this plan.",
     ],
     signingHealthcareProfessionals: [
       {
@@ -198,6 +211,16 @@ const sampleMuriel = {
         roleAndSpeciality: "GP",
         leadHealthcareProfessional: "Yes",
         professionalRegistrationNumber: "GMC 5843214",
+      },
+    ],
+    othersInvolvedInPlanning: [
+      {
+        name: "Edward Jones",
+        roleAndRelationship: "Spouse",
+      },
+      {
+        name: "Robert Jones",
+        roleAndRelationship: "Son",
       },
     ],
   },
