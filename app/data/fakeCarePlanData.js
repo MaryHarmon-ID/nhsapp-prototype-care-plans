@@ -71,6 +71,8 @@
  * @property {EmergencyContactsContent} emergencyContacts
  * @property {string} carePlanDocumentName
  * @property {string} carePlanDocumentPdfUrl - Prototype only, not in the care-plans repo. Link for "Download PDF".
+ * @property {string} carePlanDocumentImage1Url
+ * @property {string} carePlanDocumentImage2Url
  * @property {string} carePlanLastUpdatedDateTime
  * @property {string} carePlanCreatedAtOrganisationName
  */
@@ -87,6 +89,8 @@ const sampleJoe = {
   carePlanDocumentName: "Recommended Summary Plan for Emergency Care and Treatment (ReSPECT)",
   // Copied from the NHS App prototype's emergency care plan document page.
   carePlanDocumentPdfUrl: "/assets/documents/Joe-ReSPECT-plan.pdf",
+  carePlanDocumentImage1Url: "/assets/images/Joe-ReSPECT-P1.jpg",
+  carePlanDocumentImage2Url: "/assets/images/Joe-ReSPECT-P2.jpg",
   // The same fictional values the NHS App prototype shows.
   carePlanLastUpdatedDateTime: "15 March 2024, 09:33",
   carePlanCreatedAtOrganisationName: "Meadow Springs Medical Centre",
